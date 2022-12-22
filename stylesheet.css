@@ -1,3 +1,52 @@
-.red{
-    color:red;
+/* Header */
+.header{
+    background-color: #1a1a1a;
+    padding: 10px 4%;
 }
+.header-container{
+    height:42px;
+    color: white;
+    font-size: 24px;
+}
+/* Brand */
+.brand{
+    float:left;
+    cursor: pointer;
+    transition: color 0.5s ease;
+}
+.brand:hover{
+    color: rgb(255, 188, 63);
+}
+.brand-image{
+    width: 30px;
+    margin-top:-5px;
+}
+.brand-icon, .brand-name{
+    font-family: Helvetica;
+    display: inline;
+}
+/* End of Brand */
+
+/* Projects */
+.projects{
+    font-family: system-ui;
+    float:right;
+}
+/* End of Projects */
+
+/* Large devices (laptops/desktops, 992px and below) */
+@media only screen and (max-width: 992px) {
+    .header{
+        padding: 15px 30px;
+    }
+
+    .brand-name, .brand-icon{
+        color: greenyellow;
+    }
+}
+
+/* End of Header */
+
+/* Body */
+
+/* End of Body */
