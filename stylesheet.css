@@ -37,7 +37,7 @@
 /* Large devices (laptops/desktops, 992px and below) */
 @media only screen and (max-width: 992px) {
     .header{
-        padding: 15px 30px;
+        padding: 10px 30px;
     }
 
     .brand-name, .brand-icon{
