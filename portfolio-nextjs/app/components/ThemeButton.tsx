@@ -20,7 +20,8 @@ export default function ThemeButton() {
             onClick={() =>
                 setTheme(resolvedTheme === "dark" ? "light" : "dark")
             }
-            className="bg-teal-500/30 p-2 rounded-lg text-teal-500"
+            className="bg-teal-100 text-teal-600 hover:bg-teal-200 hover:text-teal-700 
+            p-2 rounded-lg dark:bg-teal-900 dark:text-teal-400 dark:hover:bg-teal-600 dark:hover:text-teal-200"
         >
             {resolvedTheme === "dark" ? (
                 <svg

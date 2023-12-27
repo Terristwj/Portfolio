@@ -35,20 +35,22 @@ export default function Navbar() {
                                         href="/"
                                         prefetch
                                         className={`${
-                                            pathname === "/"
-                                                ? "border-teal-500 dark:text-white h-full inline-flex items-center px-1 pt-1 border-b-2 text-sm font-medium"
-                                                : "border-transparent text-gray-500 dark:text-gray-300 dark:hover:text-white inline-flex items-center px-1 pt-1 border-b-2 text-sm font-medium"
+                                            (pathname === "/"
+                                                ? "border-teal-500  dark:text-white"
+                                                : "border-transparent hover:border-teal-500 text-gray-500 hover:text-black dark:text-gray-300 dark:hover:text-white") +
+                                            " h-full inline-flex items-center px-1 pt-1 border-b-2 text-sm font-medium"
                                         }`}
                                     >
-                                        Home
+                                        About Me
                                     </Link>
                                     <Link
                                         href="/guestbook"
                                         prefetch
                                         className={`${
-                                            pathname === "/guestbook"
-                                                ? "border-teal-500 dark:text-white h-full inline-flex items-center px-1 pt-1 border-b-2 text-sm font-medium"
-                                                : "border-transparent text-gray-500 dark:text-gray-300 dark:hover:text-white inline-flex items-center px-1 pt-1 border-b-2 text-sm font-medium"
+                                            (pathname === "/guestbook"
+                                                ? "border-teal-500  dark:text-white"
+                                                : "border-transparent hover:border-teal-500 text-gray-500 hover:text-black dark:text-gray-300 dark:hover:text-white") +
+                                            " h-full inline-flex items-center px-1 pt-1 border-b-2 text-sm font-medium"
                                         }`}
                                     >
                                         Guestbook
@@ -57,9 +59,10 @@ export default function Navbar() {
                                         href="/projects"
                                         prefetch
                                         className={`${
-                                            pathname === "/projects"
-                                                ? "border-teal-500 dark:text-white h-full inline-flex items-center px-1 pt-1 border-b-2 text-sm font-medium"
-                                                : "border-transparent text-gray-500 dark:text-gray-300 dark:hover:text-white inline-flex items-center px-1 pt-1 border-b-2 text-sm font-medium"
+                                            (pathname === "/projects"
+                                                ? "border-teal-500  dark:text-white"
+                                                : "border-transparent hover:border-teal-500 text-gray-500 hover:text-black dark:text-gray-300 dark:hover:text-white") +
+                                            " h-full inline-flex items-center px-1 pt-1 border-b-2 text-sm font-medium"
                                         }`}
                                     >
                                         Projects
@@ -72,7 +75,6 @@ export default function Navbar() {
 
                             {/* Navbar-Mobile-Hamburger START */}
                             <div className="-mr-2 flex items-center sm:hidden">
-                                <ThemeButton />
                                 <Disclosure.Button className="inline-flex items-center justify-center p-2 rounded-md text-gray-400 hover:text-gray-500 hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-teal-500 dark:hover:bg-gray-800">
                                     {open ? (
                                         <svg
@@ -106,6 +108,7 @@ export default function Navbar() {
                                         </svg>
                                     )}
                                 </Disclosure.Button>
+                                <ThemeButton />
                             </div>
                             {/* Navbar-Mobile-Hamburger END */}
                         </div>
@@ -118,20 +121,22 @@ export default function Navbar() {
                                 href="/"
                                 prefetch
                                 className={`${
-                                    pathname === "/"
-                                        ? "bg-teal-50 border-teal-500 text-teal-500 block pl-3 pr-4 py-2 border-l-4 text-base font-medium dark:bg-gray-800"
-                                        : "border-transparent text-gray-500 hover:bg-gray-50 hover:border-gray-300 hover:text-white-700 block pl-3 pr-4 py-2 dark:hover:bg-gray-700 border-l-4 text-base font-medium dark:text-white"
+                                    (pathname === "/"
+                                        ? " text-teal-500 border-teal-500 bg-teal-50 dark:bg-gray-800"
+                                        : " text-black border-transparent hover:border-gray-500 hover:bg-gray-200 dark:text-white dark:hover:border-gray-300 dark:hover:bg-gray-700") +
+                                    " block pl-3 pr-4 py-2 border-l-4 text-base font-medium"
                                 }`}
                             >
-                                Home
+                                About Me
                             </Link>
                             <Link
                                 href="/guestbook"
                                 prefetch
                                 className={`${
-                                    pathname === "/guestbook"
-                                        ? "bg-teal-50 border-teal-500 text-teal-500 block pl-3 pr-4 py-2 border-l-4 text-base font-medium dark:bg-gray-800"
-                                        : "border-transparent text-gray-500 hover:bg-gray-50 hover:border-gray-300 hover:text-white-700 block pl-3 pr-4 py-2 dark:hover:bg-gray-700 border-l-4 text-base font-medium dark:text-white"
+                                    (pathname === "/guestbook"
+                                        ? " text-teal-500 border-teal-500 bg-teal-50 dark:bg-gray-800"
+                                        : " text-black border-transparent hover:border-gray-500 hover:bg-gray-200 dark:text-white dark:hover:border-gray-300 dark:hover:bg-gray-700") +
+                                    " block pl-3 pr-4 py-2 border-l-4 text-base font-medium"
                                 }`}
                             >
                                 Guestbook
@@ -140,9 +145,10 @@ export default function Navbar() {
                                 href="/projects"
                                 prefetch
                                 className={`${
-                                    pathname === "/projects"
-                                        ? "bg-teal-50 border-teal-500 text-teal-500 block pl-3 pr-4 py-2 border-l-4 text-base font-medium dark:bg-gray-800"
-                                        : "border-transparent text-gray-500 hover:bg-gray-50 hover:border-gray-300 hover:text-white-700 block pl-3 pr-4 py-2 dark:hover:bg-gray-700 border-l-4 text-base font-medium dark:text-white"
+                                    (pathname === "/projects"
+                                        ? " text-teal-500 border-teal-500 bg-teal-50 dark:bg-gray-800"
+                                        : " text-black border-transparent hover:border-gray-500 hover:bg-gray-200 dark:text-white dark:hover:border-gray-300 dark:hover:bg-gray-700") +
+                                    " block pl-3 pr-4 py-2 border-l-4 text-base font-medium"
                                 }`}
                             >
                                 Projects
