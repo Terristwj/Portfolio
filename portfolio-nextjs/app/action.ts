@@ -4,13 +4,13 @@ import { revalidatePath } from "next/cache";
 import prisma from "./db";
 
 // Post Guestbook message into database
-export async function postEntry(formData: FormData, username: string) {
+export async function postEntry(message: string, username: string) {
     "use server";
 
     // Add message into database
-    const data = await prisma.guestbook.create({
+    await prisma.guestbook.create({
         data: {
-            message: formData.get("message") as string,
+            message,
             username,
         },
     });
