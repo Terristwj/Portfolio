@@ -22,3 +22,9 @@ Visit at: https://terristwj.github.io/Portfolio/
     - `schema.prisma`
     - CLI -> `npx prisma db push`
     - [Prisma best practice with NextJS](https://www.prisma.io/docs/orm/more/help-and-troubleshooting/help-articles/nextjs-prisma-client-dev-practices)
+    - Console commands
+        - `SELECT * FROM Guestbook;`
+        - `DELETE FROM Guestbook;`
+6. Guestbook page
+    - Cookies with random-animal-name
+    - bad-words and [OpenAI API](https://platform.openai.com/)
