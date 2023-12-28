@@ -1,0 +1,17 @@
+/* Header */
+@import url("https://fonts.googleapis.com/css2?family=Poppins&display=swap");
+.poppins {
+    font-family: "Poppins", sans-serif;
+}
+
+/* Body */
+@import url("https://fonts.googleapis.com/css2?family=Montserrat&display=swap");
+.montserrat {
+    font-family: "Montserrat", sans-serif;
+}
+
+/* Code */
+@import url("https://fonts.googleapis.com/css2?family=Fira+Code&family=Open+Sans&display=swap");
+.fira-code {
+    font-family: "Fira Code", monospace;
+}

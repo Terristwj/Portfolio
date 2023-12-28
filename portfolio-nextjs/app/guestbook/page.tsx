@@ -22,7 +22,7 @@ export default async function Guestbook() {
     return (
         <div className="divide-y divide-gray-700 dark:divide-gray-100">
             <div className="space-y-2 pt-5 pb-8 md:space-x-5">
-                <h1 className="text-3xl font-extrabold leading-9 tracking-tight text-gray-900 dark:text-gray-100 sm:text-4xl sm:leading-10 md:text-6xl md:leading-13">
+                <h1 className="text-3xl font-extrabold leading-9 tracking-tight text-gray-900 dark:text-gray-100 sm:text-4xl sm:leading-10 md:text-6xl md:leading-13 poppins">
                     Guestbook
                 </h1>
             </div>
@@ -31,7 +31,7 @@ export default async function Guestbook() {
                 <div className="max-w-[500px] mx-auto mt-8">
                     <Form />
 
-                    <div className="flex flex-col space-y-2">
+                    <div className="flex flex-col space-y-2 montserrat font-medium">
                         {data.map((entry) => (
                             <div
                                 key={entry.id}

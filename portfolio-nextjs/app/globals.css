@@ -3,6 +3,41 @@
 @tailwind utilities;
 
 * {
-    /* transition: background-color 5s ease-in-out; */
     transition: background-color 0.5s linear;
 }
+
+/* Scrollbar START */
+/* width */
+::-webkit-scrollbar {
+    width: 2px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+    background: transparent;
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+    background: #14b8a6;
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+    background: #109d8d;
+}
+/* Scrollbar END */
+
+/* Custom no highlight */
+.noSelect {
+    -webkit-touch-callout: none; /* iOS Safari */
+    -webkit-user-select: none; /* Safari */
+    -khtml-user-select: none; /* Konqueror HTML */
+    -moz-user-select: none; /* Old versions of Firefox */
+    -ms-user-select: none; /* Internet Explorer/Edge */
+    user-select: none; /* Non-prefixed version, currently
+                                    supported by Chrome, Edge, Opera and Firefox */
+}
+
+/* My Google Fonts */
+@import "googleFonts.css";
