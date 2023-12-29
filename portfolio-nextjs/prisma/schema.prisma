@@ -13,7 +13,7 @@ datasource db {
 
 model Guestbook {
   id          String    @id @default(uuid())
-  message     String
+  message     String    // Max 191 characters
   username    String
   created_at  DateTime  @default(now())
 }

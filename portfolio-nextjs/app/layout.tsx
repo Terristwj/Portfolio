@@ -3,7 +3,7 @@ import type { Metadata } from "next";
 import "./styles/globals.css";
 
 import Navbar from "./components/Navbar/Navbar";
-import Theme from "./components/Wrappers/Theme";
+import Theme from "./components/wrappers/Theme";
 
 export const metadata: Metadata = {
     title: "Terris Tan Portfolio",

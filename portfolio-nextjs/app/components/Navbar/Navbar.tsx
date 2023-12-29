@@ -25,7 +25,7 @@ const mobileThemeBtnDelay = 1;
 export default function Navbar() {
     let pathname = usePathname() || "/";
     return (
-        <Disclosure as="nav">
+        <Disclosure as="nav" className="inter">
             {({ open }) => (
                 <>
                     <div className="flex justify-between h-16">
@@ -124,18 +124,16 @@ export default function Navbar() {
                                     duration: 0.5,
                                 }}
                             >
-                                <div className="pt-2 pb-3 space-y-1">
-                                    {tabs.map((tab) => {
-                                        return (
-                                            <NavLinkMobile
-                                                key={tab.to}
-                                                pathname={pathname}
-                                                to={tab.to}
-                                                name={tab.name}
-                                            />
-                                        );
-                                    })}
-                                </div>
+                                {tabs.map((tab) => {
+                                    return (
+                                        <NavLinkMobile
+                                            key={tab.to}
+                                            pathname={pathname}
+                                            to={tab.to}
+                                            name={tab.name}
+                                        />
+                                    );
+                                })}
                             </motion.div>
                         )}
                     </AnimatePresence>

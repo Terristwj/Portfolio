@@ -23,9 +23,13 @@ export default async function handleFormData(formData: FormData) {
     // input[name='message']
     const message = formData.get("message") as string;
 
+    // Max 191 characters
+    if (message.length > 191) {
+        alert("Message is too long!");
+    }
     // Check for profanity using 'bad-words' package
     // Check for profanity using openAI
-    if (new Filter().isProfane(message) || (await isProfaneAI(message))) {
+    else if (new Filter().isProfane(message) || (await isProfaneAI(message))) {
         alert("You can't type that!");
     }
     // onSend update database
