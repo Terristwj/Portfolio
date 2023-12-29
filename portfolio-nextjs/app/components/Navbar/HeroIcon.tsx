@@ -1,4 +1,6 @@
-export default function Hamburger(props: { d: string }) {
+// https://heroicons.com/
+
+export default function HeroIcon(props: { d: string }) {
     return (
         <svg
             xmlns="http://www.w3.org/2000/svg"

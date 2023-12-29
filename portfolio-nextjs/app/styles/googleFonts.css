@@ -1,0 +1,26 @@
+@import url("https://fonts.googleapis.com/css2?family=Inter&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Poppins&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Montserrat&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Fira+Code&family=Open+Sans&display=swap");
+
+/* https://fonts.google.com/ */
+
+/* Navbar */
+.inter {
+    font-family: "Inter", sans-serif;
+}
+
+/* Header */
+.poppins {
+    font-family: "Poppins", sans-serif;
+}
+
+/* Body */
+.montserrat {
+    font-family: "Montserrat", sans-serif;
+}
+
+/* Code */
+.fira-code {
+    font-family: "Fira Code", monospace;
+}
