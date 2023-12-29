@@ -6,7 +6,7 @@ import Navbar from "./components/Navbar/Navbar";
 import Theme from "./components/wrappers/Theme";
 
 export const metadata: Metadata = {
-    title: "Terris Tan Portfolio",
+    title: "Terris Portfolio",
     description: "Terris Tan Portfolio Website",
 };
 
@@ -17,6 +17,9 @@ export default function RootLayout({
 }) {
     return (
         <html lang="en" suppressHydrationWarning>
+            <head>
+                <link rel="icon" href="/favicon.ico" />
+            </head>
             <body
                 className="h-full
                 text-black bg-white
