@@ -24,11 +24,14 @@ export default function NavLinkDesktop(props: {
                 // hover:border-teal-500
                 className={`${
                     (pathname === to
-                        ? "border-transparent dark:text-white relative"
+                        ? "border-transparent dark:text-white"
                         : "border-transparent text-gray-500 hover:text-black dark:text-gray-300 dark:hover:text-white") +
-                    " h-full inline-flex items-center px-1 pt-1 border-b-2 text-sm font-medium"
+                    " h-full inline-flex items-center px-1 pt-1" +
+                    " border-b-2 text-sm font-medium" +
+                    " relative group"
                 }`}
             >
+                {/* Border bottom on active link */}
                 {pathname === to && (
                     <motion.div
                         initial={{
@@ -41,9 +44,16 @@ export default function NavLinkDesktop(props: {
                         animate={{
                             width: "100%",
                         }}
-                        transition={{ delay: 0.5 }}
+                        transition={{ delay: 0.5, duration: 0.3 }}
                     ></motion.div>
                 )}
+                {/* Border bottom on hover link */}
+                <span
+                    className="border-b-2 border-teal-500 
+                    h-[1px] w-0 group-hover:w-full
+                    absolute left-0 -bottom-0.5 
+                    transition-[width] ease duration-300"
+                ></span>
                 <DropTransition delay={delay}>{name}</DropTransition>
             </Link>
         </>

@@ -15,7 +15,7 @@ export default async function Guestbook() {
                 <div className="space-y-2 pt-5 pb-8 md:space-x-5">
                     <h1
                         className="text-3xl font-extrabold leading-9 tracking-tight 
-                        text-gray-900 dark:text-gray-100 
+                        text-black dark:text-white
                         sm:text-4xl sm:leading-10 
                         md:text-6xl md:leading-13 
                         poppins"
@@ -32,7 +32,7 @@ export default async function Guestbook() {
                             {data.map((entry) => (
                                 <div
                                     key={entry.id}
-                                    className="w-full text-sm break-words leading-5"
+                                    className="w-full break-words leading-5"
                                 >
                                     <span className="text-teal-600 dark:text-teal-500">
                                         {entry.username}:
