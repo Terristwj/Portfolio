@@ -40,7 +40,7 @@ export default function FormContent() {
                     <>
                         {/* Loading Button START */}
                         <FormButton type="button" disabled={true}>
-                            <IconSend />
+                            <IconLoading />
                         </FormButton>
                         {/* Loading Button END */}
                     </>

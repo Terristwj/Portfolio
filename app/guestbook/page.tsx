@@ -24,25 +24,23 @@ export default async function Guestbook() {
                     </h1>
                 </div>
 
-                <div className="w-full">
-                    <div className="max-w-[500px] mx-auto mt-8">
-                        <Form />
+                <div className="w-full pt-8">
+                    <Form />
 
-                        <div className="flex flex-col space-y-2 font-medium">
-                            {data.map((entry) => (
-                                <div
-                                    key={entry.id}
-                                    className="w-full break-words leading-5"
-                                >
-                                    <span className="text-teal-600 dark:text-teal-500">
-                                        {entry.username}:
-                                    </span>{" "}
-                                    <span className="montserrat">
-                                        {entry.message}
-                                    </span>
-                                </div>
-                            ))}
-                        </div>
+                    <div className="flex flex-col space-y-2 font-medium">
+                        {data.map((entry) => (
+                            <div
+                                key={entry.id}
+                                className="w-full break-words leading-5"
+                            >
+                                <span className="text-teal-600 dark:text-teal-500">
+                                    {entry.username}:
+                                </span>{" "}
+                                <span className="montserrat">
+                                    {entry.message}
+                                </span>
+                            </div>
+                        ))}
                     </div>
                 </div>
             </div>
