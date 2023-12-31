@@ -1,0 +1,33 @@
+{
+    "hackathon": [
+        {
+            "_id": "1",
+            "title": "Synthia",
+            "subtitle": "The Best GenAI Tool",
+            "overview": "Synthia is a web-based AI; a Chatbot, Image generator, Music generator, and Code generator.",
+            "link": "https://synthia-gen-ai-website.vercel.app/",
+            "imgSrc": "/projects/Synthia.gif",
+            "techStack": [
+                "NextJs",
+                "TypeScript",
+                "TailwindCSS",
+                "shadcn/ui",
+                "OpenAI"
+            ]
+        },
+        {
+            "_id": "2",
+            "title": "Viiicky",
+            "subtitle": "Your Colourblind Asssistant",
+            "overview": "Aims to help the colorblind. Viiicky enables users to identify colors from photos effortlessly.",
+            "link": "https://vicky-nine.vercel.app/",
+            "imgSrc": "/projects/Viiicky.jpg",
+            "techStack": ["ReactJs", "TypeScript", "TailwindCSS", "MUI"]
+        }
+    ],
+    "academic": [
+        {
+            "title": "sam"
+        }
+    ]
+}

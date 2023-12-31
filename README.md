@@ -53,6 +53,7 @@ Visit at: https://terristwj.github.io/Portfolio/
 
         1. [React headlessUI](https://headlessui.com/) - UI & Transition
         2. [React Framer Motion](https://www.framer.com/) - Animation
+            - npm i @motionone/utils
 
     2.  Icons
 
