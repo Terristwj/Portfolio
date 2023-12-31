@@ -43,11 +43,21 @@ export default function Navbar() {
                                 transition={{ duration: 1 }}
                             >
                                 <Link href="/">
-                                    <h1 className="text-2xl font-medium">
-                                        <span className="text-teal-600 dark:text-teal-500">
+                                    <h1 className="text-2xl font-medium group">
+                                        <span
+                                            className="text-teal-600 dark:text-teal-500
+                                                group-hover:text-black group-hover:dark:text-white
+                                                transition-all duration-1000 ease-in-out"
+                                        >
                                             Terris
                                         </span>{" "}
-                                        Tan
+                                        <span
+                                            className="text-black dark:text-white
+                                            group-hover:text-teal-600 group-hover:dark:text-teal-500
+                                            transition-all duration-1000 ease-in-out"
+                                        >
+                                            Tan
+                                        </span>
                                     </h1>
                                 </Link>
                             </motion.div>

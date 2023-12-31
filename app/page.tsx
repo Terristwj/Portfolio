@@ -45,7 +45,7 @@ export default function About() {
                             className="h-48 w-48 rounded-full object-cover object-top"
                         />
                         <h3
-                            className="text-teal-600 dark:text-teal-400 
+                            className="text-teal-600 dark:text-teal-400
                                 pt-4 pb-2 text-2xl font-bold leading-8 tracking-tight"
                         >
                             Terris Tan
