@@ -24,11 +24,11 @@ export default function ThemeButton(props: { delay: number }) {
                 onClick={() =>
                     setTheme(resolvedTheme === "dark" ? "light" : "dark")
                 }
-                className="p-2 rounded-lg 
-                bg-teal-100 text-teal-600
-                hover:bg-teal-200 hover:text-teal-700
-                dark:bg-teal-900 dark:text-teal-400
-                dark:hover:bg-teal-600 dark:hover:text-teal-200"
+                className="p-2 rounded-lg
+                    bg-teal-100 text-teal-600
+                    hover:bg-teal-200 hover:text-teal-700
+                    dark:bg-teal-900 dark:text-teal-400
+                    dark:hover:bg-teal-600 dark:hover:text-teal-200"
             >
                 {resolvedTheme === "dark" ? (
                     // Dark mode icon

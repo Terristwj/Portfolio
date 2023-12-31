@@ -77,7 +77,7 @@ export default function Navbar() {
                             {/* Navbar-Mobile-Hamburger START */}
                             <DropTransition delay={hamburgerDelay}>
                                 <Disclosure.Button
-                                    className="inline-flex items-center justify-center p-2 rounded-md 
+                                    className="inline-flex items-center justify-center p-2 rounded-md
                                         text-gray-600 dark:text-gray-400
                                         hover:text-black hover:bg-gray-100
                                         dark:hover:text-white dark:hover:bg-gray-800

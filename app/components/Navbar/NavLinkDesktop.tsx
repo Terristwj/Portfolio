@@ -49,10 +49,10 @@ export default function NavLinkDesktop(props: {
                 )}
                 {/* Border bottom on hover link */}
                 <span
-                    className="border-b-2 border-teal-500 
-                    h-[1px] w-0 group-hover:w-full
-                    absolute left-0 -bottom-0.5 
-                    transition-[width] ease duration-300"
+                    className="border-b-2 border-teal-500
+                        h-[1px] w-0 group-hover:w-full
+                        absolute left-0 -bottom-0.5
+                        transition-[width] ease duration-300"
                 ></span>
                 <DropTransition delay={delay}>{name}</DropTransition>
             </Link>

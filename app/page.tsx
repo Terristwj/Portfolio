@@ -22,8 +22,8 @@ export default function About() {
                     <h1
                         className="text-3xl font-extrabold leading-9 tracking-tight
                         text-black dark:text-white
-                        sm:text-4xl sm:leading-10 
-                        md:text-6xl md:leading-13 
+                        sm:text-4xl sm:leading-10
+                        md:text-6xl md:leading-13
                         poppins"
                     >
                         About Me
@@ -31,9 +31,9 @@ export default function About() {
                 </div>
 
                 <div
-                    className="items-center space-y-2 
-                    xl:grid xl:grid-cols-3 
-                    xl:gap-x-8 xl:space-y-0"
+                    className="items-center space-y-2
+                        xl:grid xl:grid-cols-3
+                        xl:gap-x-8 xl:space-y-0"
                 >
                     {/* Profile START */}
                     <div className=" flex flex-col items-center pt-8 noSelect">
@@ -46,13 +46,13 @@ export default function About() {
                         />
                         <h3
                             className="text-teal-600 dark:text-teal-400 
-                            pt-4 pb-2 text-2xl font-bold leading-8 tracking-tight"
+                                pt-4 pb-2 text-2xl font-bold leading-8 tracking-tight"
                         >
                             Terris Tan
                         </h3>
                         <p
-                            className="text-black dark:text-white 
-                            text-center font-semibold fira-code"
+                            className="text-black dark:text-white
+                                text-center font-semibold fira-code"
                         >
                             <Typewriter
                                 words={[...TypewriterWords]}
@@ -87,9 +87,9 @@ export default function About() {
 
                     {/* Description START */}
                     <div
-                        className="max-w-none prose-lg pt-8 pb-7 
-                        dark:prose-invert xl:col-span-2 
-                        montserrat"
+                        className="max-w-none prose-lg pt-8 pb-7
+                            dark:prose-invert xl:col-span-2
+                            montserrat"
                     >
                         <p>
                             Hey everyone my name is Terris, I am 23 years old
