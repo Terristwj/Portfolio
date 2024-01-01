@@ -30,7 +30,7 @@ export default function Projects() {
 
                 <div
                     className="pt-8
-                        grid gap-y-8
+                        grid gap-y-8 grid-cols-1
                         sm:gap-6 sm:grid-cols-2
                         md:gap-6
                         lg:gap-10 lg:grid-cols-3"
@@ -90,13 +90,19 @@ export default function Projects() {
                                 >
                                     {project.overview}
                                 </p>
-                                
+
                                 <section>
-                                    <ParallaxText baseVelocity={-5}>
-                                        Framer Motion
+                                    <h3
+                                        className="mt-4 font-bold poppins leading-7
+                                            text-teal-600 dark:text-teal-400"
+                                    >
+                                        Techstack
+                                    </h3>
+                                    <ParallaxText baseVelocity={-1}>
+                                        {project.techStack}
                                     </ParallaxText>
-                                    <ParallaxText baseVelocity={5}>
-                                        Scroll velocity
+                                    <ParallaxText baseVelocity={1}>
+                                        {project.techStack}
                                     </ParallaxText>
                                 </section>
 

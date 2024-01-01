@@ -13,13 +13,15 @@ import {
 import { wrap } from "@motionone/utils";
 
 interface ParallaxProps {
-    children: string;
-    baseVelocity: number;
+    children: Array<string>;
+    baseVelocity?: number;
+    numSpaces?: number;
 }
 
 export default function ParallaxText({
     children,
     baseVelocity = 100,
+    numSpaces = 2,
 }: ParallaxProps) {
     const baseX = useMotionValue(0);
     const { scrollY } = useScroll();
@@ -66,12 +68,29 @@ export default function ParallaxText({
      * dynamically generated number of children.
      */
     return (
-        <div className="overflow-hidden tracking-widest m-0 whitespace-nowrap flex flex-nowrap">
-            <motion.div className="text-lg flex " style={{ x }}>
-                <span className="mr-8">{children} </span>
-                <span className="mr-8">{children} </span>
-                <span className="mr-8">{children} </span>
-                <span className="mr-8">{children} </span>
+        <div className="overflow-hidden tracking-widest m-0 whitespace-nowrap flex flex-nowrap fira-code">
+            <motion.div className="flex" style={{ x }}>
+                {/* Repeat 4 times */}
+                {[...Array(4)].map((_, i1) => (
+                    <span key={i1}>
+                        {/* For each item in techStack */}
+                        {[...children].map((child, i2) => (
+                            <span
+                                key={i2}
+                                className="hover:font-extrabold
+                                    hover:text-teal-600 hover:dark:text-teal-400"
+                            >
+                                {child}
+                                {/* Number of white-spaces */}
+                                {[...Array(numSpaces)].map((_, i3) => (
+                                    <span key={i3} className="noSelect">
+                                        &nbsp;
+                                    </span>
+                                ))}
+                            </span>
+                        ))}
+                    </span>
+                ))}
             </motion.div>
         </div>
     );

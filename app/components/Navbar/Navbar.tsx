@@ -42,7 +42,7 @@ export default function Navbar() {
                                 }}
                                 transition={{ duration: 1 }}
                             >
-                                <Link href="/">
+                                <Link href="/" prefetch>
                                     <h1 className="text-2xl font-medium group">
                                         <span
                                             className="text-teal-600 dark:text-teal-500
