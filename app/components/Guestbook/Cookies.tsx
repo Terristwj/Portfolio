@@ -1,3 +1,5 @@
+"use client";
+
 // For username cookie
 import generateRandomAnimal from "random-animal-name";
 

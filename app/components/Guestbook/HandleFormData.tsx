@@ -1,3 +1,5 @@
+"use client";
+
 import { postEntry } from "../../api/dbAction";
 
 // For username cookie

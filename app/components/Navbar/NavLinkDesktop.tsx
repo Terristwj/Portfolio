@@ -5,17 +5,19 @@ import { motion } from "framer-motion";
 
 import DropTransition from "./DropTransition";
 
-export default function NavLinkDesktop(props: {
+interface NavLinkDesktopProps {
     pathname: string;
     to: string;
     name: string;
     delay: number;
-}) {
-    const pathname = props.pathname;
-    const to = props.to;
-    const name = props.name;
-    const delay = props.delay;
+}
 
+export default function NavLinkDesktop({
+    pathname,
+    to,
+    name,
+    delay,
+}: NavLinkDesktopProps) {
     return (
         <>
             <Link

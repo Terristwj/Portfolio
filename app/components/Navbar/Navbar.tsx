@@ -12,6 +12,7 @@ import NavLinkMobile from "./NavLinkMobile";
 import HeroIcon from "./HeroIcon";
 import ThemeButton from "./ThemeButton";
 
+// Drop-delay settings START
 const tabs = [
     { to: "/", name: "About Me", delay: 0.5 },
     { to: "/guestbook", name: "Guestbook", delay: 1 },
@@ -21,6 +22,7 @@ const desktopThemeBtnDelay = 2;
 
 const hamburgerDelay = 0.5;
 const mobileThemeBtnDelay = 1;
+// Drop-delay settings END
 
 export default function Navbar() {
     let pathname = usePathname() || "/";
@@ -28,10 +30,10 @@ export default function Navbar() {
         <Disclosure as="nav" className="inter">
             {({ open }) => (
                 <>
+                    {/* Navbar START */}
                     <div className="flex justify-between h-16">
-                        {/* Navbar-Desktop START */}
                         <div className="flex justify-between w-full">
-                            {/* Navbar-Desktop-Name START */}
+                            {/* Navbar-Name START */}
                             <motion.div
                                 className="flex items-center whitespace-nowrap"
                                 initial={{ opacity: 0, width: 0 }}
@@ -61,7 +63,7 @@ export default function Navbar() {
                                     </h1>
                                 </Link>
                             </motion.div>
-                            {/* Navbar-Desktop-Name END */}
+                            {/* Navbar-Name END */}
 
                             {/* Navbar-Desktop-Links START */}
                             <div className="hidden sm:ml-6 sm:flex sm:space-x-8 sm:items-center">
@@ -80,7 +82,7 @@ export default function Navbar() {
                             </div>
                             {/* Navbar-Desktop-Links END */}
                         </div>
-                        {/* Navbar-Desktop END */}
+                        {/* Navbar Part-1/2 END */}
 
                         {/* Navbar-Mobile START */}
                         <div className="-mr-2 flex items-center sm:hidden">
@@ -112,6 +114,7 @@ export default function Navbar() {
                         </div>
                         {/* Navbar-Mobile END */}
                     </div>
+                    {/* Navbar Part-2/2 END */}
 
                     {/* Navbar-Mobile-Links START */}
                     <AnimatePresence>

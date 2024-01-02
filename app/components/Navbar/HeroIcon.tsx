@@ -1,6 +1,12 @@
+"use client";
+
 // https://heroicons.com/
 
-export default function HeroIcon(props: { d: string }) {
+interface HeroIconProps {
+    d: string;
+}
+
+export default function HeroIcon({ d }: HeroIconProps) {
     return (
         <svg
             xmlns="http://www.w3.org/2000/svg"
@@ -10,7 +16,7 @@ export default function HeroIcon(props: { d: string }) {
             stroke="currentColor"
             className="w-6 h-6"
         >
-            <path strokeLinecap="round" strokeLinejoin="round" d={props.d} />
+            <path strokeLinecap="round" strokeLinejoin="round" d={d} />
         </svg>
     );
 }

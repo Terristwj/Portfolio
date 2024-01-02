@@ -2,7 +2,9 @@
 
 import Image from "next/image";
 import { Typewriter } from "react-simple-typewriter";
+
 import PageAnimate from "./components/wrappers/PageAnimate";
+import PageDefault from "./components/wrappers/PageDefault";
 
 import Me from "@/public/me.png";
 
@@ -17,19 +19,7 @@ const TypewriterWords = [
 export default function About() {
     return (
         <PageAnimate>
-            <div className="divide-y divide-black dark:divide-white">
-                <div className="space-y-2 pt-5 pb-8 md:space-x-5">
-                    <h1
-                        className="text-3xl font-extrabold leading-9 tracking-tight
-                        text-black dark:text-white
-                        sm:text-4xl sm:leading-10
-                        md:text-6xl md:leading-13
-                        poppins"
-                    >
-                        About Me
-                    </h1>
-                </div>
-
+            <PageDefault title="About Me">
                 <div
                     className="items-center space-y-2
                         xl:grid xl:grid-cols-3
@@ -113,7 +103,7 @@ export default function About() {
                     </div>
                     {/* Description END */}
                 </div>
-            </div>
+            </PageDefault>
         </PageAnimate>
     );
 }

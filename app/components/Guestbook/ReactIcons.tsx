@@ -1,3 +1,5 @@
+"use client";
+
 // https://reactsvgicons.com/
 
 export function IconSend(props: React.SVGProps<SVGSVGElement>) {

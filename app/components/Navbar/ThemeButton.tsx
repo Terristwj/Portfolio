@@ -6,7 +6,11 @@ import { useState, useEffect } from "react";
 import DropTransition from "./DropTransition";
 import HeroIcon from "./HeroIcon";
 
-export default function ThemeButton(props: { delay: number }) {
+interface ThemeButtonProps {
+    delay: number;
+}
+
+export default function ThemeButton({ delay }: ThemeButtonProps) {
     const { setTheme, resolvedTheme } = useTheme();
     const [mounted, setMounted] = useState(false);
 
@@ -19,7 +23,7 @@ export default function ThemeButton(props: { delay: number }) {
     }
 
     return (
-        <DropTransition delay={props.delay}>
+        <DropTransition delay={delay}>
             <button
                 onClick={() =>
                     setTheme(resolvedTheme === "dark" ? "light" : "dark")

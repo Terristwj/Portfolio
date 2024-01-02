@@ -3,11 +3,16 @@
 import { ReactNode } from "react";
 import { motion } from "framer-motion";
 
-// For desktop links animation in navbar
-export default function DropTransition(props: {
-    delay: number;
+interface DropTransitionProps {
     children: ReactNode;
-}) {
+    delay: number;
+}
+
+// For desktop links animation in navbar
+export default function DropTransition({
+    delay,
+    children,
+}: DropTransitionProps) {
     return (
         <motion.div
             initial={{ y: -100 }}
@@ -15,11 +20,11 @@ export default function DropTransition(props: {
                 y: 0,
             }}
             transition={{
-                delay: props.delay,
+                delay,
                 duration: 1,
             }}
         >
-            {props.children}
+            {children}
         </motion.div>
     );
 }

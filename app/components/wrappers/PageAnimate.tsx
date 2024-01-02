@@ -3,7 +3,11 @@
 import { ReactNode } from "react";
 import { motion } from "framer-motion";
 
-export default function PageAnimate({ children }: { children: ReactNode }) {
+interface PageAnimateProps {
+    children: ReactNode;
+}
+
+export default function PageAnimate({ children }: PageAnimateProps) {
     return (
         <motion.div
             initial={{ opacity: 0, y: -20 }}

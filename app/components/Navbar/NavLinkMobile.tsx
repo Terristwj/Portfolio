@@ -2,15 +2,17 @@
 
 import Link from "next/link";
 
-export default function NavLinkMobile(props: {
+interface NavLinkMobileProps {
     pathname: string;
     to: string;
     name: string;
-}) {
-    const pathname = props.pathname;
-    const to = props.to;
-    const name = props.name;
+}
 
+export default function NavLinkMobile({
+    pathname,
+    to,
+    name,
+}: NavLinkMobileProps) {
     return (
         <Link
             href={to}

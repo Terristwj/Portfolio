@@ -4,10 +4,10 @@ import { revalidatePath } from "next/cache";
 import prisma from "./db";
 
 // Get Guestbook messages from database
-export async function getEntries() {
+export async function getEntries(limit: number = 10) {
     const data = await prisma.guestbook.findMany({
         // Msg display limit
-        take: 10,
+        take: limit,
         orderBy: {
             created_at: "desc",
         },
