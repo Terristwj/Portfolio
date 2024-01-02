@@ -19,7 +19,7 @@ const TypewriterWords = [
 export default function About() {
     return (
         <PageAnimate>
-            <PageDefault title="About Me">
+            <PageDefault title="About Me" divider={true} bottomGap={true}>
                 <div
                     className="items-center space-y-2
                         xl:grid xl:grid-cols-3
