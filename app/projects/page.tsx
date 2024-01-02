@@ -1,33 +1,29 @@
-import Image from "next/image";
+"use client";
 
 import PageAnimate from "../components/wrappers/PageAnimate";
+import PageDefault from "../components/wrappers/PageDefault";
+
+import AnimatedTabs from "../components/Projects/AnimatedTabs";
+import ProjectCard from "../components/Projects/ProjectCard";
+
+import { sortBy } from "../components/Projects/actions";
+
 import projects from "./data/projects.json";
-import ParallaxText from "../components/Projects/ParallaxText";
 
 export default function Projects() {
-    // Sort hackathons by id DESC
-    const hackathons = sortByID_DESC(projects.hackathon);
+    // Get only hackathons
+    let projectArray = projects.hackathon;
 
-    function sortByID_DESC(obj: Array<any>) {
-        const id = "_id";
-        return obj.sort((a: any, b: any) => b[id].localeCompare(a[id]));
-    }
+    // Sort by id DESC
+    projectArray = sortBy(projects.hackathon, "DESC");
 
     return (
         <PageAnimate>
-            <div className="divide-y divide-gray-700 dark:divide-gray-100 mb-5">
-                <div className="space-y-2 pt-5 pb-8 md:space-x-5">
-                    <h1
-                        className="text-3xl font-extrabold leading-9 tracking-tight
-                            text-black dark:text-white
-                            sm:text-4xl sm:leading-10
-                            md:text-6xl md:leading-13
-                            poppins"
-                    >
-                        Projects
-                    </h1>
-                </div>
+            <PageDefault title="Projects">
+                {/* Controls */}
+                <AnimatedTabs />
 
+                {/* Projects Display */}
                 <div
                     className="pt-8
                         grid gap-y-8 grid-cols-1
@@ -35,97 +31,11 @@ export default function Projects() {
                         md:gap-6
                         lg:gap-10 lg:grid-cols-3"
                 >
-                    {hackathons.map((project) => (
-                        <article
-                            key={project._id}
-                            className="border rounded-md
-                                border-black bg-white
-                                dark:border-white dark:bg-black hover:border-teal-500
-                                hover:shadow-xl hover:shadow-teal-100 hover:dark:shadow-teal-900
-                                transition-all duration-500 ease-in-out
-                                group relative"
-                        >
-                            <div
-                                className="overflow-hidden noSelect
-                                relative w-full h-56
-                                border-b border-black dark:border-white"
-                            >
-                                <a href={project.link} target="_blank">
-                                    <Image
-                                        fill
-                                        src={project.imgSrc}
-                                        alt={project.title}
-                                        className="object-cover
-                                            group-hover:scale-125
-                                            transition-all duration-500 ease"
-                                        draggable={false}
-                                    />
-                                </a>
-                            </div>
-
-                            <div className="p-4 sm:p-6">
-                                {/* Title */}
-                                <h3
-                                    className="text-lg font-bold poppins
-                                        text-teal-600 dark:text-teal-400"
-                                >
-                                    <a href={project.link} target="_blank">
-                                        {project.title}
-                                    </a>
-                                </h3>
-
-                                {/* Subtitle */}
-                                <h3
-                                    className="font-medium
-                                        text-black dark:text-white"
-                                >
-                                    {project.subtitle}
-                                </h3>
-
-                                {/* Overview */}
-                                <p
-                                    className="mt-2.5 mb-2.5
-                                        text-sm leading-relaxed montserrat
-                                        text-black dark:text-white"
-                                >
-                                    {project.overview}
-                                </p>
-
-                                <section>
-                                    <h3
-                                        className="mt-4 font-bold poppins leading-7
-                                            text-teal-600 dark:text-teal-400"
-                                    >
-                                        Techstack
-                                    </h3>
-                                    <ParallaxText baseVelocity={-1}>
-                                        {project.techStack}
-                                    </ParallaxText>
-                                    <ParallaxText baseVelocity={1}>
-                                        {project.techStack}
-                                    </ParallaxText>
-                                </section>
-
-                                {/* Empty space between */}
-                                <p className="mt-10"></p>
-
-                                {/* Visit Site */}
-                                <a
-                                    href={project.link}
-                                    target="_blank"
-                                    className="pb-5 noSelect
-                                        absolute bottom-0
-                                        text-teal-500 font-medium
-                                        group-hover:ms-2
-                                        transition-all duration-500"
-                                >
-                                    &rarr; Visit Site!
-                                </a>
-                            </div>
-                        </article>
+                    {projectArray.map((project, index) => (
+                        <ProjectCard key={index} project={project} />
                     ))}
                 </div>
-            </div>
+            </PageDefault>
         </PageAnimate>
     );
 }

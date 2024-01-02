@@ -1,13 +1,13 @@
 {
     "hackathon": [
         {
-            "_id": "1",
+            "completion_sequence": "2",
             "title": "Synthia",
             "subtitle": "The Best GenAI Tool",
             "overview": "Synthia is a web-based AI; a Chatbot, Image generator, Music generator, and Code generator.",
             "link": "https://synthia-gen-ai-website.vercel.app/",
-            "imgSrc": "/projects/Synthia.gif",
-            "techStack": [
+            "img_src": "/projects/Synthia.gif",
+            "tech_stack": [
                 "NextJs",
                 "TypeScript",
                 "TailwindCSS",
@@ -16,18 +16,24 @@
             ]
         },
         {
-            "_id": "2",
+            "completion_sequence": "3",
             "title": "Viiicky",
             "subtitle": "Your Colourblind Asssistant",
             "overview": "Aims to help the colorblind. Viiicky enables users to identify colors from photos effortlessly.",
             "link": "https://vicky-nine.vercel.app/",
-            "imgSrc": "/projects/Viiicky.jpg",
-            "techStack": ["ReactJs", "TypeScript", "TailwindCSS", "MUI"]
+            "img_src": "/projects/Viiicky.jpg",
+            "tech_stack": ["ReactJs", "TypeScript", "TailwindCSS", "MUI"]
         }
     ],
     "academic": [
         {
-            "title": "sam"
+            "completion_sequence": "1",
+            "title": "A Healthier McDonalds",
+            "subtitle": "Guide to a Healthier McDonalds",
+            "overview": "My first website in 2017. Aimed to help motivate and spread awareness of being healthy. Especially in McDonalds.",
+            "link": "https://mymcsample.web.app/MainWebPage.html",
+            "img_src": "/projects/HealthierMcDonalds.jpg",
+            "tech_stack": ["HTML/CSS", "Vanilla-JavaScript"]
         }
     ]
 }
