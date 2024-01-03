@@ -1,10 +1,10 @@
 {
     "hackathon": [
         {
-            "completion_sequence": "2",
+            "completion_sequence": 3,
             "title": "Synthia",
             "subtitle": "The Best GenAI Tool",
-            "overview": "Synthia is a web-based AI; a Chatbot, Image generator, Music generator, and Code generator.",
+            "overview": "Synthia is a web-based AI; A Chatbot, Image generator, Music generator, and Code generator.",
             "link": "https://synthia-gen-ai-website.vercel.app/",
             "img_src": "/projects/Synthia.gif",
             "tech_stack": [
@@ -16,24 +16,33 @@
             ]
         },
         {
-            "completion_sequence": "3",
+            "completion_sequence": 4,
             "title": "Viiicky",
             "subtitle": "Your Colourblind Asssistant",
-            "overview": "Aims to help the colorblind. Viiicky enables users to identify colors from photos effortlessly.",
+            "overview": "Aim to help the colorblind. Viiicky enables users to identify colors and rectify color deficiency.",
             "link": "https://vicky-nine.vercel.app/",
             "img_src": "/projects/Viiicky.jpg",
-            "tech_stack": ["ReactJs", "TypeScript", "TailwindCSS", "MUI"]
+            "tech_stack": ["React", "TypeScript", "TailwindCSS", "MUI"]
         }
     ],
     "academic": [
         {
-            "completion_sequence": "1",
+            "completion_sequence": 1,
             "title": "A Healthier McDonalds",
             "subtitle": "Guide to a Healthier McDonalds",
             "overview": "My first website in 2017. Aimed to help motivate and spread awareness of being healthy. Especially in McDonalds.",
             "link": "https://mymcsample.web.app/MainWebPage.html",
             "img_src": "/projects/HealthierMcDonalds.jpg",
             "tech_stack": ["HTML/CSS", "Vanilla-JavaScript"]
+        },
+        {
+            "completion_sequence": 2,
+            "title": "StaffCorps",
+            "subtitle": "All-in-one Business Solution Tool",
+            "overview": "A Singapore-based app to boost productivity; OCR, News, real-time weather, and real-time traffic video.",
+            "link": "https://staffcorps-ff2bb.web.app/home",
+            "img_src": "/projects/StaffCorps.jpg",
+            "tech_stack": ["Angular", "TypeScript", "Firebase", "Ionic"]
         }
     ]
 }

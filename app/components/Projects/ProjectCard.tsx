@@ -1,35 +1,22 @@
 "use client";
 
+import IProject from "./ProjectInterface";
+
 import Image from "next/image";
 import ParallaxText from "./ParallaxText";
 
 interface ProjectCardProps {
-    project: {
-        completion_sequence: string;
-        title: string;
-        subtitle: string;
-        overview: string;
-        link: string;
-        img_src: string;
-        tech_stack: string[];
-    };
+    project: IProject;
 }
 
 export default function ProjectCard({ project }: ProjectCardProps) {
     return (
-        <article
-            key={project.completion_sequence}
-            className="border rounded-md
-                                border-black bg-white
-                                dark:border-white dark:bg-black hover:border-teal-500
-                                hover:shadow-xl hover:shadow-teal-100 hover:dark:shadow-teal-900
-                                transition-all duration-500 ease-in-out
-                                group relative"
-        >
+        <>
+            {/* Sample Image */}
             <div
                 className="overflow-hidden noSelect
-                                relative w-full h-56
-                                border-b border-black dark:border-white"
+                    relative w-full h-56
+                    border-b border-black dark:border-white"
             >
                 <a href={project.link} target="_blank">
                     <Image
@@ -37,8 +24,8 @@ export default function ProjectCard({ project }: ProjectCardProps) {
                         src={project.img_src}
                         alt={project.title}
                         className="object-cover
-                                            group-hover:scale-125
-                                            transition-all duration-500 ease"
+                            group-hover:scale-125
+                            transition-all duration-500 ease"
                         draggable={false}
                     />
                 </a>
@@ -48,7 +35,7 @@ export default function ProjectCard({ project }: ProjectCardProps) {
                 {/* Title */}
                 <h3
                     className="text-lg font-bold poppins
-                                        text-teal-600 dark:text-teal-400"
+                        text-teal-600 dark:text-teal-400"
                 >
                     <a href={project.link} target="_blank">
                         {project.title}
@@ -58,7 +45,7 @@ export default function ProjectCard({ project }: ProjectCardProps) {
                 {/* Subtitle */}
                 <h3
                     className="font-medium
-                                        text-black dark:text-white"
+                        text-black dark:text-white"
                 >
                     {project.subtitle}
                 </h3>
@@ -66,44 +53,54 @@ export default function ProjectCard({ project }: ProjectCardProps) {
                 {/* Overview */}
                 <p
                     className="mt-2.5 mb-2.5
-                                        text-sm leading-relaxed montserrat
-                                        text-black dark:text-white"
+                        text-sm leading-relaxed montserrat
+                        text-black dark:text-white"
                 >
                     {project.overview}
                 </p>
 
-                <section>
-                    <h3
-                        className="mt-4 font-bold poppins leading-7
-                                            text-teal-600 dark:text-teal-400"
-                    >
-                        Technology Stack
-                    </h3>
-
-                    <ParallaxText baseVelocity={-1}>
-                        {project.tech_stack}
-                    </ParallaxText>
-                    <ParallaxText baseVelocity={1}>
-                        {project.tech_stack}
-                    </ParallaxText>
-                </section>
-
                 {/* Empty space between */}
-                <p className="mt-10"></p>
+                <p className="mt-36"></p>
 
-                {/* Visit Site */}
-                <a
-                    href={project.link}
-                    target="_blank"
-                    className="pb-5 noSelect
-                                        absolute bottom-0
-                                        text-teal-500 font-medium
-                                        group-hover:ms-2
-                                        transition-all duration-500"
+                {/* Items above empty space START */}
+                <div
+                    className="pb-5
+                        pl-4 pr-4 sm:pl-6 sm:pr-6
+                        absolute left-0 bottom-0
+                        w-full overflow-hidden
+                        flex flex-col gap-5"
                 >
-                    &rarr; Visit Site!
-                </a>
+                    {/* Tech Stack */}
+                    <section>
+                        <h3
+                            className="mt-4 font-bold poppins leading-7
+                            text-teal-600 dark:text-teal-400"
+                        >
+                            Technology Stack
+                        </h3>
+
+                        <ParallaxText baseVelocity={-1}>
+                            {project.tech_stack}
+                        </ParallaxText>
+                        <ParallaxText baseVelocity={1}>
+                            {project.tech_stack}
+                        </ParallaxText>
+                    </section>
+
+                    {/* Visit Site */}
+                    <a
+                        href={project.link}
+                        target="_blank"
+                        className="noSelect
+                        text-teal-500 font-medium
+                        group-hover:ms-2
+                        transition-all duration-500"
+                    >
+                        &rarr; Visit Site!
+                    </a>
+                </div>
+                {/* Items above empty space END */}
             </div>
-        </article>
+        </>
     );
 }

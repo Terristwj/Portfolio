@@ -14,15 +14,17 @@ import { wrap } from "@motionone/utils";
 
 interface ParallaxProps {
     children: Array<string>;
-    baseVelocity?: number;
+    baseVelocity: number;
     numSpaces?: number;
 }
 
 export default function ParallaxText({
     children,
-    baseVelocity = 100,
+    baseVelocity, // Positive -> Move left, Negative -> Move right
     numSpaces = 2,
 }: ParallaxProps) {
+    const hoverSpeedMultiply = 4;
+
     const baseX = useMotionValue(0);
     const { scrollY } = useScroll();
     const scrollVelocity = useVelocity(scrollY);
@@ -68,7 +70,11 @@ export default function ParallaxText({
      * dynamically generated number of children.
      */
     return (
-        <div className="overflow-hidden tracking-widest m-0 whitespace-nowrap flex flex-nowrap fira-code">
+        <div
+            className="overflow-hidden tracking-widest m-0 whitespace-nowrap flex flex-nowrap fira-code"
+            onMouseOver={() => (baseVelocity *= hoverSpeedMultiply)}
+            onMouseOut={() => (baseVelocity /= hoverSpeedMultiply)}
+        >
             <motion.div className="flex" style={{ x }}>
                 {/* Repeat 4 times */}
                 {[...Array(4)].map((_, i1) => (
