@@ -40,8 +40,6 @@ export default function Projects() {
 
     // UseEffects for tracking tab changes
     useEffect(() => {
-        setProjectArray([]);
-
         setTimeout(() => {
             let order: "DESC" | "ASC" =
                 activeOrderbyTab === "Newest" ? "DESC" : "ASC";
@@ -53,7 +51,7 @@ export default function Projects() {
             } else if (activeTypeTab === "Academic") {
                 setProjectArray(Project.getAcademicProjects(order));
             }
-        }, 500);
+        }, 0);
         // eslint-disable-next-line react-hooks/exhaustive-deps
     }, [activeTypeTab, activeOrderbyTab]);
 
@@ -103,7 +101,6 @@ export default function Projects() {
                                 }}
                                 animate={{ opacity: 1 }}
                                 exit={{ opacity: 0 }}
-                                transition={{ duration: 1 }}
                                 className="border rounded-md
                                     border-black bg-white
                                     dark:border-white dark:bg-black hover:border-teal-500
