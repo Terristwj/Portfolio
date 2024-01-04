@@ -53,7 +53,7 @@ export default function Projects() {
             } else if (activeTypeTab === "Academic") {
                 setProjectArray(Project.getAcademicProjects(order));
             }
-        }, 500);
+        }, 5000);
         // eslint-disable-next-line react-hooks/exhaustive-deps
     }, [activeTypeTab, activeOrderbyTab]);
 
@@ -101,8 +101,6 @@ export default function Projects() {
                                 initial={{
                                     opacity: 0.5,
                                     y: -10,
-                                    transitionDuration: "0.5s",
-                                    transitionDelay: `${0.1 * index}s`,
                                 }}
                                 animate={{ opacity: 1, y: 0 }}
                                 exit={{ opacity: 0 }}
