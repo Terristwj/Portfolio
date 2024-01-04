@@ -59,7 +59,7 @@ export default function Projects() {
         // Timer between temp and []
         setTimeout(() => {
             setProjectArray(temp);
-        }, maxDelay);
+        }, 500);
         // eslint-disable-next-line react-hooks/exhaustive-deps
     }, [activeTypeTab, activeOrderbyTab]);
 
@@ -107,7 +107,6 @@ export default function Projects() {
                                 initial={{ opacity: 0 }}
                                 animate={{ opacity: 1 }}
                                 exit={{ opacity: 0 }}
-                                transition={{ delay: 0.1 * index }}
                                 className="border rounded-md
                                     border-black bg-white
                                     dark:border-white dark:bg-black hover:border-teal-500
