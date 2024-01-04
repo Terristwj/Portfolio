@@ -45,7 +45,7 @@ export default function Projects() {
             } else if (activeTypeTab === "Academic") {
                 setProjectArray(myProjectActions.getAcademicProjects(order));
             }
-        }, 0);
+        }, 100);
     }, [activeTypeTab, activeOrderbyTab]);
 
     return (
@@ -89,7 +89,7 @@ export default function Projects() {
                         {projectArray.map((project, index) => (
                             <motion.article
                                 key={index}
-                                exit={{ opacity: 0 }}
+                                exit={{ opacity: 0.5 }}
                                 className="border rounded-md
                                     border-black bg-white
                                     dark:border-white dark:bg-black hover:border-teal-500
