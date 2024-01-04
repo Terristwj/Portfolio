@@ -15,6 +15,9 @@ import { AnimatePresence, motion } from "framer-motion";
 const typeTabs = ["All", "Hackathon", "Academic"];
 const orderbyTabs = ["Newest", "Oldest"];
 
+// Animation delay
+const delayPerProject = 250;
+
 export default function Projects() {
     // Default: All/Newest
     let [activeTypeTab, setActiveTypeTab] = useState(typeTabs[0]);
@@ -26,11 +29,13 @@ export default function Projects() {
     );
 
     // Default delay for animation
-    let [maxDelay, setMaxDelay] = useState(projectArray.length * 150);
+    let [maxDelay, setMaxDelay] = useState(
+        projectArray.length * delayPerProject
+    );
 
     // UseEffects for tracking number of projects displayed
     useEffect(() => {
-        setMaxDelay(projectArray.length * 150);
+        setMaxDelay(projectArray.length * delayPerProject);
     }, [projectArray]);
 
     // UseEffects for tracking tab changes

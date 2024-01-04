@@ -18,7 +18,7 @@ export default function AnimatedTabs({
     useStateActiveTab,
 }: AnimatedTabsProps) {
     return (
-        <div className="flex space-x-1">
+        <div className="flex space-x-1 noSelect">
             {tabs.map((tab) => (
                 <button
                     key={tab}
