@@ -11,29 +11,77 @@ import ProjectCard from "../components/Projects/ProjectCard";
 import Project from "../components/Projects/ProjectAction";
 import { AnimatePresence, motion } from "framer-motion";
 
+// Settings
+const typeTabs = ["All", "Hackathon", "Academic"];
+const orderbyTabs = ["Newest", "Oldest"];
+
 export default function Projects() {
-    // Display projects - Default: All/Newest
+    // Default: All/Newest
+    let [activeTypeTab, setActiveTypeTab] = useState(typeTabs[0]);
+    let [activeOrderbyTab, setActiveOrderbyTab] = useState(orderbyTabs[0]);
+
+    // Default projects to be displayed
     let [projectArray, setProjectArray] = useState(
         Project.getAllProjects("DESC")
     );
 
-    //
+    // Default delay for animation
     let [maxDelay, setMaxDelay] = useState(projectArray.length * 150);
 
-    // useEffect(() => {
-    //     setMaxDelay(projectArray.length * 0.1 + 5);
-    // }, [projectArray]);
+    // UseEffects for tracking number of projects displayed
+    useEffect(() => {
+        setMaxDelay(projectArray.length * 150);
+    }, [projectArray]);
+
+    // UseEffects for tracking tab changes
+    useEffect(() => {
+        setProjectArray([]);
+
+        setTimeout(() => {
+            let order: "DESC" | "ASC" =
+                activeOrderbyTab === "Newest" ? "DESC" : "ASC";
+
+            if (activeTypeTab === "All") {
+                setProjectArray(Project.getAllProjects(order));
+            } else if (activeTypeTab === "Hackathon") {
+                setProjectArray(Project.getHackathonProjects(order));
+            } else if (activeTypeTab === "Academic") {
+                setProjectArray(Project.getAcademicProjects(order));
+            }
+        }, maxDelay);
+        // eslint-disable-next-line react-hooks/exhaustive-deps
+    }, [activeTypeTab, activeOrderbyTab]);
 
     return (
         <PageAnimate>
             <PageDefault title="Projects" bottomGap={true}>
-                {/* Controls */}
-                <AnimatedTabs
-                    setProjectArray={setProjectArray}
-                    maxDelay={maxDelay}
-                />
+                {/* Control Tabs START */}
+                <div className="flex justify-between fira-code font-black">
+                    {/* (Left-tabs) Project Type START */}
+                    <AnimatedTabs
+                        layoutId="projectTypeBubble"
+                        tabs={typeTabs}
+                        useStateActiveTab={{
+                            cur: activeTypeTab,
+                            set: setActiveTypeTab,
+                        }}
+                    />
+                    {/* (Left-tabs) Project Type END */}
 
-                {/* Projects Display */}
+                    {/* (Right-tabs) Project Order START */}
+                    <AnimatedTabs
+                        layoutId="projectOrderByBubble"
+                        tabs={orderbyTabs}
+                        useStateActiveTab={{
+                            cur: activeOrderbyTab,
+                            set: setActiveOrderbyTab,
+                        }}
+                    />
+                    {/* (Right-tabs) Project Order END */}
+                </div>
+                {/* Controls Tabs END */}
+
+                {/* Projects Display START */}
                 <div
                     className="pt-8
                         grid gap-y-8 grid-cols-1
@@ -64,6 +112,7 @@ export default function Projects() {
                         ))}
                     </AnimatePresence>
                 </div>
+                {/* Projects Display END */}
             </PageDefault>
         </PageAnimate>
     );
