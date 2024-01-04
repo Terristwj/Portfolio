@@ -16,7 +16,7 @@ const typeTabs = ["All", "Hackathon", "Academic"];
 const orderbyTabs = ["Newest", "Oldest"];
 
 // Animation delay
-const delayPerProject = 250;
+const delayPerProject = 1000;
 
 export default function Projects() {
     // Default: All/Newest
