@@ -1,6 +1,7 @@
 "use client";
 
 import { useEffect, useState } from "react";
+import { AnimatePresence, motion } from "framer-motion";
 
 import PageAnimate from "../components/wrappers/PageAnimate";
 import PageDefault from "../components/wrappers/PageDefault";
@@ -9,15 +10,16 @@ import AnimatedTabs from "../components/Projects/AnimatedTabs";
 import ProjectCard from "../components/Projects/ProjectCard";
 
 import ProjectActions from "../components/Projects/ProjectActions";
-import { AnimatePresence, motion } from "framer-motion";
+import IProject from "../components/Projects/ProjectInterface";
 
 // Settings
 const typeTabs = ["All", "Hackathon", "Academic"];
 const orderbyTabs = ["Newest", "Oldest"];
 
 // Animation delay
-const delayPerProject = 0;
+const delayPerProject = 200;
 
+// Actions
 const myProjectActions = new ProjectActions();
 
 export default function Projects() {
@@ -30,22 +32,35 @@ export default function Projects() {
         myProjectActions.getAllProjects("DESC")
     );
 
+    // Initial delay settings
+    let [maxDelay, setMaxDelay] = useState(
+        projectArray.length * delayPerProject
+    );
+
     // UseEffects for tracking tab changes
     useEffect(() => {
+        // To animate the previous exit
+        // And to fix a rendering bug
         setProjectArray([]);
 
-        setTimeout(() => {
-            let order: "DESC" | "ASC" =
-                activeOrderbyTab === "Newest" ? "DESC" : "ASC";
+        let order: "DESC" | "ASC" =
+            activeOrderbyTab === "Newest" ? "DESC" : "ASC";
 
-            if (activeTypeTab === "All") {
-                setProjectArray(myProjectActions.getAllProjects(order));
-            } else if (activeTypeTab === "Hackathon") {
-                setProjectArray(myProjectActions.getHackathonProjects(order));
-            } else if (activeTypeTab === "Academic") {
-                setProjectArray(myProjectActions.getAcademicProjects(order));
-            }
-        }, 100);
+        let temp: IProject[];
+        if (activeTypeTab === "All") {
+            temp = myProjectActions.getAllProjects(order);
+        } else if (activeTypeTab === "Hackathon") {
+            temp = myProjectActions.getHackathonProjects(order);
+        } else if (activeTypeTab === "Academic") {
+            temp = myProjectActions.getAcademicProjects(order);
+        }
+        setMaxDelay(projectArray.length * delayPerProject);
+
+        // Timer between temp and []
+        setTimeout(() => {
+            setProjectArray(temp);
+        }, maxDelay);
+        // eslint-disable-next-line react-hooks/exhaustive-deps
     }, [activeTypeTab, activeOrderbyTab]);
 
     return (
@@ -89,7 +104,10 @@ export default function Projects() {
                         {projectArray.map((project, index) => (
                             <motion.article
                                 key={index}
-                                exit={{ opacity: 0.5 }}
+                                initial={{ opacity: 0 }}
+                                animate={{ opacity: 1 }}
+                                exit={{ opacity: 0 }}
+                                transition={{ delay: 0.1 * index }}
                                 className="border rounded-md
                                     border-black bg-white
                                     dark:border-white dark:bg-black hover:border-teal-500
