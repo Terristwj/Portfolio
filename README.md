@@ -46,6 +46,15 @@ This portfolio site was created using [Next.js](https://nextjs.org/), and others
         <td>Prisma</td>
         <td>Database</td>
     </tr>
+    <tr>
+        <th style="text-align:left;">
+            <a href="https://vercel.com/">
+                Vercel
+            </a>
+        </th>
+        <td>Cloud Hosting</td>
+        <td>Website Provider</td>
+    </tr>
 </table>
 
 #### (Others) Tech Stack Dependencies
@@ -162,6 +171,12 @@ In this project,
 4. In PlanetScale, use the console commands to debug:
     - `SELECT * FROM Guestbook;`
     - `DELETE FROM Guestbook;`
+
+#### Vercel & PlanetScale Documentation
+
+[Deploying Vercel project with PlanetScale](https://pris.ly/d/vercel-build)
+
+-   In `package.json` -> `scripts` add `"postinstall": "prisma generate"`
 
 ### References
 
