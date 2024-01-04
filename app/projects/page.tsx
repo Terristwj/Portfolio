@@ -8,7 +8,7 @@ import PageDefault from "../components/wrappers/PageDefault";
 import AnimatedTabs from "../components/Projects/AnimatedTabs";
 import ProjectCard from "../components/Projects/ProjectCard";
 
-import Project from "../components/Projects/ProjectAction";
+import ProjectActions from "../components/Projects/ProjectActions";
 import { AnimatePresence, motion } from "framer-motion";
 
 // Settings
@@ -18,6 +18,8 @@ const orderbyTabs = ["Newest", "Oldest"];
 // Animation delay
 const delayPerProject = 0;
 
+const myProjectActions = new ProjectActions();
+
 export default function Projects() {
     // Default: All/Newest
     let [activeTypeTab, setActiveTypeTab] = useState(typeTabs[0]);
@@ -25,34 +27,25 @@ export default function Projects() {
 
     // Default projects to be displayed
     let [projectArray, setProjectArray] = useState(
-        Project.getAllProjects("DESC")
+        myProjectActions.getAllProjects("DESC")
     );
-
-    // Default delay for animation
-    let [maxDelay, setMaxDelay] = useState(
-        projectArray.length * delayPerProject
-    );
-
-    // UseEffects for tracking number of projects displayed
-    useEffect(() => {
-        setMaxDelay(projectArray.length * delayPerProject);
-    }, [projectArray]);
 
     // UseEffects for tracking tab changes
     useEffect(() => {
+        setProjectArray([]);
+
         setTimeout(() => {
             let order: "DESC" | "ASC" =
                 activeOrderbyTab === "Newest" ? "DESC" : "ASC";
 
             if (activeTypeTab === "All") {
-                setProjectArray(Project.getAllProjects(order));
+                setProjectArray(myProjectActions.getAllProjects(order));
             } else if (activeTypeTab === "Hackathon") {
-                setProjectArray(Project.getHackathonProjects(order));
+                setProjectArray(myProjectActions.getHackathonProjects(order));
             } else if (activeTypeTab === "Academic") {
-                setProjectArray(Project.getAcademicProjects(order));
+                setProjectArray(myProjectActions.getAcademicProjects(order));
             }
         }, 0);
-        // eslint-disable-next-line react-hooks/exhaustive-deps
     }, [activeTypeTab, activeOrderbyTab]);
 
     return (
@@ -96,10 +89,6 @@ export default function Projects() {
                         {projectArray.map((project, index) => (
                             <motion.article
                                 key={index}
-                                initial={{
-                                    opacity: 0.5,
-                                }}
-                                animate={{ opacity: 1 }}
                                 exit={{ opacity: 0 }}
                                 className="border rounded-md
                                     border-black bg-white
