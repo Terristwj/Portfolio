@@ -16,7 +16,7 @@ const typeTabs = ["All", "Hackathon", "Academic"];
 const orderbyTabs = ["Newest", "Oldest"];
 
 // Animation delay
-const delayPerProject = 1000;
+const delayPerProject = 250;
 
 export default function Projects() {
     // Default: All/Newest
@@ -98,11 +98,11 @@ export default function Projects() {
                         {projectArray.map((project, index) => (
                             <motion.article
                                 key={index}
-                                initial={{ opacity: 0 }}
-                                animate={{ opacity: 1 }}
+                                initial={{ opacity: 0, y: -10 }}
+                                animate={{ opacity: 1, y: 0 }}
                                 exit={{ opacity: 0 }}
                                 transition={{
-                                    duration: 0.5,
+                                    duration: 0.8,
                                     delay: 0.1 * index,
                                 }}
                                 className="border rounded-md
