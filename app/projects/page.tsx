@@ -16,7 +16,7 @@ const typeTabs = ["All", "Hackathon", "Academic"];
 const orderbyTabs = ["Newest", "Oldest"];
 
 // Animation delay
-const delayPerProject = 250;
+const delayPerProject = 0;
 
 export default function Projects() {
     // Default: All/Newest
@@ -53,7 +53,7 @@ export default function Projects() {
             } else if (activeTypeTab === "Academic") {
                 setProjectArray(Project.getAcademicProjects(order));
             }
-        }, maxDelay);
+        }, 500);
         // eslint-disable-next-line react-hooks/exhaustive-deps
     }, [activeTypeTab, activeOrderbyTab]);
 
@@ -98,13 +98,14 @@ export default function Projects() {
                         {projectArray.map((project, index) => (
                             <motion.article
                                 key={index}
-                                initial={{ opacity: 0.5, y: -10 }}
+                                initial={{
+                                    opacity: 0.5,
+                                    y: -10,
+                                    transitionDuration: "0.5s",
+                                    transitionDelay: `${0.1 * index}s`,
+                                }}
                                 animate={{ opacity: 1, y: 0 }}
                                 exit={{ opacity: 0 }}
-                                transition={{
-                                    duration: 0.5,
-                                    delay: 0.1 * index,
-                                }}
                                 className="border rounded-md
                                     border-black bg-white
                                     dark:border-white dark:bg-black hover:border-teal-500
