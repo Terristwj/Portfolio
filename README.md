@@ -1,7 +1,7 @@
 ## Welcome
 
 👋 Hi, my name is Terris and this is my portfolio website repository.
-Visit the site at: https://terristwj.github.io/Portfolio/
+Visit the site at: https://terris-portfolio.vercel.app/
 
 ### Introduction
 
