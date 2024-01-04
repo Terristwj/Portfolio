@@ -1,6 +1,193 @@
+## Welcome
+
+👋 Hi, my name is Terris and this is my portfolio website repository.
+Visit the site at: https://terristwj.github.io/Portfolio/
+
+### Introduction
+
+This portfolio site was created using [Next.js](https://nextjs.org/), and others.
+
+#### (Main) Tech Stack
+
+<table>
+    <tr>
+        <th style="text-align:left;">
+            <a href="https://nextjs.org/">
+                Next.js
+            </a>
+        </th>
+        <td>Frontend</td>
+        <td>Backend</td>
+    </tr>
+    <tr>
+        <th style="text-align:left;">
+            <a href="https://tailwindcss.com/">
+                TailwindCSS
+            </a>
+        </th>
+        <td>Styling</td>
+        <td></td>
+    </tr>
+    <tr>
+        <th style="text-align:left;">
+            <a href="https://www.framer.com/motion/">
+                Framer Motion
+            </a>
+            </th>
+        <td>Animations</td>
+        <td>Transitions</td>
+    </tr>
+    <tr>
+        <th style="text-align:left;">
+            <a href="https://planetscale.com/">
+                PlanetScale
+            </a>
+        </th>
+        <td>Prisma</td>
+        <td>Database</td>
+    </tr>
+</table>
+
+#### (Others) Tech Stack Dependencies
+
+<table>
+    <tr>
+        <th colspan="3" style="text-align:left;">UI Components</th>
+    </tr>
+    <tr>
+        <th style="text-align:left;">
+            <a href="https://headlessui.com/">
+                React headlessUI
+            </a>
+        </th>
+        <td>UI Library</td>
+        <td>Transitions</td>
+    </tr>
+    <tr>
+        <th colspan="3" style="text-align:left;">Framer Motion</th>
+    </tr>
+    <tr>
+        <th style="text-align:left;">
+            <a href="https://www.npmjs.com/package/@motionone/utils">
+                @motionone/utils
+            </a>
+        </th>
+        <td>Framer Motion</td>
+        <td>Utility</td>
+    </tr>
+    <tr>
+        <th colspan="3" style="text-align:left;">Icons</th>
+    </tr>
+    <tr>
+        <th style="text-align:left;">
+            <a href="https://heroicons.com/">
+                Hero Icons
+            </a>
+        </th>
+        <td>Tailwind Icons</td>
+        <td>Hamburger Icon</td>
+    </tr>
+    <tr>
+        <th style="text-align:left;">
+            <a href="https://reactsvgicons.com/search?q=mail">
+                React SVG Icons
+            </a>
+        </th>
+        <td>React Icons</td>
+        <td>Social Media Icons</td>
+    </tr>
+    <tr>
+        <th colspan="3" style="text-align:left;">Fonts</th>
+    </tr>
+    <tr>
+        <th style="text-align:left;">
+            <a href="https://fonts.google.com/">
+                Google Fonts
+            </a>
+        </th>
+        <td>Fonts Library</td>
+        <td></td>
+    </tr>
+    <tr>
+        <th style="text-align:left;">
+            <a href="https://www.npmjs.com/package/react-simple-typewriter">
+                react-simple-typewriter
+            </a>
+        </th>
+        <td>Typewriter Effect</td>
+        <td></td>
+    </tr>
+    <tr>
+        <th colspan="3" style="text-align:left;">Guestbook Page</th>
+    </tr>
+    <tr>
+        <th style="text-align:left;">
+            <a href="https://www.npmjs.com/package/random-animal-name">
+                random-animal-name
+            </a>
+        </th>
+        <td>Name generation</td>
+        <td>Used With Cookies</td>
+    </tr>
+    <tr>
+        <th style="text-align:left;">
+            <a href="https://www.npmjs.com/package/bad-words">
+                bad-words
+            </a>
+        </th>
+        <td>Filter Flagged Words</td>
+        <td>First Filter Layer</td>
+    </tr>
+    <tr>
+        <th style="text-align:left;">
+            <a href="https://platform.openai.com/">
+                OpenAI API
+            </a>
+        </th>
+        <td>AI Sentimental Filter</td>
+        <td>Second Filter Layer</td>
+    </tr>
+</table>
+
+#### Project's PlanetScale Documentation
+
+In this project,
+
+1. Add `DATABASE_URL` into `.env` to connect to PlanetScale.
+
+2. Create and modify `prisma/schema.prisma` for database changes.
+
+3. Using CLI, push any database changes `npx prisma db push`. Refer to [Prisma best practice with NextJS](https://www.prisma.io/docs/orm/more/help-and-troubleshooting/help-articles/nextjs-prisma-client-dev-practices) for more infomation.
+
+4. In PlanetScale, use the console commands to debug:
+    - `SELECT * FROM Guestbook;`
+    - `DELETE FROM Guestbook;`
+
+### References
+
+1.  Main Tutorial
+
+    1. [Build a modern Portfolio Website with NextJS - Youtube](https://www.youtube.com/watch?v=l0pkuHopo8A)
+    2. [Github Reference](https://github.com/ski043/portfolio-yt/blob/main/app/page.tsx)
+
+2.  [How to Create a Stunning Portfolio Website with Nextjs, Tailwind CSS and Framer-motion🌟](https://www.youtube.com/watch?v=Yw7yWHigGKI&t=214s)
+
+    1. [Demo Website](https://minimal-nextjs-portfolio-website.vercel.app/about)
+    2. [GitHub Starter Code](https://github.com/codebucks27/Next.js-Developer-Portfolio-Starter-Code)
+
+3.  [On-Scroll Reveal Animation with React & Framer Motion](https://www.youtube.com/watch?v=hjbxaYTMhy0)
+
+    1. [Demo Website](https://steam-portfolio-demo.vercel.app/)
+
+4.  [Hover.dev](https://www.hover.dev/)
+    -   Animated UI Components for React & Tailwind
+5.  [Brittany Chiang](https://github.com/bchiang7/v4)
+
+## Boilerplate Documentation
+
 This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
 
-## Getting Started
+### Getting Started
 
 First, run the development server:
 
@@ -20,7 +207,7 @@ You can start editing the page by modifying `app/page.tsx`. The page auto-update
 
 This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-optimization) to automatically optimize and load Inter, a custom Google Font.
 
-## Learn More
+### Learn More
 
 To learn more about Next.js, take a look at the following resources:
 
@@ -29,50 +216,8 @@ To learn more about Next.js, take a look at the following resources:
 
 You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
 
-## Deploy on Vercel
+### Deploy on Vercel
 
 The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
 
 Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
-
-# Terris Tan
-
-Portfolio
-Visit at: https://terristwj.github.io/Portfolio/
-
-### References
-
-1.  Tutorial
-
-    1. [Build a modern Portfolio Website with NextJS - Youtube](https://www.youtube.com/watch?v=l0pkuHopo8A)
-    2. [Github Reference](https://github.com/ski043/portfolio-yt/blob/main/app/page.tsx)
-
-2.  UI/UX Styling
-
-    1.  UI Components
-
-        1. [React headlessUI](https://headlessui.com/) - UI & Transition
-        2. [React Framer Motion](https://www.framer.com/) - Animation
-            - [@motionone/utils](https://www.npmjs.com/package/@motionone/utils)
-
-    2.  Icons
-
-        1. [Tailwind Icons](https://heroicons.com/) - Hamburger Icon
-        2. [React Icons](https://reactsvgicons.com/search?q=mail) - Github & LinkedIn Icons
-
-    3.  Styling
-
-        1. [Google fonts](https://fonts.google.com/)
-        2. [react-simple-typewriter](https://www.npmjs.com/package/react-simple-typewriter)
-
-3.  Guestbook page
-    1.  Cookies with [random-animal-name](https://www.npmjs.com/package/random-animal-name)
-    2.  [bad-words](https://www.npmjs.com/package/bad-words) and [OpenAI API](https://platform.openai.com/)
-    3.  [PlanetScale](https://planetscale.com/) - Prisma Database
-        -   `.env` -> `DATABASE_URL`
-        -   `schema.prisma`
-        -   CLI -> `npx prisma db push`
-        -   [Prisma best practice with NextJS](https://www.prisma.io/docs/orm/more/help-and-troubleshooting/help-articles/nextjs-prisma-client-dev-practices)
-        -   Console commands
-            -   `SELECT * FROM Guestbook;`
-            -   `DELETE FROM Guestbook;`
