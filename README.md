@@ -1,13 +1,14 @@
 ## Welcome
 
-👋 Hi, my name is Terris and this is my portfolio website repository.
-Visit the site at: https://terris-portfolio.vercel.app/
+👋 Hi, my name is Terris and this is my portfolio website repository.<br/>
+Visit the website at: [https://terris-portfolio.vercel.app/](https://terris-portfolio.vercel.app/)<br/>
+And documentation here: [https://terristwj.github.io/Portfolio/](https://terristwj.github.io/Portfolio/)
 
 ### Introduction
 
 This portfolio site was created using [Next.js](https://nextjs.org/), and others.
 
-#### (Main) Tech Stack
+### (Main) Tech Stack
 
 <table>
     <tr>
@@ -57,7 +58,7 @@ This portfolio site was created using [Next.js](https://nextjs.org/), and others
     </tr>
 </table>
 
-#### (Others) Tech Stack Dependencies
+### (Others) Tech Stack Dependencies
 
 <table>
     <tr>
@@ -158,7 +159,7 @@ This portfolio site was created using [Next.js](https://nextjs.org/), and others
     </tr>
 </table>
 
-#### Project's PlanetScale Documentation
+### Project's PlanetScale Documentation
 
 In this project,
 
@@ -172,7 +173,7 @@ In this project,
     - `SELECT * FROM Guestbook;`
     - `DELETE FROM Guestbook;`
 
-#### Vercel & PlanetScale Documentation
+### Vercel & PlanetScale Documentation
 
 [Deploying Vercel project with PlanetScale](https://pris.ly/d/vercel-build)
 
