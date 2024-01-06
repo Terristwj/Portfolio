@@ -7,7 +7,7 @@ import Form from "../components/Guestbook/Form";
 import ResultEntries from "../components/Guestbook/ResultEntries";
 
 // Resets cache data after 5 sec
-// export const revalidate = 5;
+export const revalidate = 5;
 
 // Settings
 const numEntries = 10;
