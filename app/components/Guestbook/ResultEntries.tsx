@@ -26,12 +26,12 @@ export default function ResultEntries({
 
     // To avoid parent (server-side) from having errors
     // - server-side components doesn't have window object
-    if (typeof window !== "undefined") {
-        // Every interval, refresh the data
-        setTimeout(() => {
-            router.refresh();
-        }, reloadInterval);
-    }
+    // if (typeof window !== "undefined") {
+    //     // Every interval, refresh the data
+    //     setTimeout(() => {
+    //         router.refresh();
+    //     }, reloadInterval);
+    // }
 
     return (
         <div className="flex flex-col space-y-2 font-medium">
