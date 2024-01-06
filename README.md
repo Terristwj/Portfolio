@@ -12,7 +12,7 @@ This portfolio site was created using [Next.js](https://nextjs.org/), and others
 
 <table>
     <tr>
-        <th style="text-align:left;">
+        <th align="left">
             <a href="https://nextjs.org/">
                 Next.js
             </a>
@@ -21,7 +21,7 @@ This portfolio site was created using [Next.js](https://nextjs.org/), and others
         <td>Backend</td>
     </tr>
     <tr>
-        <th style="text-align:left;">
+        <th align="left">
             <a href="https://tailwindcss.com/">
                 TailwindCSS
             </a>
@@ -30,7 +30,7 @@ This portfolio site was created using [Next.js](https://nextjs.org/), and others
         <td></td>
     </tr>
     <tr>
-        <th style="text-align:left;">
+        <th align="left">
             <a href="https://www.framer.com/motion/">
                 Framer Motion
             </a>
@@ -39,7 +39,7 @@ This portfolio site was created using [Next.js](https://nextjs.org/), and others
         <td>Transitions</td>
     </tr>
     <tr>
-        <th style="text-align:left;">
+        <th align="left">
             <a href="https://planetscale.com/">
                 PlanetScale
             </a>
@@ -48,7 +48,7 @@ This portfolio site was created using [Next.js](https://nextjs.org/), and others
         <td>Database</td>
     </tr>
     <tr>
-        <th style="text-align:left;">
+        <th align="left">
             <a href="https://vercel.com/">
                 Vercel
             </a>
@@ -62,10 +62,10 @@ This portfolio site was created using [Next.js](https://nextjs.org/), and others
 
 <table>
     <tr>
-        <th colspan="3" style="text-align:left;">UI Components</th>
+        <th colspan="3" align="left">UI Components</th>
     </tr>
     <tr>
-        <th style="text-align:left;">
+        <th align="left">
             <a href="https://headlessui.com/">
                 React headlessUI
             </a>
@@ -74,10 +74,10 @@ This portfolio site was created using [Next.js](https://nextjs.org/), and others
         <td>Transitions</td>
     </tr>
     <tr>
-        <th colspan="3" style="text-align:left;">Framer Motion</th>
+        <th colspan="3" align="left">Framer Motion</th>
     </tr>
     <tr>
-        <th style="text-align:left;">
+        <th align="left">
             <a href="https://www.npmjs.com/package/@motionone/utils">
                 @motionone/utils
             </a>
@@ -86,10 +86,10 @@ This portfolio site was created using [Next.js](https://nextjs.org/), and others
         <td>Utility</td>
     </tr>
     <tr>
-        <th colspan="3" style="text-align:left;">Icons</th>
+        <th colspan="3" align="left">Icons</th>
     </tr>
     <tr>
-        <th style="text-align:left;">
+        <th align="left">
             <a href="https://heroicons.com/">
                 Hero Icons
             </a>
@@ -98,7 +98,7 @@ This portfolio site was created using [Next.js](https://nextjs.org/), and others
         <td>Hamburger Icon</td>
     </tr>
     <tr>
-        <th style="text-align:left;">
+        <th align="left">
             <a href="https://reactsvgicons.com/search?q=mail">
                 React SVG Icons
             </a>
@@ -107,10 +107,10 @@ This portfolio site was created using [Next.js](https://nextjs.org/), and others
         <td>Social Media Icons</td>
     </tr>
     <tr>
-        <th colspan="3" style="text-align:left;">Fonts</th>
+        <th colspan="3" align="left">Fonts</th>
     </tr>
     <tr>
-        <th style="text-align:left;">
+        <th align="left">
             <a href="https://fonts.google.com/">
                 Google Fonts
             </a>
@@ -119,7 +119,7 @@ This portfolio site was created using [Next.js](https://nextjs.org/), and others
         <td></td>
     </tr>
     <tr>
-        <th style="text-align:left;">
+        <th align="left">
             <a href="https://www.npmjs.com/package/react-simple-typewriter">
                 react-simple-typewriter
             </a>
@@ -128,10 +128,10 @@ This portfolio site was created using [Next.js](https://nextjs.org/), and others
         <td></td>
     </tr>
     <tr>
-        <th colspan="3" style="text-align:left;">Guestbook Page</th>
+        <th colspan="3" align="left">Guestbook Page</th>
     </tr>
     <tr>
-        <th style="text-align:left;">
+        <th align="left">
             <a href="https://www.npmjs.com/package/random-animal-name">
                 random-animal-name
             </a>
@@ -140,7 +140,7 @@ This portfolio site was created using [Next.js](https://nextjs.org/), and others
         <td>Used With Cookies</td>
     </tr>
     <tr>
-        <th style="text-align:left;">
+        <th align="left">
             <a href="https://www.npmjs.com/package/bad-words">
                 bad-words
             </a>
@@ -149,7 +149,7 @@ This portfolio site was created using [Next.js](https://nextjs.org/), and others
         <td>First Filter Layer</td>
     </tr>
     <tr>
-        <th style="text-align:left;">
+        <th align="left">
             <a href="https://platform.openai.com/">
                 OpenAI API
             </a>
@@ -158,7 +158,7 @@ This portfolio site was created using [Next.js](https://nextjs.org/), and others
         <td>Second Filter Layer</td>
     </tr>
     <tr>
-        <th style="text-align:left;">
+        <th align="left">
             <a href="https://www.npmjs.com/package/random-number">
                 random-number
             </a>
@@ -167,7 +167,7 @@ This portfolio site was created using [Next.js](https://nextjs.org/), and others
         <td>Min/Max Integer/Float</td>
     </tr>
     <tr>
-        <th style="text-align:left;">
+        <th align="left">
             <a href="https://unsplash.com/developers">
                 Unsplash
             </a>
