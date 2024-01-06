@@ -186,18 +186,21 @@ In this project,
     1. [Build a modern Portfolio Website with NextJS - Youtube](https://www.youtube.com/watch?v=l0pkuHopo8A)
     2. [Github Reference](https://github.com/ski043/portfolio-yt/blob/main/app/page.tsx)
 
-2.  [How to Create a Stunning Portfolio Website with Nextjs, Tailwind CSS and Framer-motion🌟](https://www.youtube.com/watch?v=Yw7yWHigGKI&t=214s)
+2.  Portfolio References 2. [How to Create a Stunning Portfolio Website with Nextjs, Tailwind CSS and Framer-motion🌟](https://www.youtube.com/watch?v=Yw7yWHigGKI&t=214s)
 
-    1. [Demo Website](https://minimal-nextjs-portfolio-website.vercel.app/about)
-    2. [GitHub Starter Code](https://github.com/codebucks27/Next.js-Developer-Portfolio-Starter-Code)
+        1. [Demo Website](https://minimal-nextjs-portfolio-website.vercel.app/about)
+        2. [GitHub Starter Code](https://github.com/codebucks27/Next.js-Developer-Portfolio-Starter-Code)
 
-3.  [On-Scroll Reveal Animation with React & Framer Motion](https://www.youtube.com/watch?v=hjbxaYTMhy0)
+    3.  [On-Scroll Reveal Animation with React & Framer Motion](https://www.youtube.com/watch?v=hjbxaYTMhy0)
 
-    1. [Demo Website](https://steam-portfolio-demo.vercel.app/)
+        1. [Demo Website](https://steam-portfolio-demo.vercel.app/)
 
-4.  [Hover.dev](https://www.hover.dev/)
-    -   Animated UI Components for React & Tailwind
-5.  [Brittany Chiang](https://github.com/bchiang7/v4)
+    4.  [Brittany Chiang](https://github.com/bchiang7/v4)
+
+3.  Additional References
+    1.  [Hover.dev](https://www.hover.dev/)
+        -   Animated UI Components for React & Tailwind
+    2.  [Animated tabs](https://buildui.com/recipes/animated-tabs)
 
 ## Boilerplate Documentation
 

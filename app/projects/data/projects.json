@@ -5,8 +5,18 @@
             "title": "Synthia",
             "subtitle": "The Best GenAI Tool",
             "overview": "Synthia is a web-based AI; A Chatbot, Image generator, Music generator, and Code generator.",
-            "link": "https://synthia-gen-ai-website.vercel.app/",
-            "img_src": "/projects/Synthia.gif",
+            "links": [
+                ["site", "https://synthia-gen-ai-website.vercel.app/"],
+                [
+                    "pitch",
+                    "https://docs.google.com/presentation/d/1UDDu-MYY3yNmJo_f99f1KUEKXrBLoSQGgOr9SSt4VMM/edit?usp=sharing"
+                ],
+                [
+                    "appendix",
+                    "https://docs.google.com/presentation/d/1IjmlcROHSKsYXwYLqjMmZtMbGlyViA5SvSudedWdeRA/edit?usp=sharing"
+                ]
+            ],
+            "img_src": "/projects/hackathon/Synthia.gif",
             "tech_stack": [
                 "NextJs",
                 "TypeScript",
@@ -20,9 +30,49 @@
             "title": "Viiicky",
             "subtitle": "Your Colourblind Asssistant",
             "overview": "Aim to help the colorblind. Viiicky enables users to identify colors and rectify color deficiency.",
-            "link": "https://vicky-nine.vercel.app/",
-            "img_src": "/projects/Viiicky.jpg",
+            "links": [
+                ["site", "https://vicky-nine.vercel.app/"],
+                [
+                    "pitch",
+                    "https://www.canva.com/design/DAFs2rj4YTM/v7RKuWysnLGd9AvaRnRL0Q/view?utm_content=DAFs2rj4YTM&utm_campaign=designshare&utm_medium=link&utm_source=publishsharelink#1"
+                ],
+                ["video", "https://www.youtube.com/watch?v=gTMW-ZFXwGg"]
+            ],
+            "img_src": "/projects/hackathon/Viiicky.jpg",
             "tech_stack": ["React", "TypeScript", "TailwindCSS", "MUI"]
+        },
+        {
+            "completion_sequence": 5,
+            "title": "EduTrekker",
+            "subtitle": "Self-learning for children",
+            "overview": "An AI driven tutoring app for children. Note-taking, AI-curated flashcards, and an AI Chatbot named Pam.",
+            "links": [
+                ["site", "https://ignite-matchsticks-pam.web.app/"],
+                [
+                    "pitch",
+                    "https://docs.google.com/presentation/d/1VlYox3sGu5h6qYRd2Zpp7SPYK6eq2_sB96zVZQfbb_U/edit?usp=sharing"
+                ]
+            ],
+            "img_src": "/projects/hackathon/EduTrekker.jpg",
+            "tech_stack": ["Flutter", "Dart", "Firebase", "PaLM", "OpenAI"]
+        },
+        {
+            "completion_sequence": 6,
+            "title": "UrbanAIze",
+            "subtitle": "Urban Planning with AI",
+            "overview": "An AI driven tutoring app for children. Note-taking, AI-curated flashcards, and an AI Chatbot named Pam.",
+            "links": [
+                [
+                    "figma",
+                    "https://www.figma.com/proto/TB0akMAxSXhEtRkl2nNy7k/We-prototype-here?type=design&node-id=162-4917&t=HC5zF66k2mWhaOUn-1&scaling=scale-down-width&page-id=13%3A9787&starting-point-node-id=162%3A4917"
+                ],
+                [
+                    "pitch",
+                    "https://www.canva.com/design/DAFxLGwcxSI/jluNy81THJi1PQyGFnFIFA/view"
+                ]
+            ],
+            "img_src": "/projects/hackathon/UrbanAIze.jpg",
+            "tech_stack": ["Replicate", "Figma"]
         }
     ],
     "academic": [
@@ -31,8 +81,8 @@
             "title": "A Healthier McDonalds",
             "subtitle": "Guide to a Healthier McDonalds",
             "overview": "My first website in 2017. Aimed to help motivate and spread awareness of being healthy. Especially in McDonalds.",
-            "link": "https://mymcsample.web.app/MainWebPage.html",
-            "img_src": "/projects/HealthierMcDonalds.jpg",
+            "links": [["site", "https://mymcsample.web.app/MainWebPage.html"]],
+            "img_src": "/projects/academic/HealthierMcDonalds.jpg",
             "tech_stack": ["HTML/CSS", "Vanilla-JavaScript"]
         },
         {
@@ -40,9 +90,57 @@
             "title": "StaffCorps",
             "subtitle": "All-in-one Business Solution Tool",
             "overview": "A Singapore-based app to boost productivity; OCR, News, real-time weather, and real-time traffic video.",
-            "link": "https://staffcorps-ff2bb.web.app/home",
-            "img_src": "/projects/StaffCorps.jpg",
+            "links": [["site", "https://staffcorps-ff2bb.web.app/home"]],
+            "img_src": "/projects/academic/StaffCorps.jpg",
             "tech_stack": ["Angular", "TypeScript", "Firebase", "Ionic"]
+        },
+        {
+            "completion_sequence": 7,
+            "title": "WeSports",
+            "subtitle": "Booking Badminton Courts Made Easy",
+            "overview": "The WeSports App facilitate seamless booking of badminton courts - Connecting Youths through Sports.",
+            "links": [
+                [
+                    "figma",
+                    "https://www.figma.com/proto/vhDiwasq01SLSg4xZxwdRK/Our-Design-goes-here?type=design&node-id=27-1014&t=zqHd0DKhfO4COVeX-0&scaling=scale-down&page-id=27%3A1014&starting-point-node-id=333%3A16744"
+                ],
+                ["video", "https://www.youtube.com/watch?v=C-EaYvbNT_A"]
+            ],
+            "img_src": "/projects/academic/WeSports.jpg",
+            "tech_stack": ["Figma", "Youtube"]
+        },
+        {
+            "completion_sequence": 8,
+            "title": "Reventé",
+            "subtitle": "Sustainable Fashion Marketplace",
+            "overview": "An eCommerce platform that allows users to buy and sell pre-loved fashion items. Gamification and AI empowered.",
+            "links": [
+                ["site", "https://smu-wad2.web.app/about"],
+                [
+                    "pitch",
+                    "https://www.canva.com/design/DAFy0X2wNfg/t5iFIhIUxyxV-uX_voKW5A/view"
+                ]
+            ],
+            "img_src": "/projects/academic/Revente.jpg",
+            "tech_stack": [
+                "Vue",
+                "Vite",
+                "Bootstrap",
+                "PrimeVue",
+                "chart.js",
+                "anime.js",
+                "GSAP",
+                "Google Maps",
+                "DialogFlow",
+                "Pinia",
+                "Firebase",
+                "ExpressJS",
+                "OpenAI",
+                "PaLM",
+                "Replicate",
+                "Stripe",
+                "Vercel"
+            ]
         }
     ]
 }

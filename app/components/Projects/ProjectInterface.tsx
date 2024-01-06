@@ -3,7 +3,7 @@ export default interface IProject {
     title: string;
     subtitle: string;
     overview: string;
-    link: string;
+    links: Array<Array<string>>;
     img_src: string;
     tech_stack: Array<string>;
 }

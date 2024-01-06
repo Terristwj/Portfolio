@@ -9,7 +9,16 @@ interface ProjectCardProps {
     project: IProject;
 }
 
+// Speed of parallax effect origin number
+const baseVelocityOrigin = 5;
+
 export default function ProjectCard({ project }: ProjectCardProps) {
+    // Speed of parallax effect - based on number of tech stack items
+    const baseVelocity = baseVelocityOrigin / project.tech_stack.length;
+
+    // Main link
+    const mainLink = project.links[0][1];
+
     return (
         <>
             {/* Image of Project START */}
@@ -19,7 +28,7 @@ export default function ProjectCard({ project }: ProjectCardProps) {
                     border-b border-black dark:border-white"
             >
                 <a
-                    href={project.link}
+                    href={mainLink}
                     target="_blank"
                     className="absolute w-full h-full"
                 >
@@ -45,7 +54,7 @@ export default function ProjectCard({ project }: ProjectCardProps) {
                     className="text-lg font-bold poppins
                         text-teal-600 dark:text-teal-400"
                 >
-                    <a href={project.link} target="_blank">
+                    <a href={mainLink} target="_blank">
                         {project.title}
                     </a>
                 </h3>
@@ -89,27 +98,40 @@ export default function ProjectCard({ project }: ProjectCardProps) {
                             Technology Stack
                         </h3>
 
-                        <ParallaxText baseVelocity={-1}>
+                        <ParallaxText baseVelocity={-baseVelocity}>
                             {project.tech_stack}
                         </ParallaxText>
-                        <ParallaxText baseVelocity={1}>
+                        <ParallaxText baseVelocity={baseVelocity}>
                             {project.tech_stack}
                         </ParallaxText>
                     </section>
                     {/* Tech Stack END */}
 
-                    {/* Visit Site START */}
-                    <a
-                        href={project.link}
-                        target="_blank"
-                        className="noSelect
-                        text-teal-500 font-medium
-                        group-hover:ms-2
-                        transition-all duration-500"
-                    >
-                        &rarr; Visit Site!
-                    </a>
-                    {/* Visit Site END */}
+                    {/* Visit Items START */}
+                    <div className="flex noSelect">
+                        {project.links.map((link, index) => {
+                            return (
+                                <>
+                                    {/* hover:border-b-teal-600 dark:hover:border-b-teal-400 */}
+                                    <a
+                                        key={index}
+                                        href={link[1]}
+                                        target="_blank"
+                                        className="capitalize
+                                            text-teal-600 dark:text-teal-400 font-medium
+                                            border-2 border-transparent pb-1 pt-1
+                                            hover:border-t-teal-600 dark:hover:border-t-teal-400
+                                            group-hover:ms-1
+                                            transition-all duration-500 "
+                                    >
+                                        &rarr; {link[0]}
+                                    </a>
+                                    &nbsp; &nbsp;
+                                </>
+                            );
+                        })}
+                    </div>
+                    {/* Visit Items END */}
                 </div>
                 {/* Items above empty space END */}
                 {/* Empty space between END*/}
