@@ -1,17 +1,15 @@
 "use client";
 
 import { useFormStatus } from "react-dom";
-import { useRouter } from "next/navigation";
+import { reloadGuestbook } from "../../api/dbAction";
 
 import { IconSend, IconRefresh, IconLoading } from "./ReactIcons";
-
 import FormButton from "./FormButton";
 
 export default function FormContent() {
     // Button loading
     const { pending } = useFormStatus();
 
-    const router = useRouter();
     return (
         <>
             {/* Input message START */}
@@ -58,7 +56,7 @@ export default function FormContent() {
                         {/* Refresh Button START */}
                         <FormButton
                             type="button"
-                            onClick={() => router.refresh()}
+                            onClick={() => reloadGuestbook()}
                         >
                             <IconRefresh />
                         </FormButton>

@@ -29,3 +29,8 @@ export async function postEntry(message: string, username: string) {
     // Reload data onSend
     revalidatePath("/guestbook");
 }
+
+export async function reloadGuestbook() {
+    // Reload
+    revalidatePath("/guestbook");
+}
