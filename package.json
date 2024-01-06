@@ -19,6 +19,7 @@
         "next-themes": "^0.2.1",
         "openai": "^4.24.1",
         "random-animal-name": "^0.1.1",
+        "random-number": "^0.0.9",
         "react": "^18",
         "react-dom": "^18",
         "react-simple-typewriter": "^5.0.1"

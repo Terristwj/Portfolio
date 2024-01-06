@@ -4,14 +4,14 @@ import PageAnimate from "../components/wrappers/PageAnimate";
 import PageDefault from "../components/wrappers/PageDefault";
 
 import Form from "../components/Guestbook/Form";
-import EntryResults from "../components/Guestbook/EntryResults";
+import ResultEntries from "../components/Guestbook/ResultEntries";
 
 // Resets cache data after 5 sec
 // export const revalidate = 5;
 
 // Settings
 const numEntries = 10;
-const reloadInterval = 5000;
+const reloadInterval = 10000;
 
 export default async function Guestbook() {
     let data = await getEntries(numEntries);
@@ -24,7 +24,7 @@ export default async function Guestbook() {
                     <Form />
 
                     {/* Display Results */}
-                    <EntryResults
+                    <ResultEntries
                         entries={data}
                         reloadInterval={reloadInterval}
                     />

@@ -157,6 +157,24 @@ This portfolio site was created using [Next.js](https://nextjs.org/), and others
         <td>AI Sentimental Filter</td>
         <td>Second Filter Layer</td>
     </tr>
+    <tr>
+        <th style="text-align:left;">
+            <a href="https://www.npmjs.com/package/random-number">
+                random-number
+            </a>
+        </th>
+        <td>Random Number</td>
+        <td>Min/Max Integer/Float</td>
+    </tr>
+    <tr>
+        <th style="text-align:left;">
+            <a href="https://unsplash.com/developers">
+                Unsplash
+            </a>
+        </th>
+        <td>Random Images</td>
+        <td></td>
+    </tr>
 </table>
 
 ### Project's PlanetScale Documentation
@@ -207,6 +225,7 @@ In this project,
 
 4.  Technical References
     1. [Window is not defined](https://bobbyhadz.com/blog/javascript-referenceerror-window-is-not-defined)
+    2. [Unsplash image from keyword api](https://dev.to/koshirok096/get-an-unsplash-image-dynamically-according-to-the-random-keyword-api-3n75#:~:text=Also%2C%20besides%20that%20you%20designate,some%20filters%20to%20this%20URL.)
 
 ## Boilerplate Documentation
 
