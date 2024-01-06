@@ -18,7 +18,7 @@ export default function AnimatedTabs({
     useStateActiveTab,
 }: AnimatedTabsProps) {
     return (
-        <div className="flex space-x-1 noSelect">
+        <div>
             {tabs.map((tab) => (
                 <button
                     key={tab}
@@ -29,7 +29,7 @@ export default function AnimatedTabs({
                     className={`${
                         (useStateActiveTab.cur !== tab &&
                             "hover:text-black/60 hover:dark:text-white/60") +
-                        " relative rounded-full px-3 py-1.5 text-sm font-medium text-black dark:text-white"
+                        " relative rounded-full px-2 py-1.5 text-black dark:text-white"
                     }`}
                     style={{
                         WebkitTapHighlightColor: "transparent",

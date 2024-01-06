@@ -68,7 +68,10 @@ export default function Projects() {
         <PageAnimate>
             <PageDefault title="Projects" bottomGap={true}>
                 {/* Control Tabs START */}
-                <div className="flex justify-between fira-code font-black">
+                <div
+                    className="flex justify-between noSelect
+                        fira-code text-sm font-medium"
+                >
                     {/* (Left-tabs) Project Type START */}
                     <AnimatedTabs
                         layoutId="projectTypeBubble"
