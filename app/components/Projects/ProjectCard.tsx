@@ -113,10 +113,9 @@ export default function ProjectCard({ project }: ProjectCardProps) {
                     <div className="flex noSelect">
                         {project.links.map((link, index) => {
                             return (
-                                <>
+                                <div key={`${project.title}_${link[0]}`}>
                                     {/* hover:border-b-teal-600 dark:hover:border-b-teal-400 */}
                                     <a
-                                        key={index}
                                         href={link[1]}
                                         target="_blank"
                                         className="capitalize
@@ -129,7 +128,7 @@ export default function ProjectCard({ project }: ProjectCardProps) {
                                         &rarr; {link[0]}
                                     </a>
                                     &nbsp; &nbsp;
-                                </>
+                                </div>
                             );
                         })}
                     </div>
