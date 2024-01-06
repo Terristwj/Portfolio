@@ -1,7 +1,6 @@
 "use client";
 
 import React, { useRef } from "react";
-import { useRouter } from "next/navigation";
 import { useMotionValue, motion, useSpring, useTransform } from "framer-motion";
 
 var rn = require("random-number");
@@ -13,8 +12,6 @@ interface LinkProps {
 }
 
 export default function ResultEntry({ username, message, imgSrc }: LinkProps) {
-    const router = useRouter();
-
     const rotateVal = rn({
         min: -15,
         max: 15,

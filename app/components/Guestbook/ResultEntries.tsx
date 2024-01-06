@@ -1,7 +1,7 @@
 "use client";
 import { motion } from "framer-motion";
-import { useRouter } from "next/navigation";
 
+import { reloadGuestbook } from "../../api/dbAction";
 import ResultEntry from "./ResultEntry";
 
 interface ResultsProps {
@@ -22,16 +22,18 @@ export default function ResultEntries({
     entries,
     reloadInterval,
 }: ResultsProps) {
-    const router = useRouter();
-
     // To avoid parent (server-side) from having errors
     // - server-side components doesn't have window object
-    // if (typeof window !== "undefined") {
-    //     // Every interval, refresh the data
-    //     setTimeout(() => {
-    //         router.refresh();
-    //     }, reloadInterval);
-    // }
+    if (typeof window !== "undefined") {
+        // Every interval, refresh the data
+        setTimeout(() => {
+            // Avoid using router.reload()
+            // - Reloading the page does not clear cache
+
+            // Clear cache and reload page
+            reloadGuestbook();
+        }, reloadInterval);
+    }
 
     return (
         <div className="flex flex-col space-y-2 font-medium">

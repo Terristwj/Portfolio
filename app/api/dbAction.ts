@@ -30,6 +30,7 @@ export async function postEntry(message: string, username: string) {
     revalidatePath("/guestbook");
 }
 
+// Reload Guestbook messages
 export async function reloadGuestbook() {
     // Reload
     revalidatePath("/guestbook");
