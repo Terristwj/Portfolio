@@ -26,7 +26,7 @@ export default function About() {
                         xl:gap-x-8 xl:space-y-0"
                 >
                     {/* Profile START */}
-                    <div className=" flex flex-col items-center pt-8 noSelect">
+                    <div className="flex flex-col items-center pt-8 noSelect">
                         <Image
                             alt="My Picture"
                             src={Me}
