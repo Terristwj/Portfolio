@@ -25,7 +25,9 @@ export default function ProjectCard({ project }: ProjectCardProps) {
             <div
                 className="overflow-hidden noSelect
                     relative w-full h-56
-                    border-b border-black dark:border-white"
+                    border-b border-black dark:border-white
+                    group-hover:border-teal-500
+                    transition-all duration-500 ease-in-out"
             >
                 <a
                     href={mainLink}
