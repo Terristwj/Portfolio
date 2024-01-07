@@ -1,7 +1,7 @@
 "use client";
 
 import { useEffect, useState } from "react";
-import { AnimatePresence, motion } from "framer-motion";
+import { AnimatePresence } from "framer-motion";
 
 import PageAnimate from "../components/wrappers/PageAnimate";
 import PageDefault from "../components/wrappers/PageDefault";
@@ -15,12 +15,6 @@ import IProject from "../components/Projects/ProjectInterface";
 // Settings
 const typeTabs = ["All", "Hackathon", "Academic"];
 const orderbyTabs = ["Newest", "Oldest"];
-
-// Animation delay
-// - Time must set >0 to prevent rendering bug
-// - Delay in desktop and mobile works differently
-const delayProjects = 1500;
-// const delayPerProject = 200;
 
 // Actions
 const myProjectActions = new ProjectActions();
@@ -42,29 +36,26 @@ export default function Projects() {
 
     // UseEffects for tracking tab changes
     useEffect(() => {
-        // Reset projectArray to [] to trigger AnimatePresence
-        // - Animates the previous exit
-        // - Fixes rendering bug
+        // Prevents rendering bug for toggle between tabs
         setProjectArray([]);
 
+        // Orderby
         let order: "DESC" | "ASC" =
             activeOrderbyTab === "Newest" ? "DESC" : "ASC";
 
-        let temp: IProject[];
-        if (activeTypeTab === "All") {
-            temp = myProjectActions.getAllProjects(order);
-        } else if (activeTypeTab === "Hackathon") {
-            temp = myProjectActions.getHackathonProjects(order);
-        } else if (activeTypeTab === "Academic") {
-            temp = myProjectActions.getAcademicProjects(order);
-        }
-        // setMaxDelay(projectArray.length * delayPerProject);
-
         // Timer between temp and []
+        // - Prevents rendering bug for toggle between tabs
         setTimeout(() => {
-            setProjectArray(temp);
+            if (activeTypeTab === "All")
+                setProjectArray(myProjectActions.getAllProjects(order));
+            else if (activeTypeTab === "Hackathon")
+                setProjectArray(myProjectActions.getHackathonProjects(order));
+            else if (activeTypeTab === "Academic")
+                setProjectArray(myProjectActions.getAcademicProjects(order));
+
             // Time must set >0 to prevent rendering bug
-        }, delayProjects);
+        }, 0);
+
         // eslint-disable-next-line react-hooks/exhaustive-deps
     }, [activeTypeTab, activeOrderbyTab]);
 
@@ -110,20 +101,7 @@ export default function Projects() {
                 >
                     <AnimatePresence>
                         {projectArray.map((project, index) => (
-                            <motion.article
-                                key={index}
-                                initial={{ opacity: 0.5, y: 100 }}
-                                animate={{ opacity: 1, y: 0 }}
-                                exit={{ opacity: 0, y: 100 }}
-                                className="border rounded-md noSelect
-                                    border-black bg-white
-                                    dark:border-white dark:bg-black hover:border-teal-500
-                                    hover:shadow-xl hover:shadow-teal-100 hover:dark:shadow-teal-900
-                                    transition-all duration-500
-                                    group relative"
-                            >
-                                <ProjectCard project={project} />
-                            </motion.article>
+                            <ProjectCard key={index} project={project} />
                         ))}
                     </AnimatePresence>
                 </div>
