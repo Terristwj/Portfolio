@@ -24,11 +24,11 @@ export default function PageDefault({
                 }`}
             >
                 <h1
-                    className="text-3xl font-extrabold leading-9 tracking-tight
-                            text-black dark:text-white
-                            sm:text-4xl sm:leading-10
-                            md:text-6xl md:leading-13
-                            poppins"
+                    className="font-extrabold tracking-tight poppins
+                        text-black dark:text-white
+                        text-3xl leading-9
+                        sm:text-4xl sm:leading-10
+                        md:text-6xl md:leading-13"
                 >
                     {title}
                 </h1>
