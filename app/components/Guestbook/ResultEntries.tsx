@@ -1,26 +1,38 @@
 "use client";
 import { motion } from "framer-motion";
 
-import { reloadGuestbook } from "../../api/dbAction";
+import { revalidateGuestbook } from "../../api/dbAction";
 import ResultEntry from "./ResultEntry";
 
 interface ResultsProps {
+    // Entries
     entries: Array<{
         id: string;
         message: string;
         username: string;
         created_at: Date;
     }>;
-    reloadInterval: number;
+    entryHoverImageThemes: { [key: number]: string };
+
+    // Entries Settings
+    revalidateInterval: number;
+
+    // Per Entry Settings
+    animateDuration: number;
+    staggerInterval: number;
 }
 
-// Settings
-const animateDuration = 0.8;
-const staggerInterval = 0.1;
-
 export default function ResultEntries({
+    // Entries
     entries,
-    reloadInterval,
+    entryHoverImageThemes,
+
+    // Entries Settings
+    revalidateInterval,
+
+    // Per Entry Settings
+    animateDuration,
+    staggerInterval,
 }: ResultsProps) {
     // To avoid parent (server-side) from having errors
     // - server-side components doesn't have window object
@@ -31,30 +43,17 @@ export default function ResultEntries({
             // - Reloading the page does not clear cache
 
             // Clear cache and reload page
-            reloadGuestbook();
-        }, reloadInterval);
+            revalidateGuestbook();
+        }, revalidateInterval);
     }
 
     return (
         <div className="flex flex-col space-y-2 font-medium">
             {entries.map((entry, index) => {
-                const imgThemes = [
-                    // Set 1
-                    "landmarks",
-                    "skylines",
-                    // Set 2
-                    "holiday",
-                    "fun",
-                    // Set 3
-                    "forest",
-                    "atlantis ocean",
-                    "mountain",
-                    // Set 4
-                    "ocean life animals",
-                    "animal exotic",
-                    "animal pet",
-                ];
-                const imgSrc = `https://source.unsplash.com/random/800x600?${imgThemes[index]}`;
+                // Unsplash API for random images
+                const imgSrc = `https://source.unsplash.com/random/800x600?${
+                    entryHoverImageThemes[index + 1]
+                }`;
                 return (
                     <motion.div
                         key={entry.id}
@@ -71,11 +70,11 @@ export default function ResultEntries({
                     >
                         {/* Version 1 */}
                         {/* <div className="w-full break-words leading-5">
-                        <span className="text-teal-600 dark:text-teal-500">
-                            {entry.username}:
-                        </span>{" "}
-                        <span className="montserrat">{entry.message}</span>
-                    </div> */}
+                            <span className="text-teal-600 dark:text-teal-500">
+                                {entry.username}:
+                            </span>{" "}
+                            <span className="montserrat">{entry.message}</span>
+                        </div> */}
 
                         {/* Debugging */}
                         {/* {imgSrc} */}

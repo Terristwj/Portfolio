@@ -1,7 +1,7 @@
 "use client";
 
 import { useFormStatus } from "react-dom";
-import { reloadGuestbook } from "../../api/dbAction";
+import { revalidateGuestbook } from "../../../api/dbAction";
 
 import { IconSend, IconRefresh, IconLoading } from "./ReactIcons";
 import FormButton from "./FormButton";
@@ -56,7 +56,7 @@ export default function FormContent() {
                         {/* Refresh Button START */}
                         <FormButton
                             type="button"
-                            onClick={() => reloadGuestbook()}
+                            onClick={() => revalidateGuestbook()}
                         >
                             <IconRefresh />
                         </FormButton>

@@ -1,6 +1,6 @@
 "use client";
 
-import { postEntry } from "../../api/dbAction";
+import { postEntry } from "../../../api/dbAction";
 
 // For username cookie
 import checkCookie from "./Cookies";
@@ -8,7 +8,7 @@ import checkCookie from "./Cookies";
 // For profanity check
 // @ts-ignore
 import Filter from "bad-words";
-import { isProfaneAI } from "../../api/openAI";
+import { isProfaneAI } from "../../../api/openAI";
 
 /**
  * Check profanity, then add to database.

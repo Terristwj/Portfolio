@@ -12,6 +12,8 @@ interface LinkProps {
 }
 
 export default function ResultEntry({ username, message, imgSrc }: LinkProps) {
+    // Random rotation value
+    // - Used to rotate the image
     const rotateVal = rn({
         min: -15,
         max: 15,
@@ -19,9 +21,11 @@ export default function ResultEntry({ username, message, imgSrc }: LinkProps) {
 
     const ref = useRef<HTMLAnchorElement | null>(null);
 
+    // Mouse Position
     const x = useMotionValue(0);
     const y = useMotionValue(0);
 
+    // Mouse Position Spring
     const mouseXSpring = useSpring(x);
     const mouseYSpring = useSpring(y);
 
@@ -37,6 +41,7 @@ export default function ResultEntry({ username, message, imgSrc }: LinkProps) {
     const imgTop = useTransform(mouseYSpring, [-0.5, 0], ["25%", "75%"]);
     const imgLeft = useTransform(mouseXSpring, [0, 0.3], ["70%", "80%"]);
 
+    // Reset values on mouse move
     const handleMouseMove = (
         e: React.MouseEvent<HTMLAnchorElement, MouseEvent>
     ) => {
@@ -61,11 +66,14 @@ export default function ResultEntry({ username, message, imgSrc }: LinkProps) {
             onMouseMove={handleMouseMove}
             initial="initial"
             whileHover="whileHover"
-            className="relative flex items-center justify-between
+            className="relative noSelect
+                flex items-center justify-between
                 py-4 md:py-8
-                group transition-colors duration-500"
+                group transition-all duration-500"
         >
+            {/* Left Item START */}
             <div>
+                {/* Username START */}
                 <motion.span
                     variants={{
                         initial: { x: 0 },
@@ -76,12 +84,13 @@ export default function ResultEntry({ username, message, imgSrc }: LinkProps) {
                         staggerChildren: 0.075,
                         delayChildren: 0.25,
                     }}
-                    className="block relative z-10
-                        text-4xl font-bold
+                    className="block relative z-10 lemon
                         text-black dark:text-white
+                        text-xl sm:text-2xl md:text-3xl
                         group-hover:text-teal-600
                         group-hover:dark:text-teal-500
-                        md:text-6xl"
+                        group-hover:transition-colors 
+                        group-hover:duration-500"
                 >
                     {username.split("").map((char, i) => (
                         <motion.span
@@ -91,24 +100,40 @@ export default function ResultEntry({ username, message, imgSrc }: LinkProps) {
                                 whileHover: { x: 16 },
                             }}
                             transition={{ type: "spring" }}
-                            className="inline-block"
+                            className="inline-block
+                            hover:text-black
+                            hover:dark:text-white
+                            hover:transition-colors hover:duration-300"
                         >
                             {char}
                         </motion.span>
                     ))}
                 </motion.span>
+                {/* Username END */}
+
+                {/* Message START */}
                 <span
                     className="block relative z-10 mt-2
-                        text-base
+                        capitalize tracking-tighter italic krona-one
                         text-neutral-500
+                        text-sm
+                        sm:text-base
+                        md:text-lg
                         group-hover:text-black
+                        group-hover:font-bold
                         group-hover:dark:text-white
-                        transition-colors duration-500"
+                        group-hover:transition-colors 
+                        group-hover:duration-500"
                 >
+                    &quot;
                     {message}
+                    &quot;
                 </span>
+                {/* Message END */}
             </div>
+            {/* Left Item END */}
 
+            {/* Sliding Hovers - Words START */}
             {/* <motion.span
                 style={{
                     top: wordTop,
@@ -124,7 +149,9 @@ export default function ResultEntry({ username, message, imgSrc }: LinkProps) {
             >
                 hey
             </motion.span> */}
+            {/* Sliding Hovers - Words END */}
 
+            {/* Sliding Hovers - Images START */}
             <motion.img
                 style={{
                     top: imgTop,
@@ -138,13 +165,14 @@ export default function ResultEntry({ username, message, imgSrc }: LinkProps) {
                 }}
                 transition={{ type: "spring" }}
                 src={imgSrc}
-                className="absolute noSelect
-                    rounded-lg object-cover
-                    h-24 w-32
-                    md:h-48 md:w-64"
+                className="absolute object-cover
+                    rounded-md h-24 w-32 md:h-48 md:w-64
+                    hover:rounded-none hover:md:h-full
+                    transition-[height] duration-500"
                 draggable={false}
                 alt={`Image for ${username} is missing`}
             />
+            {/* Sliding Hovers - Images END */}
         </motion.a>
     );
 }
