@@ -1,7 +1,6 @@
 "use client";
 
 import Image from "next/image";
-import { motion } from "framer-motion";
 
 import IProject from "./ProjectInterface";
 import ParallaxText from "./ParallaxText";
@@ -21,21 +20,7 @@ export default function ProjectCard({ project }: ProjectCardProps) {
     const mainLink = project.links[0][1];
 
     return (
-        <motion.article
-            initial={{ y: -10 }}
-            animate={{ y: 10 }}
-            className="border rounded-md noSelect
-            border-black bg-white
-
-            dark:border-white dark:bg-black
-            hover:border-teal-500
-
-            hover:shadow-xl hover:shadow-teal-100
-            hover:dark:shadow-teal-900
-            
-            transition-all duration-500
-            group relative"
-        >
+        <>
             {/* Image of Project START */}
             <div
                 className="overflow-hidden
@@ -162,6 +147,6 @@ export default function ProjectCard({ project }: ProjectCardProps) {
                 {/* Empty space between END*/}
             </div>
             {/* Card content END*/}
-        </motion.article>
+        </>
     );
 }

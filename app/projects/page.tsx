@@ -1,7 +1,7 @@
 "use client";
 
 import { useEffect, useState } from "react";
-import { AnimatePresence } from "framer-motion";
+import { AnimatePresence, motion } from "framer-motion";
 
 import PageAnimate from "../components/wrappers/PageAnimate";
 import PageDefault from "../components/wrappers/PageDefault";
@@ -10,7 +10,6 @@ import AnimatedTabs from "../components/Projects/AnimatedTabs";
 import ProjectCard from "../components/Projects/ProjectCard";
 
 import ProjectActions from "../components/Projects/ProjectActions";
-import IProject from "../components/Projects/ProjectInterface";
 
 // Settings
 const typeTabs = ["All", "Hackathon", "Academic"];
@@ -54,7 +53,7 @@ export default function Projects() {
                 setProjectArray(myProjectActions.getAcademicProjects(order));
 
             // Time must set >0 to prevent rendering bug
-        }, 200);
+        }, 100);
 
         // eslint-disable-next-line react-hooks/exhaustive-deps
     }, [activeTypeTab, activeOrderbyTab]);
@@ -93,15 +92,32 @@ export default function Projects() {
 
                 {/* Projects Display START */}
                 <div
-                    className="pt-8
+                    className="pt-5 pb-5
                         grid gap-y-8 grid-cols-1
                         sm:gap-6 sm:grid-cols-2
                         md:gap-6
                         lg:gap-10 lg:grid-cols-3"
                 >
                     <AnimatePresence>
+                        {/* Do not use opacity - Mobile has problems */}
                         {projectArray.map((project, index) => (
-                            <ProjectCard key={index} project={project} />
+                            <motion.article
+                                key={index}
+                                animate={{ y: 10 }}
+                                className="border rounded-md noSelect
+                                    border-black bg-white
+
+                                    dark:border-white dark:bg-black
+                                    hover:border-teal-500
+
+                                    hover:shadow-xl hover:shadow-teal-100
+                                    hover:dark:shadow-teal-900
+                                    
+                                    transition-all duration-500
+                                    group relative"
+                            >
+                                <ProjectCard project={project} />
+                            </motion.article>
                         ))}
                     </AnimatePresence>
                 </div>
