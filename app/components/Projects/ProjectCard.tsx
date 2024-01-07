@@ -22,8 +22,8 @@ export default function ProjectCard({ project }: ProjectCardProps) {
 
     return (
         <motion.article
-            initial={{ opacity: 0, y: -10 }}
-            animate={{ opacity: 1, y: 10 }}
+            initial={{ y: -10 }}
+            animate={{ y: 10 }}
             className="border rounded-md noSelect
             border-black bg-white
 
