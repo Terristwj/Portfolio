@@ -112,8 +112,9 @@ export default function Projects() {
                         {projectArray.map((project, index) => (
                             <motion.article
                                 key={index}
-                                initial={{ opacity: 0}}
-                                animate={{ opacity: 1}}
+                                initial={{ opacity: 0.5, y: 100 }}
+                                animate={{ opacity: 1, y: 0 }}
+                                exit={{ opacity: 0, y: 100 }}
                                 className="border rounded-md noSelect
                                     border-black bg-white
                                     dark:border-white dark:bg-black hover:border-teal-500
