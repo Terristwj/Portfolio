@@ -61,7 +61,7 @@ export default function Projects() {
         setTimeout(() => {
             setProjectArray(temp);
             // Time must set >0 to prevent rendering bug
-        }, 500);
+        }, 1000);
         // eslint-disable-next-line react-hooks/exhaustive-deps
     }, [activeTypeTab, activeOrderbyTab]);
 
