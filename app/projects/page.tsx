@@ -17,6 +17,9 @@ const typeTabs = ["All", "Hackathon", "Academic"];
 const orderbyTabs = ["Newest", "Oldest"];
 
 // Animation delay
+// - Time must set >0 to prevent rendering bug
+// - Delay in desktop and mobile works differently
+const delayProjects = 1500;
 // const delayPerProject = 200;
 
 // Actions
@@ -61,7 +64,7 @@ export default function Projects() {
         setTimeout(() => {
             setProjectArray(temp);
             // Time must set >0 to prevent rendering bug
-        }, 1000);
+        }, delayProjects);
         // eslint-disable-next-line react-hooks/exhaustive-deps
     }, [activeTypeTab, activeOrderbyTab]);
 
@@ -111,7 +114,6 @@ export default function Projects() {
                                 key={index}
                                 initial={{ opacity: 0, y: 100 }}
                                 animate={{ opacity: 1, y: 0 }}
-                                exit={{ opacity: 0, y: 100 }}
                                 className="border rounded-md noSelect
                                     border-black bg-white
                                     dark:border-white dark:bg-black hover:border-teal-500
