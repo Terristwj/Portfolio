@@ -75,6 +75,7 @@ export default function ProjectCard({ project }: ProjectCardProps) {
                 {/* Subtitle START*/}
                 <h3
                     className="font-medium
+                        leading-tight tracking-tight
                         text-black dark:text-white
                         group-hover:text-teal-600 dark:group-hover:text-teal-400
                         transition-[color] duration-300"
@@ -85,7 +86,8 @@ export default function ProjectCard({ project }: ProjectCardProps) {
                 {/* Overview START */}
                 <p
                     className="mt-2.5 mb-2.5
-                        text-sm leading-relaxed montserrat
+                        leading-relaxed text-balance
+                        text-sm montserrat
                         text-black dark:text-white
                         transition-colors duration-300"
                 >

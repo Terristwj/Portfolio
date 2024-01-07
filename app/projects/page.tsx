@@ -53,7 +53,7 @@ export default function Projects() {
                 setProjectArray(myProjectActions.getAcademicProjects(order));
 
             // Time must set >0 to prevent rendering bug
-        }, 0);
+        }, 50);
 
         // eslint-disable-next-line react-hooks/exhaustive-deps
     }, [activeTypeTab, activeOrderbyTab]);
