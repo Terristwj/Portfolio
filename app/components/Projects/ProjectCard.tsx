@@ -54,7 +54,10 @@ export default function ProjectCard({ project }: ProjectCardProps) {
                 {/* Title START */}
                 <h3
                     className="text-lg font-bold poppins
-                        text-teal-600 dark:text-teal-400"
+                        text-teal-600 dark:text-teal-400
+                        group-hover:scale-105 
+                        group-hover:pl-2 group-hover:sm:pl-1 
+                        transition-all duration-500"
                 >
                     <a
                         href={mainLink}
