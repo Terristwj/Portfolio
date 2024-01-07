@@ -189,7 +189,10 @@ In this project,
 
 4. In PlanetScale, use the console commands to debug:
     - `SELECT * FROM Guestbook;`
+    - `SELECT * FROM Guestbook ORDER BY created_at DESC;`
     - `DELETE FROM Guestbook;`
+    - Example
+        - `SELECT * FROM Guestbook WHERE username = "Bossy Gnat" and (message !="fishy\\" and message != "omg" and message !="<h1>hey</h1>" and message !="<br/>");`
 
 ### Vercel & PlanetScale Documentation
 
