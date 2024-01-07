@@ -60,7 +60,7 @@
             "completion_sequence": 6,
             "title": "UrbanAIze",
             "subtitle": "Urban Planning with AI",
-            "overview": "An AI driven tutoring app for children. Note-taking, AI-curated flashcards, and an AI Chatbot named Pam.",
+            "overview": "Empowered by various AI models. Generate diverse 3D urban layout plans for better city development.",
             "links": [
                 [
                     "figma",
@@ -97,7 +97,7 @@
         {
             "completion_sequence": 7,
             "title": "WeSports",
-            "subtitle": "Booking Badminton Courts Made Easy",
+            "subtitle": "Booking Badminton Courts",
             "overview": "The WeSports App facilitate seamless booking of badminton courts - Connecting Youths through Sports.",
             "links": [
                 [
@@ -113,7 +113,7 @@
             "completion_sequence": 8,
             "title": "Reventé",
             "subtitle": "Sustainable Fashion Marketplace",
-            "overview": "An eCommerce platform that allows users to buy and sell pre-loved fashion items. Gamification and AI empowered.",
+            "overview": "An eCommerce platform for fashionistas to buy and sell pre-loved fashion items. gamification and AI empowered.",
             "links": [
                 ["site", "https://smu-wad2.web.app/about"],
                 [

@@ -17,7 +17,7 @@ const typeTabs = ["All", "Hackathon", "Academic"];
 const orderbyTabs = ["Newest", "Oldest"];
 
 // Animation delay
-const delayPerProject = 200;
+// const delayPerProject = 200;
 
 // Actions
 const myProjectActions = new ProjectActions();
@@ -33,14 +33,15 @@ export default function Projects() {
     );
 
     // Initial delay settings
-    let [maxDelay, setMaxDelay] = useState(
-        projectArray.length * delayPerProject
-    );
+    // let [maxDelay, setMaxDelay] = useState(
+    //     projectArray.length * delayPerProject
+    // );
 
     // UseEffects for tracking tab changes
     useEffect(() => {
-        // To animate the previous exit
-        // And to fix a rendering bug
+        // Reset projectArray to [] to trigger AnimatePresence
+        // - Animates the previous exit
+        // - Fixes rendering bug
         setProjectArray([]);
 
         let order: "DESC" | "ASC" =
@@ -54,13 +55,13 @@ export default function Projects() {
         } else if (activeTypeTab === "Academic") {
             temp = myProjectActions.getAcademicProjects(order);
         }
-        setMaxDelay(projectArray.length * delayPerProject);
+        // setMaxDelay(projectArray.length * delayPerProject);
 
         // Timer between temp and []
         setTimeout(() => {
             setProjectArray(temp);
             // Time must set >0 to prevent rendering bug
-        }, 100);
+        }, 500);
         // eslint-disable-next-line react-hooks/exhaustive-deps
     }, [activeTypeTab, activeOrderbyTab]);
 
@@ -108,12 +109,14 @@ export default function Projects() {
                         {projectArray.map((project, index) => (
                             <motion.article
                                 key={index}
-                                exit={{ opacity: 0.5 }}
-                                className="border rounded-md
+                                initial={{ opacity: 0, y: 100 }}
+                                animate={{ opacity: 1, y: 0 }}
+                                exit={{ opacity: 0, y: 100 }}
+                                className="border rounded-md noSelect
                                     border-black bg-white
                                     dark:border-white dark:bg-black hover:border-teal-500
                                     hover:shadow-xl hover:shadow-teal-100 hover:dark:shadow-teal-900
-                                    transition-all duration-500 ease-in-out
+                                    transition-all duration-500
                                     group relative"
                             >
                                 <ProjectCard project={project} />

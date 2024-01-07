@@ -26,12 +26,12 @@ export async function postEntry(message: string, username: string) {
         },
     });
 
-    // Reload data onSend
-    revalidatePath("/guestbook");
+    // Clear cache and reload page onSend
+    revalidateGuestbook();
 }
 
-// Reload Guestbook messages
-export async function reloadGuestbook() {
-    // Reload
+// Reload Guestbook messages by resetting the cache
+export async function revalidateGuestbook() {
+    // Clear cache and reload page
     revalidatePath("/guestbook");
 }

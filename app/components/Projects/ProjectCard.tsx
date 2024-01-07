@@ -23,11 +23,11 @@ export default function ProjectCard({ project }: ProjectCardProps) {
         <>
             {/* Image of Project START */}
             <div
-                className="overflow-hidden noSelect
+                className="overflow-hidden
                     relative w-full h-56
                     border-b border-black dark:border-white
                     group-hover:border-teal-500
-                    transition-all duration-500 ease-in-out"
+                    transition-[border] duration-500 ease-in-out"
             >
                 <a
                     href={mainLink}
@@ -56,7 +56,14 @@ export default function ProjectCard({ project }: ProjectCardProps) {
                     className="text-lg font-bold poppins
                         text-teal-600 dark:text-teal-400"
                 >
-                    <a href={mainLink} target="_blank">
+                    <a
+                        href={mainLink}
+                        target="_blank"
+                        className="border-2 border-transparent 
+                            hover:border-t-teal-600 hover:border-b-teal-600
+                            dark:hover:border-t-teal-400 dark:hover:border-b-teal-400
+                            transition-[border] duration-500"
+                    >
                         {project.title}
                     </a>
                 </h3>
@@ -65,7 +72,9 @@ export default function ProjectCard({ project }: ProjectCardProps) {
                 {/* Subtitle START*/}
                 <h3
                     className="font-medium
-                        text-black dark:text-white"
+                        text-black dark:text-white
+                        group-hover:text-teal-600 dark:group-hover:text-teal-400
+                        transition-[color] duration-300"
                 >
                     {project.subtitle}
                 </h3>
@@ -74,7 +83,8 @@ export default function ProjectCard({ project }: ProjectCardProps) {
                 <p
                     className="mt-2.5 mb-2.5
                         text-sm leading-relaxed montserrat
-                        text-black dark:text-white"
+                        text-black dark:text-white
+                        transition-colors duration-300"
                 >
                     {project.overview}
                 </p>
@@ -99,7 +109,6 @@ export default function ProjectCard({ project }: ProjectCardProps) {
                         >
                             Technology Stack
                         </h3>
-
                         <ParallaxText baseVelocity={-baseVelocity}>
                             {project.tech_stack}
                         </ParallaxText>
@@ -110,7 +119,7 @@ export default function ProjectCard({ project }: ProjectCardProps) {
                     {/* Tech Stack END */}
 
                     {/* Visit Items START */}
-                    <div className="flex noSelect">
+                    <div className="flex">
                         {project.links.map((link, index) => {
                             return (
                                 <div key={`${project.title}_${link[0]}`}>
@@ -120,10 +129,10 @@ export default function ProjectCard({ project }: ProjectCardProps) {
                                         target="_blank"
                                         className="capitalize
                                             text-teal-600 dark:text-teal-400 font-medium
-                                            border-2 border-transparent pb-1 pt-1
+                                            border-2 border-transparent
                                             hover:border-t-teal-600 dark:hover:border-t-teal-400
                                             group-hover:ms-1
-                                            transition-all duration-500 "
+                                            transition-all duration-500"
                                     >
                                         &rarr; {link[0]}
                                     </a>
