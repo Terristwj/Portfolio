@@ -200,6 +200,13 @@ In this project,
 
 -   In `package.json` -> `scripts` add `"postinstall": "prisma generate"`
 
+### Vercel Add-ons Documentation
+
+-   [Speed Insights](https://vercel.com/docs/speed-insights)
+    -   `npm i @vercel/speed-insights`
+-   [Web Analytics](https://vercel.com/docs/analytics)
+    -   `@vercel/analytics`
+
 ### References
 
 1.  Main Tutorial
@@ -229,6 +236,7 @@ In this project,
 4.  Technical References
     1. [Window is not defined](https://bobbyhadz.com/blog/javascript-referenceerror-window-is-not-defined)
     2. [Unsplash image from keyword api](https://dev.to/koshirok096/get-an-unsplash-image-dynamically-according-to-the-random-keyword-api-3n75#:~:text=Also%2C%20besides%20that%20you%20designate,some%20filters%20to%20this%20URL.)
+    3. [NextJS meta data](https://nextjs.org/docs/app/building-your-application/optimizing/metadata)
 
 ## Boilerplate Documentation
 
