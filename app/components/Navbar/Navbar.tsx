@@ -15,7 +15,7 @@ import ThemeButton from "./ThemeButton";
 // Drop-delay settings START
 const tabs = [
     { to: "/", name: "About Me", delay: 0.5 },
-    { to: "/guestbook", name: "Guestbook", delay: 1 },
+    // { to: "/guestbook", name: "Guestbook", delay: 1 },
     { to: "/projects", name: "Projects", delay: 1.5 },
 ];
 const desktopThemeBtnDelay = 2;
