@@ -87,7 +87,7 @@ export default function About() {
                         <p>
                             I’m currently a penultimate student at Singapore Management University,
                             pursuing a BSc in Information Systems. My passion for creating Full Stack
-                            applications often shines through my participation in hackathons—where I’ve taken
+                            applications often shines through my participation in hackathons, where I’ve taken
                             part in 10 to date. This portfolio highlights the skills I’ve developed with 
                             Next.js and TailwindCSS.
                         </p>
