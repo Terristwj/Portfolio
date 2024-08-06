@@ -82,23 +82,27 @@ export default function About() {
                             montserrat"
                     >
                         <p>
-                            Hey everyone my name is Terris, I am 23 years old
-                            and i am a Full Stack developer based in Singapore.
+                            Hi there! I’m Terris, a 24-year-old Full Stack Developer based in Singapore.
                         </p>
                         <p>
-                            I am currently a student in Singapore Management
-                            University and I love building Full Stack
-                            applications during my spare time. In fact, this
-                            portfolio was an experiment to try out Next.js with
-                            TailwindCSS.
+                            I’m currently a penultimate student at Singapore Management University,
+                            pursuing a BSc in Information Systems. My passion for creating Full Stack
+                            applications often shines through my participation in hackathons—where I’ve taken
+                            part in 10 to date. This portfolio highlights the skills I’ve developed with 
+                            Next.js and TailwindCSS.
                         </p>
                         <p>
-                            Building applications, such as eCommerce,
-                            micro-site, or SaaS, is my ultimate combination of
-                            creative expression, technical expertise, and
-                            self-improvement. I am thrilled to continue this
-                            journey, honing my skills, and inspiring others in
-                            the process.
+                            My journey in tech spans beyond Full Stack development. I’ve delved into
+                            AI/ML, backend development (APIs and algorithms), solution architecture,
+                            UI/UX design, and cloud computing. With three internships under my belt,
+                            including my current role as a Frontend Developer Intern at Accenture, I 
+                            continue to expand my skills and explore new technological frontiers.
+                        </p>
+                        <p>
+                            Building applications—whether they’re eCommerce platforms, micro-sites, or
+                            SaaS solutions—is where my creativity, technical expertise, and passion
+                            intersect. I’m excited to keep growing in this field and to inspire others along
+                            the way.
                         </p>
                     </div>
                     {/* Description END */}
