@@ -6,10 +6,11 @@ import { AnimatePresence, motion } from "framer-motion";
 import PageAnimate from "@/app/components/wrappers/PageAnimate";
 import PageDefault from "@/app/components/wrappers/PageDefault";
 
-import AnimatedTabs from "@/app/components/Projects/AnimatedTabs";
-import ProjectCard from "@/app//components/Projects/ProjectCard";
+import AnimatedTabs from "@/app/projects/components/AnimatedTabs";
+import ProjectCard from "@/app/projects/components/ProjectCard";
 
-import ProjectActions from "@/app//components/Projects/ProjectActions";
+import ProjectActions from "@/app/projects/components/ProjectActions";
+import IProject from "@/app/projects/components/ProjectInterface";
 
 // Settings
 const typeTabs = ["All", "Hackathon", "Academic"];
@@ -20,18 +21,15 @@ const myProjectActions = new ProjectActions();
 
 export default function Projects() {
     // Default: All/Newest
-    let [activeTypeTab, setActiveTypeTab] = useState(typeTabs[0]);
-    let [activeOrderbyTab, setActiveOrderbyTab] = useState(orderbyTabs[0]);
-
-    // Default projects to be displayed
-    let [projectArray, setProjectArray] = useState(
-        myProjectActions.getAllProjects("DESC")
+    let [activeTypeTab, setActiveTypeTab] = useState<string>(typeTabs[0]);
+    let [activeOrderbyTab, setActiveOrderbyTab] = useState<string>(
+        orderbyTabs[0]
     );
 
-    // Initial delay settings
-    // let [maxDelay, setMaxDelay] = useState(
-    //     projectArray.length * delayPerProject
-    // );
+    // Default projects to be displayed
+    let [projectArray, setProjectArray] = useState<IProject[]>(
+        myProjectActions.getAllProjects("DESC")
+    );
 
     // UseEffects for tracking tab changes
     useEffect(() => {
@@ -61,7 +59,7 @@ export default function Projects() {
     return (
         <PageAnimate>
             <PageDefault title="Projects" bottomGap={true}>
-                {/* Control Tabs START */}
+                {/* Tabs Section - Controls START */}
                 <div
                     className="flex justify-between noSelect
                         fira-code text-sm font-medium"
@@ -88,7 +86,7 @@ export default function Projects() {
                     />
                     {/* (Right-tabs) Project Order END */}
                 </div>
-                {/* Controls Tabs END */}
+                {/* Tabs Section - Controls END */}
 
                 {/* Projects Display START */}
                 <div

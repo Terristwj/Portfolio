@@ -24,7 +24,7 @@ export default function AnimatedTabs({
                     <button
                         key={tab}
                         disabled={useStateActiveTab.cur === tab}
-                        onClick={() => {
+                        onClick={(): void => {
                             useStateActiveTab.set(tab);
                         }}
                         className={`${

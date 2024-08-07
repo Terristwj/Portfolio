@@ -2,8 +2,8 @@
 
 import Image from "next/image";
 
-import IProject from "@/app/components/Projects/ProjectInterface";
-import ParallaxText from "@/app/components/Projects/ParallaxText";
+import IProject from "@/app/projects/components/ProjectInterface";
+import ParallaxText from "@/app/projects/components/ParallaxText";
 
 interface ProjectCardProps {
     project: IProject;

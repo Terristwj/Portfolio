@@ -14,7 +14,7 @@ export default function ThemeButton({
     delay,
 }: ThemeButtonProps): JSX.Element | null {
     const { setTheme, resolvedTheme } = useTheme();
-    const [mounted, setMounted] = useState(false);
+    const [mounted, setMounted] = useState<boolean>(false);
 
     // Prevents rendering error logs
     useEffect(() => {

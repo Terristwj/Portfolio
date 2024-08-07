@@ -1,7 +1,7 @@
 "use client";
 
-import IProject from "@/app/components/Projects/ProjectInterface";
-import projects from "@/app/projects/data/projects.json";
+import IProject from "@/app/projects/components/ProjectInterface";
+import projects from "@/data/projects/projects.json";
 
 // Project object
 class ProjectActions {

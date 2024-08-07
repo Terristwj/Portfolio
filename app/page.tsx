@@ -22,8 +22,8 @@ export default function About(): JSX.Element {
             <PageDefault title="About Me" divider={true} bottomGap={true}>
                 <div
                     className="items-center space-y-2
-                        xl:grid xl:grid-cols-3
-                        xl:gap-x-8 xl:space-y-0"
+                        lg:grid lg:grid-cols-3
+                        lg:gap-x-8 lg:space-y-0"
                 >
                     {/* Profile START */}
                     <div className="flex flex-col items-center pt-8 noSelect">
@@ -80,7 +80,7 @@ export default function About(): JSX.Element {
                         className="max-w-none pt-8 pb-7
                             prose-base montserrat
                             dark:prose-invert 
-                            xl:col-span-2 xl:prose-xl"
+                            lg:col-span-2 xl:prose-xl"
                     >
                         <p>
                             Hi there! I’m Terris, a 24-year-old Full Stack
