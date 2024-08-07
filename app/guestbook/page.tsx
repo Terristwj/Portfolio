@@ -1,65 +1,53 @@
-import { getEntries } from "../api/dbAction";
+"use client";
 
-import PageAnimate from "../components/wrappers/PageAnimate";
-import PageDefault from "../components/wrappers/PageDefault";
+import { useState, useEffect } from "react";
 
-import Form from "../components/Guestbook/Form/Form";
-import ResultEntries from "../components/Guestbook/ResultEntries";
+// Wrappers
+import PageAnimate from "@/app/components/wrappers/PageAnimate";
+import PageDefault from "@/app/components/wrappers/PageDefault";
 
-// Resets cache data after 5 sec
-// export const revalidate = 5;
+// Content
+import Form from "@/app/guestbook/components/Form/Form";
+import ResultEntries from "@/app/guestbook/components/ResultEntries";
 
-// Result-Entries Settings START
-// Interval to revalidate all entries
-const revalidateInterval = 30000;
+import IMessage from "@/app/guestbook/components/MessageInterface";
 
-// Hover Image Themes
-const entryHoverImageThemes = {
-    // Set 1
-    1: "landmarks",
-    2: "skylines",
-    // Set 2
-    3: "holiday",
-    4: "fun",
-    // Set 3
-    5: "forest",
-    6: "atlantis ocean",
-    7: "mountain",
-    // Set 4
-    8: "ocean life animals",
-    9: "animal exotic",
-    10: "animal pet",
-};
-// Number of entries to display - must match the number of themes
-const numEntries = Object.keys(entryHoverImageThemes).length;
+// Actions
+import { getAllMessages, addMessage } from "@/app/api/guestbook/MessageActions";
 
-// Per Entry Settings
-const animateDuration = 0.8;
-const staggerInterval = 0.1;
+export default function Guestbook(): JSX.Element | null {
+    const [mounted, setMounted] = useState<boolean>(false);
+    const [data, setData] = useState<Array<IMessage>>([]);
 
-// Result-Entries Settings END
+    // useEffect required to prevent rendering issues
+    useEffect((): void => {
+        // Prevents rendering error logs
+        setMounted(true);
 
-export default async function Guestbook() {
-    let data = await getEntries(numEntries);
+        // Calls backend to refetch
+        resetData();
+    }, []);
+
+    if (!mounted) {
+        return null;
+    }
+
+    // Reusable reset
+    async function resetData(): Promise<void> {
+        getAllMessages("DESC").then((response: Array<IMessage>): void => {
+            setData(response);
+        });
+    }
 
     return (
         <PageAnimate>
             <PageDefault title="Guestbook">
                 <div className="w-full pt-8">
                     {/* Inputs */}
-                    <Form />
+                    <Form addMessage={addMessage} resetData={resetData} />
 
                     {/* Display Results */}
-                    <ResultEntries
-                        // Entries
-                        entries={data}
-                        entryHoverImageThemes={entryHoverImageThemes}
-                        // Entries Settings
-                        revalidateInterval={revalidateInterval}
-                        // Per Entry Settings
-                        animateDuration={animateDuration}
-                        staggerInterval={staggerInterval}
-                    />
+                    <ResultEntries entries={data} resetData={resetData} />
                 </div>
             </PageDefault>
         </PageAnimate>

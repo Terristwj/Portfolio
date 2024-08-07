@@ -1,33 +1,46 @@
 "use client";
 
 import React, { useRef } from "react";
-import { useMotionValue, motion, useSpring, useTransform } from "framer-motion";
+import {
+    useMotionValue,
+    MotionValue,
+    motion,
+    useSpring,
+    useTransform,
+} from "framer-motion";
 
-var rn = require("random-number");
+import rn from "random-number";
 
-interface LinkProps {
+interface ResultEntryProps {
     username: string;
     message: string;
     imgSrc: string;
 }
 
-export default function ResultEntry({ username, message, imgSrc }: LinkProps) {
+export default function ResultEntry({
+    username,
+    message,
+    imgSrc,
+}: ResultEntryProps): JSX.Element {
     // Random rotation value
     // - Used to rotate the image
-    const rotateVal = rn({
-        min: -15,
-        max: 15,
-    }).toFixed(1);
+    const rotateVal: number = parseFloat(
+        rn({
+            min: -15,
+            max: 15,
+        }).toFixed(1)
+    );
 
-    const ref = useRef<HTMLAnchorElement | null>(null);
+    const ref: React.MutableRefObject<HTMLAnchorElement | null> =
+        useRef<HTMLAnchorElement | null>(null);
 
     // Mouse Position
-    const x = useMotionValue(0);
-    const y = useMotionValue(0);
+    const x: MotionValue<number> = useMotionValue(0);
+    const y: MotionValue<number> = useMotionValue(0);
 
     // Mouse Position Spring
-    const mouseXSpring = useSpring(x);
-    const mouseYSpring = useSpring(y);
+    const mouseXSpring: MotionValue<any> = useSpring(x);
+    const mouseYSpring: MotionValue<any> = useSpring(y);
 
     // Sliding Hovers
     // Number - Elasticity
@@ -38,23 +51,31 @@ export default function ResultEntry({ username, message, imgSrc }: LinkProps) {
     // const wordLeft = useTransform(mouseXSpring, [0.3, 0], ["60%", "80%"]);
 
     // Sliding Hovers - Images
-    const imgTop = useTransform(mouseYSpring, [-0.5, 0], ["25%", "75%"]);
-    const imgLeft = useTransform(mouseXSpring, [0, 0.3], ["70%", "80%"]);
+    const imgTop: MotionValue<string> = useTransform(
+        mouseYSpring,
+        [-0.5, 0],
+        ["25%", "75%"]
+    );
+    const imgLeft: MotionValue<string> = useTransform(
+        mouseXSpring,
+        [0, 0.3],
+        ["70%", "80%"]
+    );
 
     // Reset values on mouse move
     const handleMouseMove = (
         e: React.MouseEvent<HTMLAnchorElement, MouseEvent>
-    ) => {
-        const rect = ref.current!.getBoundingClientRect();
+    ): void => {
+        const rect: DOMRect = ref.current!.getBoundingClientRect();
 
-        const width = rect.width;
-        const height = rect.height;
+        const width: number = rect.width;
+        const height: number = rect.height;
 
-        const mouseX = e.clientX - rect.left;
-        const mouseY = e.clientY - rect.top;
+        const mouseX: number = e.clientX - rect.left;
+        const mouseY: number = e.clientY - rect.top;
 
-        const xPct = mouseX / width - 0.5;
-        const yPct = mouseY / height - 0.5;
+        const xPct: number = mouseX / width - 0.5;
+        const yPct: number = mouseY / height - 0.5;
 
         x.set(xPct);
         y.set(yPct);
@@ -71,9 +92,9 @@ export default function ResultEntry({ username, message, imgSrc }: LinkProps) {
                 py-4 md:py-8
                 group transition-all duration-500"
         >
-            {/* Left Item START */}
+            {/* Left Item - START ================================================================ */}
             <div>
-                {/* Username START */}
+                {/* Username - START  ================================ */}
                 <motion.span
                     variants={{
                         initial: { x: 0 },
@@ -92,26 +113,28 @@ export default function ResultEntry({ username, message, imgSrc }: LinkProps) {
                         group-hover:transition-colors 
                         group-hover:duration-500"
                 >
-                    {username.split("").map((char, i) => (
-                        <motion.span
-                            key={i}
-                            variants={{
-                                initial: { x: 0 },
-                                whileHover: { x: 16 },
-                            }}
-                            transition={{ type: "spring" }}
-                            className="inline-block
+                    {username.split("").map(
+                        (char: string, i: number): JSX.Element => (
+                            <motion.span
+                                key={i}
+                                variants={{
+                                    initial: { x: 0 },
+                                    whileHover: { x: 16 },
+                                }}
+                                transition={{ type: "spring" }}
+                                className="inline-block
                             hover:text-black
                             hover:dark:text-white
                             hover:transition-colors hover:duration-300"
-                        >
-                            {char}
-                        </motion.span>
-                    ))}
+                            >
+                                {char}
+                            </motion.span>
+                        )
+                    )}
                 </motion.span>
-                {/* Username END */}
+                {/* Username - END  ================================== */}
 
-                {/* Message START */}
+                {/* Message - START  ================================= */}
                 <span
                     className="block relative z-10 mt-2
                         capitalize tracking-tighter italic krona-one
@@ -129,9 +152,9 @@ export default function ResultEntry({ username, message, imgSrc }: LinkProps) {
                     {message}
                     &quot;
                 </span>
-                {/* Message END */}
+                {/* Message - END  =================================== */}
             </div>
-            {/* Left Item END */}
+            {/* Left Item - END ==================================================================== */}
 
             {/* Sliding Hovers - Words START */}
             {/* <motion.span
@@ -165,9 +188,10 @@ export default function ResultEntry({ username, message, imgSrc }: LinkProps) {
                 }}
                 transition={{ type: "spring" }}
                 src={imgSrc}
-                className="absolute object-cover
-                    rounded-md h-24 w-32 md:h-48 md:w-64
+                className="absolute object-cover rounded-md
                     hover:rounded-none hover:md:h-full
+                    h-24 w-32 
+                    md:h-48 md:w-64
                     transition-[height] duration-500"
                 draggable={false}
                 alt={`Image for ${username} is missing`}

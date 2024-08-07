@@ -1,10 +1,7 @@
 "use client";
 
-import IProject from "./ProjectInterface";
-
-import projects from "../../projects/data/projects.json";
-
-// var rn = require("random-number");
+import IProject from "@/app/components/Projects/ProjectInterface";
+import projects from "@/app/projects/data/projects.json";
 
 // Project object
 class ProjectActions {
@@ -48,23 +45,6 @@ class ProjectActions {
             return a[key] - b[key];
         });
     }
-
-    /**
-     * Return a random existing image_src.
-     * @summary Get all projects, then return a random image_src.
-     * @return {Array<IProject>} The sorted data.
-     */
-    // getRandomImageSrc(): string {
-    //     const projects = this.getAllProjects("DESC");
-    //     const totalLength = projects.length;
-
-    //     const randomIndex = rn({
-    //         min: 0,
-    //         max: totalLength - 1,
-    //         integer: true,
-    //     });
-    //     return projects[randomIndex].img_src;
-    // }
 }
 
 export default ProjectActions;

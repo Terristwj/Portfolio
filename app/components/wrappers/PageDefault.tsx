@@ -1,3 +1,5 @@
+"use client";
+
 interface PageDefaultProps {
     children: React.ReactNode;
     title: string;
@@ -10,7 +12,7 @@ export default function PageDefault({
     title,
     divider = false,
     bottomGap = false,
-}: PageDefaultProps) {
+}: PageDefaultProps): JSX.Element {
     return (
         <div
             className={`${

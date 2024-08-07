@@ -2,7 +2,7 @@
 
 // https://reactsvgicons.com/
 
-export function IconSend(props: React.SVGProps<SVGSVGElement>) {
+export function IconSend(props: React.SVGProps<SVGSVGElement>): JSX.Element {
     return (
         <svg
             viewBox="0 0 1024 1024"
@@ -19,7 +19,7 @@ export function IconSend(props: React.SVGProps<SVGSVGElement>) {
     );
 }
 
-export function IconRefresh(props: React.SVGProps<SVGSVGElement>) {
+export function IconRefresh(props: React.SVGProps<SVGSVGElement>): JSX.Element {
     return (
         <svg
             viewBox="0 0 512 512"
@@ -48,7 +48,7 @@ export function IconRefresh(props: React.SVGProps<SVGSVGElement>) {
     );
 }
 
-export function IconLoading(props: React.SVGProps<SVGSVGElement>) {
+export function IconLoading(props: React.SVGProps<SVGSVGElement>): JSX.Element {
     return (
         <svg
             viewBox="0 0 16 16"

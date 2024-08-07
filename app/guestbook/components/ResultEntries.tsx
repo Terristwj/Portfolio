@@ -1,59 +1,65 @@
 "use client";
+import { useState } from "react";
 import { motion } from "framer-motion";
 
-import { revalidateGuestbook } from "../../api/dbAction";
-import ResultEntry from "./ResultEntry";
+import IMessage from "@/app/guestbook/components/MessageInterface";
+import ResultEntry from "@/app/guestbook/components/ResultEntry";
 
-interface ResultsProps {
-    // Entries
-    entries: Array<{
-        id: string;
-        message: string;
-        username: string;
-        created_at: Date;
-    }>;
-    entryHoverImageThemes: { [key: number]: string };
+// Result-Entries Settings
+import {
+    // Refresh messages
+    revalidateInterval,
 
-    // Entries Settings
-    revalidateInterval: number;
+    // Animation
+    animateDuration,
+    staggerInterval,
 
-    // Per Entry Settings
-    animateDuration: number;
-    staggerInterval: number;
+    // Random Image Src
+    randomImageSrc,
+    imageWidth,
+    imageHeight,
+} from "@/app/guestbook/constants";
+
+interface ResultEntriesProps {
+    entries: Array<IMessage>;
+    resetData: () => Promise<void>;
 }
 
 export default function ResultEntries({
-    // Entries
     entries,
-    entryHoverImageThemes,
+    resetData,
+}: ResultEntriesProps): JSX.Element {
+    const [hasInterval, setHasInterval] = useState<boolean>(false);
 
-    // Entries Settings
-    revalidateInterval,
-
-    // Per Entry Settings
-    animateDuration,
-    staggerInterval,
-}: ResultsProps) {
     // To avoid parent (server-side) from having errors
     // - server-side components doesn't have window object
     if (typeof window !== "undefined") {
-        // Every interval, refresh the data
-        setTimeout(() => {
-            // Avoid using router.reload()
-            // - Reloading the page does not clear cache
+        // Only set interval once
+        if (!hasInterval) {
+            setHasInterval(true);
 
-            // Clear cache and reload page
-            revalidateGuestbook();
-        }, revalidateInterval);
+            // Every interval, refresh the data
+            setInterval(async (): Promise<void> => {
+                // Avoid using router.reload()
+                // - Reloading the page does not clear cache
+                await resetData();
+            }, revalidateInterval);
+        }
+    }
+
+    function formatImageSrc(width: number, height: number): string {
+        return `${randomImageSrc}/${width}/${height}`;
     }
 
     return (
         <div className="flex flex-col space-y-2 font-medium">
-            {entries.map((entry, index) => {
-                // Unsplash API for random images
-                const imgSrc = `https://source.unsplash.com/random/800x600?${
-                    entryHoverImageThemes[index + 1]
-                }`;
+            {entries.map((entry: IMessage, index: number): JSX.Element => {
+                // picsum.photos API for random images
+                const imgSrc: string = formatImageSrc(
+                    imageWidth,
+                    imageHeight - index
+                );
+
                 return (
                     <motion.div
                         key={entry.id}
@@ -68,7 +74,7 @@ export default function ResultEntries({
                             delay: staggerInterval * index,
                         }}
                     >
-                        {/* Version 1 */}
+                        {/* Version 1 - Only Text*/}
                         {/* <div className="w-full break-words leading-5">
                             <span className="text-teal-600 dark:text-teal-500">
                                 {entry.username}:
@@ -76,10 +82,7 @@ export default function ResultEntries({
                             <span className="montserrat">{entry.message}</span>
                         </div> */}
 
-                        {/* Debugging */}
-                        {/* {imgSrc} */}
-
-                        {/* Version 2 */}
+                        {/* Version 2 - Hover Random Images*/}
                         <ResultEntry
                             username={entry.username}
                             message={entry.message}

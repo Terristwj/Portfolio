@@ -3,13 +3,13 @@
 import { useEffect, useState } from "react";
 import { AnimatePresence, motion } from "framer-motion";
 
-import PageAnimate from "../components/wrappers/PageAnimate";
-import PageDefault from "../components/wrappers/PageDefault";
+import PageAnimate from "@/app/components/wrappers/PageAnimate";
+import PageDefault from "@/app/components/wrappers/PageDefault";
 
-import AnimatedTabs from "../components/Projects/AnimatedTabs";
-import ProjectCard from "../components/Projects/ProjectCard";
+import AnimatedTabs from "@/app/components/Projects/AnimatedTabs";
+import ProjectCard from "@/app//components/Projects/ProjectCard";
 
-import ProjectActions from "../components/Projects/ProjectActions";
+import ProjectActions from "@/app//components/Projects/ProjectActions";
 
 // Settings
 const typeTabs = ["All", "Hackathon", "Academic"];

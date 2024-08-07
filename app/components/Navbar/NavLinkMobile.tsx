@@ -12,7 +12,7 @@ export default function NavLinkMobile({
     pathname,
     to,
     name,
-}: NavLinkMobileProps) {
+}: NavLinkMobileProps): JSX.Element {
     return (
         <Link
             href={to}

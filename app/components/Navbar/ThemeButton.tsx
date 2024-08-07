@@ -3,17 +3,20 @@
 import { useTheme } from "next-themes";
 import { useState, useEffect } from "react";
 
-import DropTransition from "./DropTransition";
-import HeroIcon from "./HeroIcon";
+import DropTransition from "@/app/components/Navbar/DropTransition";
+import HeroIcon from "@/app/components/Navbar/HeroIcon";
 
 interface ThemeButtonProps {
     delay: number;
 }
 
-export default function ThemeButton({ delay }: ThemeButtonProps) {
+export default function ThemeButton({
+    delay,
+}: ThemeButtonProps): JSX.Element | null {
     const { setTheme, resolvedTheme } = useTheme();
     const [mounted, setMounted] = useState(false);
 
+    // Prevents rendering error logs
     useEffect(() => {
         setMounted(true);
     }, []);

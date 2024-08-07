@@ -3,20 +3,28 @@
 const Configuration = require("openai");
 const OpenAIApi = require("openai");
 
-// OpenAI Setup
-const OPENAI_APIKEY = process.env.OPENAI_APIKEY;
-const configuration = new Configuration({
+// OpenAI Setup - START ================================================================ //
+const OPENAI_APIKEY: string | undefined = process.env.OPENAI_APIKEY;
+const configuration: any = new Configuration({
     apiKey: OPENAI_APIKEY,
 });
-const openai = new OpenAIApi(configuration);
+const openAI = new OpenAIApi(configuration);
+// OpenAI Setup - END ================================================================== //
 
-// ////////////// //
-// Settings START //
-// ////////////// //
+interface ISystem {
+    role: string;
+    content: string;
+}
+
+// Settings - START ==================================================================== //
+
 // Model configuration
-const model = "gpt-3.5-turbo";
+// - https://openai.com/api/pricing/
+// const model: string = "gpt-3.5-turbo";
+const model: string = "gpt-4o-mini";
+
 // Content configuration
-let content = "You are a profanity checker and negativity checker.";
+let content: string = "You are a profanity checker and negativity checker.";
 content +=
     "If any sentence contain profanity or inappropriateness, return 'true'.";
 content +=
@@ -29,26 +37,28 @@ content +=
 content +=
     "If any sentence contain religious slender like 'jesus' or 'muslim', return 'true'.";
 content += "If not 'true', return 'false'";
+
 // System configuration
-const system = {
+const system: ISystem = {
     role: "system",
     content,
 };
-// //////////// //
-// Settings END //
-// //////////// //
 
-export async function isProfaneAI(prompt: string) {
+// Settings - END ==================================================================== //
+
+export async function isProfaneAI(prompt: string): Promise<boolean> {
     "use server";
 
-    const completion = await openai.chat.completions.create({
+    const completion = await openAI.chat.completions.create({
         model,
         messages: [system, { role: "user", content: prompt }],
     });
 
-    // Debugging
-    // console.log(prompt);
-    // console.log(completion.choices[0].message.content);
+    const response = completion.choices[0].message.content;
+
+    // Logs / Debugging
+    console.log(`Someone asked: ${prompt}`);
+    console.log(`OpenAI responded is profane: ${response}`);
 
     // Return true if:
     //  1) Profane
@@ -58,7 +68,7 @@ export async function isProfaneAI(prompt: string) {
     //  5) Sarcasm
     //  6) Age-restricted words
     // Else return false
-    if (completion.choices[0].message.content.toLowerCase().includes("true")) {
+    if (response.includes("true")) {
         console.log("AI detected profanity/negativity in:", prompt);
         return true;
     } else return false;

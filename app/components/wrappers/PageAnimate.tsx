@@ -7,7 +7,9 @@ interface PageAnimateProps {
     children: ReactNode;
 }
 
-export default function PageAnimate({ children }: PageAnimateProps) {
+export default function PageAnimate({
+    children,
+}: PageAnimateProps): JSX.Element {
     return (
         <motion.div
             initial={{ opacity: 0, y: -20 }}

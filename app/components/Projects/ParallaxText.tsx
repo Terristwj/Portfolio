@@ -1,11 +1,12 @@
 "use client";
 
-import { useRef } from "react";
+import { useRef, MutableRefObject } from "react";
 import {
     motion,
     useScroll,
     useSpring,
     useTransform,
+    MotionValue,
     useMotionValue,
     useVelocity,
     useAnimationFrame,
@@ -22,30 +23,39 @@ export default function ParallaxText({
     children,
     baseVelocity, // Positive -> Move left, Negative -> Move right
     numSpaces = 2,
-}: ParallaxProps) {
-    const hoverSpeedMultiply = 4;
+}: ParallaxProps): JSX.Element {
+    const hoverSpeedMultiply: number = 4;
 
-    const baseX = useMotionValue(0);
-    const { scrollY } = useScroll();
-    const scrollVelocity = useVelocity(scrollY);
-    const smoothVelocity = useSpring(scrollVelocity, {
+    const baseX: MotionValue<number> = useMotionValue(0);
+    const { scrollY }: { scrollY: MotionValue<number> } = useScroll();
+    const scrollVelocity: MotionValue<number> = useVelocity(scrollY);
+    const smoothVelocity: MotionValue<any> = useSpring(scrollVelocity, {
         damping: 50,
         stiffness: 400,
     });
-    const velocityFactor = useTransform(smoothVelocity, [0, 1000], [0, 5], {
-        clamp: false,
-    });
+    const velocityFactor: MotionValue<number> = useTransform(
+        smoothVelocity,
+        [0, 1000],
+        [0, 5],
+        {
+            clamp: false,
+        }
+    );
 
     /**
      * This is a magic wrapping for the length of the text - you
      * have to replace for wrapping that works for you or dynamically
      * calculate
      */
-    const x = useTransform(baseX, (v) => `${wrap(-20, -45, v)}%`);
+    const x: MotionValue<string> = useTransform(
+        baseX,
+        (v: number): string => `${wrap(-20, -45, v)}%`
+    );
 
-    const directionFactor = useRef<number>(1);
-    useAnimationFrame((t, delta) => {
-        let moveBy = directionFactor.current * baseVelocity * (delta / 1000);
+    const directionFactor: MutableRefObject<number> = useRef<number>(1);
+    useAnimationFrame((t: number, delta: number) => {
+        let moveBy: number =
+            directionFactor.current * baseVelocity * (delta / 1000);
 
         /**
          * This is what changes the direction of the scroll once we
@@ -77,10 +87,10 @@ export default function ParallaxText({
         >
             <motion.div className="flex" style={{ x }}>
                 {/* Repeat 4 times */}
-                {[...Array(4)].map((_, i1) => (
+                {[...Array(4)].map((_: any, i1: number) => (
                     <span key={i1}>
                         {/* For each item in techStack */}
-                        {[...children].map((child, i2) => (
+                        {[...children].map((child: string, i2: number) => (
                             <span
                                 key={i2}
                                 className="hover:font-extrabold
@@ -88,11 +98,13 @@ export default function ParallaxText({
                             >
                                 {child}
                                 {/* Number of white-spaces */}
-                                {[...Array(numSpaces)].map((_, i3) => (
-                                    <span key={i3} className="noSelect">
-                                        &nbsp;
-                                    </span>
-                                ))}
+                                {[...Array(numSpaces)].map(
+                                    (_: any, i3: number) => (
+                                        <span key={i3} className="noSelect">
+                                            &nbsp;
+                                        </span>
+                                    )
+                                )}
                             </span>
                         ))}
                     </span>

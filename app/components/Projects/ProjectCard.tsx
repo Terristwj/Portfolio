@@ -2,26 +2,26 @@
 
 import Image from "next/image";
 
-import IProject from "./ProjectInterface";
-import ParallaxText from "./ParallaxText";
+import IProject from "@/app/components/Projects/ProjectInterface";
+import ParallaxText from "@/app/components/Projects/ParallaxText";
 
 interface ProjectCardProps {
     project: IProject;
 }
 
 // Speed of parallax effect origin number
-const baseVelocityOrigin = 5;
+const baseVelocityOrigin: number = 5;
 
 export default function ProjectCard({ project }: ProjectCardProps) {
     // Speed of parallax effect - based on number of tech stack items
-    const baseVelocity = baseVelocityOrigin / project.tech_stack.length;
+    const baseVelocity: number = baseVelocityOrigin / project.tech_stack.length;
 
     // Main link
-    const mainLink = project.links[0][1];
+    const mainLink: string = project.links[0][1];
 
     return (
         <>
-            {/* Image of Project START */}
+            {/* Image of Project - START ============================================================================ */}
             <div
                 className="overflow-hidden
                     relative w-full h-56
@@ -47,11 +47,11 @@ export default function ProjectCard({ project }: ProjectCardProps) {
                     />
                 </a>
             </div>
-            {/* Image of Project END */}
+            {/* Image of Project - END ============================================================================== */}
 
-            {/* Card content START */}
+            {/* Card content - START ================================================================================ */}
             <div className="p-4 sm:p-6">
-                {/* Title START */}
+                {/* Title - START ============================================================ */}
                 <h3
                     className="text-lg font-bold poppins
                         text-teal-600 dark:text-teal-400
@@ -70,9 +70,9 @@ export default function ProjectCard({ project }: ProjectCardProps) {
                         {project.title}
                     </a>
                 </h3>
-                {/* Title END */}
+                {/* Title - END ============================================================== */}
 
-                {/* Subtitle START*/}
+                {/* Subtitle - START ========================================================= */}
                 <h3
                     className="font-medium
                         leading-tight tracking-tight
@@ -82,23 +82,39 @@ export default function ProjectCard({ project }: ProjectCardProps) {
                 >
                     {project.subtitle}
                 </h3>
+                {/* Subtitle - END =========================================================== */}
 
-                {/* Overview START */}
+                {/* Overview - START ========================================================= */}
                 <p
                     className="mt-2.5 mb-2.5
+                        cursor-default select-text
                         leading-relaxed text-balance
                         text-sm montserrat
                         text-black dark:text-white
                         transition-colors duration-300"
                 >
-                    {project.overview}
+                    {/* Split the words by token, when hovering each token */}
+                    {/* - hover animation fast, fade animation slow */}
+                    {project.overview
+                        .split(" ")
+                        .map((word: string, index: number) => (
+                            <span
+                                key={index}
+                                className="transition-colors duration-1000 ease-in-out
+                                    hover:text-teal-600  hover:duration-300
+                                    dark:hover:text-teal-400"
+                            >
+                                {word + " "}
+                            </span>
+                        ))}
                 </p>
-                {/* Overview START END */}
+                {/* Overview - END =========================================================== */}
 
-                {/* Empty space between START */}
+                {/* Empty space between - START ============================================== */}
                 <p className="mt-36"></p>
+                {/* Empty space between - END ================================================ */}
 
-                {/* Items above empty space START */}
+                {/* Items above empty space - START ========================================== */}
                 <div
                     className="pb-5
                         pl-4 pr-4 sm:pl-6 sm:pr-6
@@ -106,7 +122,7 @@ export default function ProjectCard({ project }: ProjectCardProps) {
                         w-full overflow-hidden
                         flex flex-col gap-5"
                 >
-                    {/* Tech Stack START */}
+                    {/* Tech Stack - START ======================================= */}
                     <section>
                         <h3
                             className="mt-4 font-bold poppins leading-7
@@ -121,37 +137,38 @@ export default function ProjectCard({ project }: ProjectCardProps) {
                             {project.tech_stack}
                         </ParallaxText>
                     </section>
-                    {/* Tech Stack END */}
+                    {/* Tech Stack - END ========================================= */}
 
-                    {/* Visit Items START */}
+                    {/* Visit Items - START ====================================== */}
                     <div className="flex">
-                        {project.links.map((link, index) => {
-                            return (
-                                <div key={`${project.title}_${link[0]}`}>
-                                    {/* hover:border-b-teal-600 dark:hover:border-b-teal-400 */}
-                                    <a
-                                        href={link[1]}
-                                        target="_blank"
-                                        className="capitalize
+                        {project.links.map(
+                            (link: string[], _: number): JSX.Element => {
+                                return (
+                                    <div key={`${project.title}_${link[0]}`}>
+                                        {/* hover:border-b-teal-600 dark:hover:border-b-teal-400 */}
+                                        <a
+                                            href={link[1]}
+                                            target="_blank"
+                                            className="capitalize
                                             text-teal-600 dark:text-teal-400 font-medium
                                             border-2 border-transparent
                                             hover:border-t-teal-600 dark:hover:border-t-teal-400
                                             group-hover:ms-1
                                             transition-all duration-500"
-                                    >
-                                        &rarr; {link[0]}
-                                    </a>
-                                    &nbsp; &nbsp;
-                                </div>
-                            );
-                        })}
+                                        >
+                                            &rarr; {link[0]}
+                                        </a>
+                                        &nbsp; &nbsp;
+                                    </div>
+                                );
+                            }
+                        )}
                     </div>
-                    {/* Visit Items END */}
+                    {/* Visit Items - END ======================================== */}
                 </div>
-                {/* Items above empty space END */}
-                {/* Empty space between END*/}
+                {/* Items above empty space - START ========================================== */}
             </div>
-            {/* Card content END*/}
+            {/* Card content - END ================================================================================== */}
         </>
     );
 }

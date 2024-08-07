@@ -7,6 +7,6 @@ interface ThemeProps {
     children: ReactNode;
 }
 
-export default function Theme({ children }: ThemeProps) {
+export default function Theme({ children }: ThemeProps): JSX.Element {
     return <ThemeProvider attribute="class">{children}</ThemeProvider>;
 }

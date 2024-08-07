@@ -4,18 +4,18 @@
 import generateRandomAnimal from "random-animal-name";
 
 // Days for cookies to expire
-const expiryDays = 2;
+import { cookiesExpiryDays } from "@/app/guestbook/constants";
 
 /**
  * Set Cookies for temporary username.
  * @param {String} cookieName
  * @param {String} cookieValue
  */
-function setCookie(cookieName: string, cookieValue: string) {
+function setCookie(cookieName: string, cookieValue: string): void {
     // Create expiry date key-value pair
-    const d = new Date();
-    d.setTime(d.getTime() + expiryDays * 24 * 60 * 60 * 1000);
-    let expires = "expires=" + d.toUTCString();
+    const d: Date = new Date();
+    d.setTime(d.getTime() + cookiesExpiryDays * 24 * 60 * 60 * 1000);
+    let expires: string = "expires=" + d.toUTCString();
 
     // Set cookie for username
     // E.g. 'username=monkey;expiryInt;path=/'
@@ -28,12 +28,12 @@ function setCookie(cookieName: string, cookieValue: string) {
  * @param {String} cookieName
  * @return {String} Get username cookie, if possible. Else return empty string.
  */
-function getCookie(cookieName: string) {
-    let name = cookieName + "=";
-    let decodedCookie = decodeURIComponent(document.cookie);
-    let cookieArr = decodedCookie.split(";");
-    for (let i = 0; i < cookieArr.length; i++) {
-        let c = cookieArr[i];
+function getCookie(cookieName: string): string {
+    let name: string = cookieName + "=";
+    let decodedCookie: string = decodeURIComponent(document.cookie);
+    let cookieArr: string[] = decodedCookie.split(";");
+    for (let i: number = 0; i < cookieArr.length; i++) {
+        let c: string = cookieArr[i];
         while (c.charAt(0) == " ") {
             c = c.substring(1);
         }
@@ -48,9 +48,9 @@ function getCookie(cookieName: string) {
  * Check if Cookies for temporary username exists.
  * @return {String} Temporary username.
  */
-export default function checkCookie() {
+export default function checkCookie(): string {
     // Get username cookie
-    let user = getCookie("username");
+    let user: string = getCookie("username");
 
     // If cookie doesn't exist, generate random animal
     if (user == "") {

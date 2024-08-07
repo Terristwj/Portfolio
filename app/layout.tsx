@@ -1,13 +1,14 @@
 import type { Metadata } from "next";
 
-import "./styles/globals.css";
-
-import Navbar from "./components/Navbar/Navbar";
-import Theme from "./components/wrappers/Theme";
-
 // Vercel Analytics & Speed Insights
 import { SpeedInsights } from "@vercel/speed-insights/next";
 import { Analytics } from "@vercel/analytics/react";
+
+// Custom CSS
+import "app/styles/globals.css";
+
+import Navbar from "@/app/components/Navbar/Navbar";
+import Theme from "@/app//components/wrappers/Theme";
 
 // export const metadata: Metadata = {
 //     title: "Terris Portfolio",
@@ -50,13 +51,14 @@ export default function RootLayout({
     children,
 }: {
     children: React.ReactNode;
-}) {
+}): JSX.Element {
     return (
         <html lang="en" suppressHydrationWarning>
             <head>
                 <link rel="icon" href="/favicon.ico" />
             </head>
             <body
+                suppressHydrationWarning={true} // Prevents errors from extensions
                 className="h-full
                 text-black bg-white
                 dark:text-white dark:bg-[#090908]
@@ -65,7 +67,7 @@ export default function RootLayout({
             >
                 <Theme>
                     <div
-                        className="max-w-6xl mx-auto px-4 
+                        className="max-w-7xl mx-auto px-4 
                         sm:px-6 lg:px-8"
                     >
                         <Navbar />

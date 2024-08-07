@@ -6,7 +6,7 @@ interface HeroIconProps {
     d: string;
 }
 
-export default function HeroIcon({ d }: HeroIconProps) {
+export default function HeroIcon({ d }: HeroIconProps): JSX.Element {
     return (
         <svg
             xmlns="http://www.w3.org/2000/svg"

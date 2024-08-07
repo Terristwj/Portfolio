@@ -4,7 +4,7 @@ import { ReactNode } from "react";
 
 interface FormButtonProps {
     children: ReactNode;
-    type: "submit" | "reset" | "button" | undefined;
+    type: "submit" | "reset" | "button";
     disabled?: boolean;
     onClick?: () => void;
 }
@@ -14,7 +14,7 @@ export default function FormButton({
     disabled,
     onClick,
     children,
-}: FormButtonProps) {
+}: FormButtonProps): JSX.Element {
     return (
         <button
             type={type}

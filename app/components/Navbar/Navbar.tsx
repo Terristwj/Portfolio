@@ -6,34 +6,34 @@ import { Disclosure } from "@headlessui/react";
 
 import { AnimatePresence, motion } from "framer-motion";
 
-import NavLinkDesktop from "./NavLinkDesktop";
-import DropTransition from "./DropTransition";
-import NavLinkMobile from "./NavLinkMobile";
-import HeroIcon from "./HeroIcon";
-import ThemeButton from "./ThemeButton";
+// Navigation
+import NavLinkDesktop from "@/app/components/Navbar/NavLinkDesktop";
+import NavLinkMobile from "@/app/components/Navbar/NavLinkMobile";
+import DropTransition from "@/app/components/Navbar/DropTransition";
 
-// Drop-delay settings START
-const tabs = [
-    { to: "/", name: "About Me", delay: 0.5 },
-    // { to: "/guestbook", name: "Guestbook", delay: 1 },
-    { to: "/projects", name: "Projects", delay: 1.5 },
-];
-const desktopThemeBtnDelay = 2;
+// Icons
+import HeroIcon from "@/app/components/Navbar/HeroIcon";
+import ThemeButton from "@/app/components/Navbar/ThemeButton";
 
-const hamburgerDelay = 0.5;
-const mobileThemeBtnDelay = 1;
-// Drop-delay settings END
+// Drop-delay settings
+import {
+    ITab,
+    tabs,
+    desktopThemeBtnDelay,
+    hamburgerDelay,
+    mobileThemeBtnDelay,
+} from "@/app/components/Navbar/constants";
 
-export default function Navbar() {
+export default function Navbar(): JSX.Element {
     let pathname = usePathname() || "/";
     return (
         <Disclosure as="nav" className="inter">
-            {({ open }) => (
+            {({ open }: { open: boolean }): JSX.Element => (
                 <>
-                    {/* Navbar START */}
+                    {/* Navbar - START =========================================================================================== */}
                     <div className="flex justify-between h-16">
                         <div className="flex justify-between w-full">
-                            {/* Navbar-Name START */}
+                            {/* Navbar-Name - START ============================================================ */}
                             <motion.div
                                 className="flex items-center whitespace-nowrap"
                                 initial={{ opacity: 0, width: 0 }}
@@ -63,12 +63,12 @@ export default function Navbar() {
                                     </h1>
                                 </Link>
                             </motion.div>
-                            {/* Navbar-Name END */}
+                            {/* Navbar-Name - END ============================================================== */}
 
-                            {/* Navbar-Desktop-Links START */}
+                            {/* Navbar-Desktop-Links - START =================================================== */}
                             <div className="hidden sm:ml-6 sm:flex sm:space-x-8 sm:items-center">
-                                {tabs.map((tab) => {
-                                    return (
+                                {tabs.map(
+                                    (tab: ITab): JSX.Element => (
                                         <NavLinkDesktop
                                             key={tab.to}
                                             pathname={pathname}
@@ -76,17 +76,17 @@ export default function Navbar() {
                                             name={tab.name}
                                             delay={tab.delay}
                                         />
-                                    );
-                                })}
+                                    )
+                                )}
                                 <ThemeButton delay={desktopThemeBtnDelay} />
                             </div>
-                            {/* Navbar-Desktop-Links END */}
+                            {/* Navbar-Desktop-Links - END ===================================================== */}
                         </div>
-                        {/* Navbar Part-1/2 END */}
+                        {/* Navbar Part-1/2 - END ================================================================================ */}
 
-                        {/* Navbar-Mobile START */}
+                        {/* Navbar-Mobile - START ====================================================================== */}
                         <div className="-mr-2 flex items-center sm:hidden">
-                            {/* Navbar-Mobile-Hamburger START */}
+                            {/* Navbar-Mobile-Hamburger - START ================================================ */}
                             <DropTransition delay={hamburgerDelay}>
                                 <Disclosure.Button
                                     className="inline-flex items-center justify-center p-2 rounded-md
@@ -104,7 +104,7 @@ export default function Navbar() {
                                     )}
                                 </Disclosure.Button>
                             </DropTransition>
-                            {/* Navbar-Mobile-Hamburger END */}
+                            {/* Navbar-Mobile-Hamburger - END ================================================== */}
                             <>
                                 <span className="select-none">
                                     &nbsp;&nbsp;
@@ -112,11 +112,11 @@ export default function Navbar() {
                             </>
                             <ThemeButton delay={mobileThemeBtnDelay} />
                         </div>
-                        {/* Navbar-Mobile END */}
+                        {/* Navbar-Mobile - END ======================================================================== */}
                     </div>
-                    {/* Navbar Part-2/2 END */}
+                    {/* Navbar Part-2/2 - END ==================================================================================== */}
 
-                    {/* Navbar-Mobile-Links START */}
+                    {/* Navbar-Mobile-Links - START ============================================================================== */}
                     <AnimatePresence>
                         {open && (
                             <motion.div
@@ -137,20 +137,20 @@ export default function Navbar() {
                                     duration: 0.5,
                                 }}
                             >
-                                {tabs.map((tab) => {
-                                    return (
+                                {tabs.map(
+                                    (tab: ITab): JSX.Element => (
                                         <NavLinkMobile
                                             key={tab.to}
                                             pathname={pathname}
                                             to={tab.to}
                                             name={tab.name}
                                         />
-                                    );
-                                })}
+                                    )
+                                )}
                             </motion.div>
                         )}
                     </AnimatePresence>
-                    {/* Navbar-Mobile-Links END */}
+                    {/* Navbar-Mobile-Links - END ================================================================================  */}
                 </>
             )}
         </Disclosure>

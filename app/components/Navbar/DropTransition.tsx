@@ -12,7 +12,7 @@ interface DropTransitionProps {
 export default function DropTransition({
     delay,
     children,
-}: DropTransitionProps) {
+}: DropTransitionProps): JSX.Element {
     return (
         <motion.div
             initial={{ y: -100 }}

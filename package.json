@@ -12,7 +12,8 @@
     "dependencies": {
         "@headlessui/react": "^1.7.17",
         "@motionone/utils": "^10.16.3",
-        "@prisma/client": "^5.7.1",
+        "@types/bad-words": "^3.0.3",
+        "@types/random-number": "^0.0.4",
         "@vercel/analytics": "^1.1.1",
         "@vercel/speed-insights": "^1.0.2",
         "bad-words": "^3.0.4",

@@ -3,10 +3,10 @@
 import Image from "next/image";
 import { Typewriter } from "react-simple-typewriter";
 
-import PageAnimate from "./components/wrappers/PageAnimate";
-import PageDefault from "./components/wrappers/PageDefault";
+import PageAnimate from "@/app/components/wrappers/PageAnimate";
+import PageDefault from "@/app/components/wrappers/PageDefault";
 
-import Me from "@/public/me.png";
+import Me from "public/me.png";
 
 const TypewriterWords = [
     "Software-Engineer",
@@ -16,7 +16,7 @@ const TypewriterWords = [
     "Nodejs-Express",
 ];
 
-export default function About() {
+export default function About(): JSX.Element {
     return (
         <PageAnimate>
             <PageDefault title="About Me" divider={true} bottomGap={true}>
@@ -77,32 +77,32 @@ export default function About() {
 
                     {/* Description START */}
                     <div
-                        className="max-w-none prose-lg pt-8 pb-7
-                            dark:prose-invert xl:col-span-2
-                            montserrat"
+                        className="max-w-none pt-8 pb-7
+                            prose-base montserrat
+                            dark:prose-invert 
+                            xl:col-span-2 xl:prose-xl"
                     >
                         <p>
-                            Hi there! I’m Terris, a 24-year-old Full Stack Developer based in Singapore.
+                            Hi there! I’m Terris, a 24-year-old Full Stack
+                            Developer based in Singapore.
                         </p>
                         <p>
-                            I’m currently a penultimate student at Singapore Management University,
-                            pursuing a BSc in Information Systems. My passion for creating Full Stack
-                            applications often shines through my participation in hackathons, where I’ve taken
-                            part in 10 to date. This portfolio highlights the skills I’ve developed with 
-                            Next.js and TailwindCSS.
+                            I’m currently a penultimate student at Singapore
+                            Management University, pursuing a BSc in Information
+                            Systems. My passion for creating Full Stack
+                            applications often shines through my participation
+                            in hackathons—where I’ve taken part in 10 to date.
+                            This portfolio highlights the skills I’ve developed
+                            throughout my coding journey.
                         </p>
                         <p>
-                            My journey in tech spans beyond Full Stack development. I’ve delved into
-                            AI/ML, backend development (APIs and algorithms), solution architecture,
-                            UI/UX design, and cloud computing. With three internships under my belt,
-                            including my current role as a Frontend Developer Intern at Accenture, I 
-                            continue to expand my skills and explore new technological frontiers.
-                        </p>
-                        <p>
-                            Building applications—whether they’re eCommerce platforms, micro-sites, or
-                            SaaS solutions—is where my creativity, technical expertise, and passion
-                            intersect. I’m excited to keep growing in this field and to inspire others along
-                            the way.
+                            My journey in tech spans beyond Full Stack
+                            development. I’ve delved into AI/ML, backend
+                            development (APIs and algorithms), solution
+                            architecture, UI/UX design, and cloud computing.
+                            With three internships under my belt, I continue to
+                            expand my skills and explore new technological
+                            frontiers.
                         </p>
                     </div>
                     {/* Description END */}

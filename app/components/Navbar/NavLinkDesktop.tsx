@@ -3,7 +3,7 @@
 import Link from "next/link";
 import { motion } from "framer-motion";
 
-import DropTransition from "./DropTransition";
+import DropTransition from "@/app/components/Navbar/DropTransition";
 
 interface NavLinkDesktopProps {
     pathname: string;
@@ -17,7 +17,7 @@ export default function NavLinkDesktop({
     to,
     name,
     delay,
-}: NavLinkDesktopProps) {
+}: NavLinkDesktopProps): JSX.Element {
     return (
         <>
             <Link
