@@ -1,7 +1,7 @@
 ## Welcome
 
 👋 Hi, my name is Terris and this is my portfolio website repository.<br/>
-Visit the website at: [https://terris-portfolio.vercel.app/](https://terris-portfolio.vercel.app/)<br/>
+Visit the website at: [https://terris-portfolio.vercel.app/](https://terris-portfolio.vercel.app/)
 And documentation here: [https://terristwj.github.io/Portfolio/](https://terristwj.github.io/Portfolio/)
 
 ### Introduction
@@ -38,7 +38,7 @@ This portfolio site was created using [Next.js](https://nextjs.org/), and others
         <td>Animations</td>
         <td>Transitions</td>
     </tr>
-    <tr>
+    <!-- <tr>
         <th align="left">
             <a href="https://planetscale.com/">
                 PlanetScale
@@ -46,7 +46,7 @@ This portfolio site was created using [Next.js](https://nextjs.org/), and others
         </th>
         <td>Prisma</td>
         <td>Database</td>
-    </tr>
+    </tr> -->
     <tr>
         <th align="left">
             <a href="https://vercel.com/">
@@ -166,7 +166,7 @@ This portfolio site was created using [Next.js](https://nextjs.org/), and others
         <td>Random Number</td>
         <td>Min/Max Integer/Float</td>
     </tr>
-    <tr>
+    <!-- <tr>
         <th align="left">
             <a href="https://unsplash.com/developers">
                 Unsplash
@@ -174,10 +174,19 @@ This portfolio site was created using [Next.js](https://nextjs.org/), and others
         </th>
         <td>Random Images</td>
         <td></td>
+    </tr> -->
+    <tr>
+        <th align="left">
+            <a href="https://picsum.photos/">
+                Lorem Picsum
+            </a>
+        </th>
+        <td>Random Images</td>
+        <td>URL API</td>
     </tr>
 </table>
 
-### Project's PlanetScale Documentation
+### Project's PlanetScale Documentation (DEPRECIATED)
 
 In this project,
 
@@ -194,7 +203,7 @@ In this project,
     - Example
         - `SELECT * FROM Guestbook WHERE username = "Bossy Gnat" and (message !="fishy\\" and message != "omg" and message !="<h1>hey</h1>" and message !="<br/>");`
 
-### Vercel & PlanetScale Documentation
+### Vercel & PlanetScale Documentation (DEPRECIATED)
 
 [Deploying Vercel project with PlanetScale](https://pris.ly/d/vercel-build)
 

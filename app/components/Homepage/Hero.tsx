@@ -7,7 +7,6 @@ import Me from "public/me.png";
 import { IMyName, ISocialMediaLinks } from "@/app/constants";
 import { multilineClassNames } from "@/app/utils/utils";
 
-import FadingText, { F } from "@/app/components/Common/FadingText";
 import { K } from "@/app/components/Common/KeywordText";
 
 // Homepage Components

@@ -15,7 +15,7 @@ import checkCookie from "@/app/guestbook/components/Form/Cookies";
  * @summary
  * Check profanity using 'bad-words' package, then using openAI.
  * If profanity is detected, alert user.
- * Else, add to PlanetScale Prisma database.
+ * Else, add to JSON database.
  * @param {FormData} formData Retrieve message from input field.
  */
 export default async function handleFormData(
