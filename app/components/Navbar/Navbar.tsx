@@ -27,7 +27,7 @@ import {
 export default function Navbar(): JSX.Element {
     let pathname = usePathname() || "/";
     return (
-        <Disclosure as="nav" className="inter">
+        <Disclosure as="nav" className="inter noSelect">
             {({ open }: { open: boolean }): JSX.Element => (
                 <>
                     {/* Navbar - START =========================================================================================== */}

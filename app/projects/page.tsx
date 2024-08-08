@@ -3,32 +3,34 @@
 import { useEffect, useState } from "react";
 import { AnimatePresence, motion } from "framer-motion";
 
-import PageAnimate from "@/app/components/wrappers/PageAnimate";
-import PageDefault from "@/app/components/wrappers/PageDefault";
+import PageAnimate from "@/app/components/Wrappers/PageAnimate";
+import PageDefault from "@/app/components/Wrappers/PageDefault";
 
 import AnimatedTabs from "@/app/projects/components/AnimatedTabs";
 import ProjectCard from "@/app/projects/components/ProjectCard";
 
-import ProjectActions from "@/app/projects/components/ProjectActions";
+// Actions
+import {
+    getAllProjects,
+    getHackathonProjects,
+    getAcademicProjects,
+} from "@/app/projects/components/ProjectActions";
 import IProject from "@/app/projects/components/ProjectInterface";
 
 // Settings
-const typeTabs = ["All", "Hackathon", "Academic"];
-const orderbyTabs = ["Newest", "Oldest"];
-
-// Actions
-const myProjectActions = new ProjectActions();
+import { TypeTabs } from "@/app/projects/constants";
+import { OrderbyTabs } from "@/app/projects/constants";
 
 export default function Projects() {
     // Default: All/Newest
-    let [activeTypeTab, setActiveTypeTab] = useState<string>(typeTabs[0]);
+    let [activeTypeTab, setActiveTypeTab] = useState<string>(TypeTabs[0]);
     let [activeOrderbyTab, setActiveOrderbyTab] = useState<string>(
-        orderbyTabs[0]
+        OrderbyTabs[0]
     );
 
     // Default projects to be displayed
     let [projectArray, setProjectArray] = useState<IProject[]>(
-        myProjectActions.getAllProjects("DESC")
+        getAllProjects("DESC")
     );
 
     // UseEffects for tracking tab changes
@@ -43,12 +45,11 @@ export default function Projects() {
         // Timer between temp and []
         // - Prevents rendering bug for toggle between tabs
         setTimeout(() => {
-            if (activeTypeTab === "All")
-                setProjectArray(myProjectActions.getAllProjects(order));
+            if (activeTypeTab === "All") setProjectArray(getAllProjects(order));
             else if (activeTypeTab === "Hackathon")
-                setProjectArray(myProjectActions.getHackathonProjects(order));
+                setProjectArray(getHackathonProjects(order));
             else if (activeTypeTab === "Academic")
-                setProjectArray(myProjectActions.getAcademicProjects(order));
+                setProjectArray(getAcademicProjects(order));
 
             // Time must set >0 to prevent rendering bug
         }, 50);
@@ -67,7 +68,7 @@ export default function Projects() {
                     {/* (Left-tabs) Project Type START */}
                     <AnimatedTabs
                         layoutId="projectTypeBubble"
-                        tabs={typeTabs}
+                        tabs={TypeTabs}
                         useStateActiveTab={{
                             cur: activeTypeTab,
                             set: setActiveTypeTab,
@@ -78,7 +79,7 @@ export default function Projects() {
                     {/* (Right-tabs) Project Order START */}
                     <AnimatedTabs
                         layoutId="projectOrderByBubble"
-                        tabs={orderbyTabs}
+                        tabs={OrderbyTabs}
                         useStateActiveTab={{
                             cur: activeOrderbyTab,
                             set: setActiveOrderbyTab,

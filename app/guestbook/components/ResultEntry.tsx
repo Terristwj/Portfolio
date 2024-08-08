@@ -11,17 +11,20 @@ import {
 
 import rn from "random-number";
 
+import IMessage from "@/app/guestbook/components/MessageInterface";
+
 interface ResultEntryProps {
-    username: string;
-    message: string;
+    entry: IMessage;
     imgSrc: string;
 }
 
 export default function ResultEntry({
-    username,
-    message,
+    entry,
     imgSrc,
 }: ResultEntryProps): JSX.Element {
+    const { username, message, created_at }: IMessage = entry;
+    const date: Date = new Date(created_at);
+
     // Random rotation value
     // - Used to rotate the image
     const rotateVal: number = parseFloat(
@@ -47,8 +50,8 @@ export default function ResultEntry({
     // Percent - Min/Max screen travel limit
 
     // Sliding Hovers - Words
-    // const wordTop = useTransform(mouseYSpring, [0, -0.5], ["50%", "100%"]);
-    // const wordLeft = useTransform(mouseXSpring, [0.3, 0], ["60%", "80%"]);
+    const wordTop = useTransform(mouseYSpring, [0, -0.5], ["50%", "100%"]);
+    const wordLeft = useTransform(mouseXSpring, [0.3, 0], ["60%", "80%"]);
 
     // Sliding Hovers - Images
     const imgTop: MotionValue<string> = useTransform(
@@ -123,9 +126,8 @@ export default function ResultEntry({
                                 }}
                                 transition={{ type: "spring" }}
                                 className="inline-block
-                            hover:text-black
-                            hover:dark:text-white
-                            hover:transition-colors hover:duration-300"
+                                    hover:text-black hover:dark:text-white
+                                    hover:transition-colors hover:duration-300"
                             >
                                 {char}
                             </motion.span>
@@ -137,11 +139,9 @@ export default function ResultEntry({
                 {/* Message - START  ================================= */}
                 <span
                     className="block relative z-10 mt-2
-                        capitalize tracking-tighter italic krona-one
+                        tracking-tighter italic krona-one
                         text-neutral-500
-                        text-sm
-                        sm:text-base
-                        md:text-lg
+                        text-sm sm:text-base md:text-lg
                         group-hover:text-black
                         group-hover:font-bold
                         group-hover:dark:text-white
@@ -149,7 +149,7 @@ export default function ResultEntry({
                         group-hover:duration-500"
                 >
                     &quot;
-                    {message}
+                    {message[0].toUpperCase() + message.slice(1)}
                     &quot;
                 </span>
                 {/* Message - END  =================================== */}
@@ -157,21 +157,33 @@ export default function ResultEntry({
             {/* Left Item - END ==================================================================== */}
 
             {/* Sliding Hovers - Words START */}
-            {/* <motion.span
+            <motion.span
                 style={{
                     top: wordTop,
                     left: wordLeft,
                     translateX: "-50%",
                     translateY: "-50%",
                 }}
+                variants={{
+                    initial: { scale: 0 },
+                    whileHover: { scale: 1 },
+                }}
                 transition={{ type: "spring" }}
                 className="absolute
                     rounded-lg object-cover
                     h-24 w-32
-                    md:h-full md:w-64"
+                    md:h-full md:w-64
+                    hidden lg:flex 
+                    items-center justify-center text-center"
             >
-                hey
-            </motion.span> */}
+                {date.toLocaleDateString("en-GB", {
+                    day: "numeric",
+                    month: "short",
+                    year: "numeric",
+                })}
+                <br />
+                posted
+            </motion.span>
             {/* Sliding Hovers - Words END */}
 
             {/* Sliding Hovers - Images START */}

@@ -9,7 +9,6 @@ import messages from "@/data/guestbook/messages.json";
 
 interface IMessageActions {
     getAllMessages(order: "ASC" | "DESC"): Array<IMessage>;
-    sortBy(data: Array<IMessage>, order: "ASC" | "DESC"): Array<IMessage>;
     addMessage(message: string, username: string): void;
 }
 
@@ -26,7 +25,7 @@ class MessageActions {
      * Get all messages.
      * @return {Array<IMessage>} All messages.
      */
-    getAllMessages(order: "ASC" | "DESC"): Array<IMessage> {
+    public getAllMessages(order: "ASC" | "DESC"): Array<IMessage> {
         return this.sortBy(messages, order);
     }
 
@@ -37,7 +36,10 @@ class MessageActions {
      * @param {string} order - The order to sort by.
      * @return {Array<IMessage>} The sorted data.
      */
-    sortBy(data: Array<IMessage>, order: "ASC" | "DESC"): Array<IMessage> {
+    private sortBy(
+        data: Array<IMessage>,
+        order: "ASC" | "DESC"
+    ): Array<IMessage> {
         return data.sort((a: IMessage, b: IMessage): number => {
             if (order === "DESC") [a, b] = [b, a];
             return a[this.key] - b[this.key];
@@ -49,7 +51,7 @@ class MessageActions {
      * @param {string} message - The message to save.
      * @param {string} username - The username that created.
      */
-    addMessage(message: string, username: string) {
+    public addMessage(message: string, username: string) {
         let data: string = fs.readFileSync(this.jsonUrl).toString();
         let dbMessages: Array<IMessage> = JSON.parse(data);
 

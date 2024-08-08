@@ -1,5 +1,6 @@
 export default interface IProject {
     completion_sequence: number;
+    project_type: string | "academic" | "hackathon";
     title: string;
     subtitle: string;
     overview: string;

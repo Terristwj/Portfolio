@@ -5,6 +5,8 @@ import Image from "next/image";
 import IProject from "@/app/projects/components/ProjectInterface";
 import ParallaxText from "@/app/projects/components/ParallaxText";
 
+import FadingText from "@/app/components/Common/FadingText";
+
 interface ProjectCardProps {
     project: IProject;
 }
@@ -13,11 +15,14 @@ interface ProjectCardProps {
 const baseVelocityOrigin: number = 5;
 
 export default function ProjectCard({ project }: ProjectCardProps) {
+    const { title, subtitle, overview, links, img_src, tech_stack }: IProject =
+        project;
+
     // Speed of parallax effect - based on number of tech stack items
-    const baseVelocity: number = baseVelocityOrigin / project.tech_stack.length;
+    const baseVelocity: number = baseVelocityOrigin / tech_stack.length;
 
     // Main link
-    const mainLink: string = project.links[0][1];
+    const mainLink: string = links[0][1];
 
     return (
         <>
@@ -38,8 +43,8 @@ export default function ProjectCard({ project }: ProjectCardProps) {
                         fill
                         priority
                         sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
-                        src={project.img_src}
-                        alt={project.title}
+                        src={img_src}
+                        alt={title}
                         className="object-cover
                             group-hover:scale-125
                             transition-all duration-500 ease"
@@ -67,7 +72,7 @@ export default function ProjectCard({ project }: ProjectCardProps) {
                             dark:hover:border-t-teal-400 dark:hover:border-b-teal-400
                             transition-[border] duration-500"
                     >
-                        {project.title}
+                        {title}
                     </a>
                 </h3>
                 {/* Title - END ============================================================== */}
@@ -80,7 +85,7 @@ export default function ProjectCard({ project }: ProjectCardProps) {
                         group-hover:text-teal-600 dark:group-hover:text-teal-400
                         transition-[color] duration-300"
                 >
-                    {project.subtitle}
+                    {subtitle}
                 </h3>
                 {/* Subtitle - END =========================================================== */}
 
@@ -88,25 +93,12 @@ export default function ProjectCard({ project }: ProjectCardProps) {
                 <p
                     className="mt-2.5 mb-2.5
                         cursor-default select-text
-                        leading-relaxed text-balance
+                        leading-relaxed text-pretty
                         text-sm montserrat
                         text-black dark:text-white
                         transition-colors duration-300"
                 >
-                    {/* Split the words by token, when hovering each token */}
-                    {/* - hover animation fast, fade animation slow */}
-                    {project.overview
-                        .split(" ")
-                        .map((word: string, index: number) => (
-                            <span
-                                key={index}
-                                className="transition-colors duration-1000 ease-in-out
-                                    hover:text-teal-600  hover:duration-300
-                                    dark:hover:text-teal-400"
-                            >
-                                {word + " "}
-                            </span>
-                        ))}
+                    <FadingText textType="sentence">{overview}</FadingText>
                 </p>
                 {/* Overview - END =========================================================== */}
 
@@ -131,38 +123,36 @@ export default function ProjectCard({ project }: ProjectCardProps) {
                             Technology Stack
                         </h3>
                         <ParallaxText baseVelocity={-baseVelocity}>
-                            {project.tech_stack}
+                            {tech_stack}
                         </ParallaxText>
                         <ParallaxText baseVelocity={baseVelocity}>
-                            {project.tech_stack}
+                            {tech_stack}
                         </ParallaxText>
                     </section>
                     {/* Tech Stack - END ========================================= */}
 
                     {/* Visit Items - START ====================================== */}
                     <div className="flex">
-                        {project.links.map(
-                            (link: string[], _: number): JSX.Element => {
-                                return (
-                                    <div key={`${project.title}_${link[0]}`}>
-                                        {/* hover:border-b-teal-600 dark:hover:border-b-teal-400 */}
-                                        <a
-                                            href={link[1]}
-                                            target="_blank"
-                                            className="capitalize
+                        {links.map((link: string[], _: number): JSX.Element => {
+                            return (
+                                <div key={`${title}_${link[0]}`}>
+                                    {/* hover:border-b-teal-600 dark:hover:border-b-teal-400 */}
+                                    <a
+                                        href={link[1]}
+                                        target="_blank"
+                                        className="capitalize
                                             text-teal-600 dark:text-teal-400 font-medium
                                             border-2 border-transparent
                                             hover:border-t-teal-600 dark:hover:border-t-teal-400
                                             group-hover:ms-1
                                             transition-all duration-500"
-                                        >
-                                            &rarr; {link[0]}
-                                        </a>
-                                        &nbsp; &nbsp;
-                                    </div>
-                                );
-                            }
-                        )}
+                                    >
+                                        &rarr; {link[0]}
+                                    </a>
+                                    &nbsp; &nbsp;
+                                </div>
+                            );
+                        })}
                     </div>
                     {/* Visit Items - END ======================================== */}
                 </div>

@@ -4,7 +4,7 @@
 import generateRandomAnimal from "random-animal-name";
 
 // Days for cookies to expire
-import { cookiesExpiryDays } from "@/app/guestbook/constants";
+import { CookiesExpiryDays } from "@/app/guestbook/constants";
 
 /**
  * Set Cookies for temporary username.
@@ -14,7 +14,7 @@ import { cookiesExpiryDays } from "@/app/guestbook/constants";
 function setCookie(cookieName: string, cookieValue: string): void {
     // Create expiry date key-value pair
     const d: Date = new Date();
-    d.setTime(d.getTime() + cookiesExpiryDays * 24 * 60 * 60 * 1000);
+    d.setTime(d.getTime() + CookiesExpiryDays * 24 * 60 * 60 * 1000);
     let expires: string = "expires=" + d.toUTCString();
 
     // Set cookie for username

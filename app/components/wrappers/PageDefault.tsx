@@ -1,5 +1,7 @@
 "use client";
 
+import FadingText from "@/app/components/Common/FadingText";
+
 interface PageDefaultProps {
     children: React.ReactNode;
     title: string;
@@ -17,23 +19,21 @@ export default function PageDefault({
         <div
             className={`${
                 (divider && "divide-y divide-gray-700 dark:divide-gray-100") +
-                " mb-5"
+                " mb-5 noSelect"
             }`}
         >
-            <div
-                className={`${
-                    (bottomGap && "pb-8") + " space-y-2 pt-5 md:space-x-5"
-                }`}
-            >
-                <h1
-                    className="font-extrabold tracking-tight poppins
+            <div className={`${(bottomGap && "pb-8") + " pt-5"}`}>
+                <FadingText
+                    textType="word"
+                    classNames="poppins
+                        font-extrabold tracking-tight 
                         text-black dark:text-white
                         text-3xl leading-9
                         sm:text-4xl sm:leading-10
                         md:text-6xl md:leading-13"
                 >
                     {title}
-                </h1>
+                </FadingText>
             </div>
 
             {children}

@@ -5,7 +5,7 @@ import { useRef, RefObject } from "react";
 import FormContent from "@/app/guestbook/components/Form/FormContent";
 import handleFormData from "@/app/guestbook/components/Form//HandleFormData";
 
-import { apiDelaySeconds } from "@/app/guestbook/constants";
+import { ApiDelaySeconds } from "@/app/guestbook/constants";
 import { wait } from "@/app/utils/utils";
 
 interface FormProps {
@@ -25,7 +25,7 @@ export default function Form({
         // console.log(formData.get("message"));
 
         // Minimum delay to prevent spam
-        await wait(apiDelaySeconds);
+        await wait(ApiDelaySeconds);
 
         // Update JSON database
         // - Check filters

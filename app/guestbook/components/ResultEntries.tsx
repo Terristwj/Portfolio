@@ -8,16 +8,16 @@ import ResultEntry from "@/app/guestbook/components/ResultEntry";
 // Result-Entries Settings
 import {
     // Refresh messages
-    revalidateInterval,
+    RevalidateInterval,
 
     // Animation
-    animateDuration,
-    staggerInterval,
+    AnimateDuration,
+    StaggerInterval,
 
     // Random Image Src
-    randomImageSrc,
-    imageWidth,
-    imageHeight,
+    RandomImageSrc,
+    ImageWidth,
+    ImageHeight,
 } from "@/app/guestbook/constants";
 
 interface ResultEntriesProps {
@@ -43,12 +43,12 @@ export default function ResultEntries({
                 // Avoid using router.reload()
                 // - Reloading the page does not clear cache
                 await resetData();
-            }, revalidateInterval);
+            }, RevalidateInterval);
         }
     }
 
     function formatImageSrc(width: number, height: number): string {
-        return `${randomImageSrc}/${width}/${height}`;
+        return `${RandomImageSrc}/${width}/${height}`;
     }
 
     return (
@@ -56,8 +56,8 @@ export default function ResultEntries({
             {entries.map((entry: IMessage, index: number): JSX.Element => {
                 // picsum.photos API for random images
                 const imgSrc: string = formatImageSrc(
-                    imageWidth,
-                    imageHeight - index
+                    ImageWidth,
+                    ImageHeight - index
                 );
 
                 return (
@@ -70,8 +70,8 @@ export default function ResultEntries({
                         }}
                         exit={{ y: 50 }}
                         transition={{
-                            duration: animateDuration,
-                            delay: staggerInterval * index,
+                            duration: AnimateDuration,
+                            delay: StaggerInterval * index,
                         }}
                     >
                         {/* Version 1 - Only Text*/}
@@ -83,11 +83,7 @@ export default function ResultEntries({
                         </div> */}
 
                         {/* Version 2 - Hover Random Images*/}
-                        <ResultEntry
-                            username={entry.username}
-                            message={entry.message}
-                            imgSrc={imgSrc}
-                        />
+                        <ResultEntry entry={entry} imgSrc={imgSrc} />
                     </motion.div>
                 );
             })}

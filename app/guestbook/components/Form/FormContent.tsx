@@ -10,7 +10,7 @@ import {
 } from "@/app/guestbook/components/Form/ReactIcons";
 import FormButton from "@/app/guestbook/components/Form/FormButton";
 
-import { apiDelaySeconds } from "@/app/guestbook/constants";
+import { ApiDelaySeconds } from "@/app/guestbook/constants";
 import { wait } from "@/app/utils/utils";
 
 interface FormContentProps {
@@ -31,7 +31,7 @@ export default function FormContent({
         // Enable spinner
         setRefreshing(true);
         // Minimum delay to prevent spam
-        await wait(apiDelaySeconds);
+        await wait(ApiDelaySeconds);
         // Reset display
         await resetData();
         // Disable spinner

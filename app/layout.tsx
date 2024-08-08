@@ -5,10 +5,12 @@ import { SpeedInsights } from "@vercel/speed-insights/next";
 import { Analytics } from "@vercel/analytics/react";
 
 // Custom CSS
-import "app/styles/globals.css";
+import "@/app/styles/globals.css";
 
 import Navbar from "@/app/components/Navbar/Navbar";
-import Theme from "@/app//components/wrappers/Theme";
+import Theme from "@/app/components/Wrappers/Theme";
+
+import MetaDataKeywords from "@/app/MetaDataKeywords";
 
 // export const metadata: Metadata = {
 //     title: "Terris Portfolio",
@@ -24,15 +26,7 @@ export const metadata: Metadata = {
     description:
         "Terris Portfolio Website. View my projects and resume. Leave a message in Guestbook!",
 
-    keywords: [
-        "Next.js",
-        "Terris",
-        "Terris Tan",
-        "Terris Tan Wei Jun",
-        "Tan Wei Jun Terris",
-        "Terris Portfolio",
-        "Portfolio",
-    ],
+    keywords: MetaDataKeywords,
     authors: [
         {
             name: "Terris Tan",
@@ -44,7 +38,7 @@ export const metadata: Metadata = {
         },
     ],
     creator: "Terris Tan",
-    publisher: "STerris Tan",
+    publisher: "Terris Tan",
 };
 
 export default function RootLayout({
@@ -60,15 +54,16 @@ export default function RootLayout({
             <body
                 suppressHydrationWarning={true} // Prevents errors from extensions
                 className="h-full
-                text-black bg-white
-                dark:text-white dark:bg-[#090908]
-                selection:bg-yellow-100
-                dark:selection:bg-teal-800/80"
+                    text-black bg-white
+                    dark:text-white dark:bg-[#090908]
+                    selection:bg-yellow-100
+                    dark:selection:bg-teal-800/80"
             >
                 <Theme>
                     <div
-                        className="max-w-7xl mx-auto px-4 
-                        sm:px-6 lg:px-8"
+                        className="max-w-7xl 
+                            mx-auto px-4 
+                            sm:px-6 lg:px-8"
                     >
                         <Navbar />
                         {children}

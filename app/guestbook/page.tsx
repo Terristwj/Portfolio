@@ -3,13 +3,14 @@
 import { useState, useEffect } from "react";
 
 // Wrappers
-import PageAnimate from "@/app/components/wrappers/PageAnimate";
-import PageDefault from "@/app/components/wrappers/PageDefault";
+import PageAnimate from "@/app/components/Wrappers/PageAnimate";
+import PageDefault from "@/app/components/Wrappers/PageDefault";
 
 // Content
 import Form from "@/app/guestbook/components/Form/Form";
 import ResultEntries from "@/app/guestbook/components/ResultEntries";
 
+// Interface
 import IMessage from "@/app/guestbook/components/MessageInterface";
 
 // Actions
