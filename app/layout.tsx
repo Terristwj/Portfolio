@@ -39,6 +39,17 @@ export const metadata: Metadata = {
     ],
     creator: "Terris Tan",
     publisher: "Terris Tan",
+    openGraph: {
+        type: "website",
+        locale: "en_US",
+
+        title: "Terris Portfolio",
+        description:
+            "Terris Portfolio Website. View my projects and resume. Leave a message in Guestbook!",
+
+        images: ["/this-website.jpg"],
+        url: "https://terris-portfolio.vercel.app/",
+    },
 };
 
 export default function RootLayout({

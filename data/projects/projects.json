@@ -7,7 +7,10 @@
         "overview": "My first website in 2017. Aimed to help motivate and spread awareness of being healthy. Especially in McDonalds.",
         "links": [["site", "https://mymcsample.web.app/MainWebPage.html"]],
         "img_src": "/projects/academic/HealthierMcDonalds.jpg",
-        "tech_stack": ["HTML/CSS", "Vanilla-JavaScript"]
+        "tech": {
+            "tech_type": "Technology Stack",
+            "tech_items": ["HTML/CSS", "Vanilla-JavaScript"]
+        }
     },
     {
         "completion_sequence": 2,
@@ -17,7 +20,10 @@
         "overview": "A Singapore-based app to boost productivity; OCR, News, real-time weather, and real-time traffic video.",
         "links": [["site", "https://staffcorps-ff2bb.web.app/home"]],
         "img_src": "/projects/academic/StaffCorps.jpg",
-        "tech_stack": ["Angular", "TypeScript", "Firebase", "Ionic"]
+        "tech": {
+            "tech_type": "Technology Stack",
+            "tech_items": ["Angular", "TypeScript", "Firebase", "Ionic"]
+        }
     },
     {
         "completion_sequence": 3,
@@ -37,18 +43,21 @@
             ]
         ],
         "img_src": "/projects/hackathon/Synthia.gif",
-        "tech_stack": [
-            "NextJs",
-            "TypeScript",
-            "TailwindCSS",
-            "shadcn/ui",
-            "OpenAI"
-        ]
+        "tech": {
+            "tech_type": "Technology Stack",
+            "tech_items": [
+                "NextJs",
+                "TypeScript",
+                "TailwindCSS",
+                "shadcn/ui",
+                "OpenAI"
+            ]
+        }
     },
     {
         "completion_sequence": 4,
         "project_type": "hackathon",
-        "title": "Viiicky",
+        "title": "Viiicky (Most Creative Award)",
         "subtitle": "Your Colourblind Asssistant",
         "overview": "Aim to help the colourblind. Viiicky enables users to identify colours and rectify colour deficiency.",
         "links": [
@@ -60,7 +69,10 @@
             ["video", "https://www.youtube.com/watch?v=gTMW-ZFXwGg"]
         ],
         "img_src": "/projects/hackathon/Viiicky.jpg",
-        "tech_stack": ["React", "TypeScript", "TailwindCSS", "MUI"]
+        "tech": {
+            "tech_type": "Technology Stack",
+            "tech_items": ["React", "TypeScript", "TailwindCSS", "MUI"]
+        }
     },
     {
         "completion_sequence": 5,
@@ -76,7 +88,10 @@
             ]
         ],
         "img_src": "/projects/hackathon/EduTrekker.jpg",
-        "tech_stack": ["Flutter", "Dart", "Firebase", "PaLM", "OpenAI"]
+        "tech": {
+            "tech_type": "Technology Stack",
+            "tech_items": ["Flutter", "Dart", "Firebase", "PaLM", "OpenAI"]
+        }
     },
     {
         "completion_sequence": 6,
@@ -95,7 +110,10 @@
             ]
         ],
         "img_src": "/projects/hackathon/UrbanAIze.jpg",
-        "tech_stack": ["Replicate", "Figma"]
+        "tech": {
+            "tech_type": "Technical Skills",
+            "tech_items": ["AI", "Replicate", "Figma", "UI/UX", "Prototyping"]
+        }
     },
     {
         "completion_sequence": 7,
@@ -111,14 +129,17 @@
             ["video", "https://www.youtube.com/watch?v=C-EaYvbNT_A"]
         ],
         "img_src": "/projects/academic/WeSports.jpg",
-        "tech_stack": ["Figma", "Youtube"]
+        "tech": {
+            "tech_type": "Technical Skills",
+            "tech_items": ["Figma", "Youtube", "UI/UX", "Prototyping"]
+        }
     },
     {
         "completion_sequence": 8,
         "project_type": "academic",
         "title": "Reventé",
         "subtitle": "Sustainable Fashion Marketplace",
-        "overview": "An eCommerce platform for fashionistas to buy and sell pre-loved fashion items. gamification and AI empowered.",
+        "overview": "An eCommerce platform for fashionistas to buy and sell pre-loved fashion items. Gamification and AI empowered.",
         "links": [
             ["site", "https://smu-wad2.web.app/about"],
             [
@@ -127,24 +148,165 @@
             ]
         ],
         "img_src": "/projects/academic/Revente.jpg",
-        "tech_stack": [
-            "Vue",
-            "Vite",
-            "Bootstrap",
-            "PrimeVue",
-            "chart.js",
-            "anime.js",
-            "GSAP",
-            "Google Maps",
-            "DialogFlow",
-            "Pinia",
-            "Firebase",
-            "ExpressJS",
-            "OpenAI",
-            "PaLM",
-            "Replicate",
-            "Stripe",
-            "Vercel"
-        ]
+        "tech": {
+            "tech_type": "Technology Stack",
+            "tech_items": [
+                "Javascript",
+                "Vue",
+                "Vite",
+                "Bootstrap",
+                "PrimeVue",
+                "chart.js",
+                "anime.js",
+                "GSAP",
+                "Google Maps",
+                "DialogFlow",
+                "Pinia",
+                "Firebase",
+                "ExpressJS",
+                "OpenAI",
+                "PaLM",
+                "Replicate",
+                "Stripe",
+                "Vercel"
+            ]
+        }
+    },
+    {
+        "completion_sequence": 9,
+        "project_type": "academic",
+        "title": "Sheng Siong App",
+        "subtitle": "Enhancing Shopping Experience",
+        "overview": "An MVP to enhance efficiency and drive new business models for growth. Utilizing AI, cloud, analytics, mobile, social media, and IoT.",
+        "links": [
+            [
+                "figma",
+                "https://www.figma.com/proto/B3tWisk8APZ092OFs9GCHh/DBTT---Sheng-Siong?node-id=34-1477&scaling=min-zoom&content-scaling=fixed&page-id=0%3A1&starting-point-node-id=34%3A1477"
+            ],
+            [
+                "pitch",
+                "https://www.canva.com/design/DAF_SDr_UkI/6xZoIp6uo4Ay3KZ92LK_qA/view"
+            ]
+        ],
+        "img_src": "/projects/academic/ShengSiongApp.jpg",
+        "tech": {
+            "tech_type": "Technical Skills",
+            "tech_items": [
+                "Figma",
+                "UI/UX",
+                "Prototyping",
+                "Analytics",
+                "Digital Transformation"
+            ]
+        }
+    },
+    {
+        "completion_sequence": 10,
+        "project_type": "academic",
+        "title": "YATA",
+        "subtitle": "Yet Another Telemedicine App",
+        "overview": "An enterprise solution built using Service-Oriented Architecture (SOA) and scalable microservices - Empowering Healthcare in Singapore.",
+        "links": [
+            [
+                "pitch",
+                "https://www.canva.com/design/DAGAkk7bgUY/n6qNKlmVUxAi3M9xR8ENsw/view"
+            ],
+            ["github", "https://github.com/0gw0/Healthcare-API"],
+            [
+                "design",
+                "https://www.canva.com/design/DAF_uRnk1AY/Zr3uAlGTDztbG1TbFcVXQg/view"
+            ]
+        ],
+        "img_src": "/projects/academic/YATA.jpg",
+        "tech": {
+            "tech_type": "Technology Stack",
+            "tech_items": [
+                "TypeScript",
+                "Next.JS",
+                "RESTFul APIs",
+                "Python",
+                "Flask",
+                "Javascript",
+                "NodeJS",
+                "ExpressJS",
+                "Zoom",
+                "MailTrap",
+                "Twilio",
+                "PhonePe",
+                "Docker",
+                "KrakenD API Gateway",
+                "RabbitMQ",
+                "SQLite"
+            ]
+        }
+    },
+    {
+        "completion_sequence": 11,
+        "project_type": "hackathon",
+        "title": "DSTA BrainHack TIL-AI 2024",
+        "subtitle": "Team FreeIceMilo (Rank 5 - Finalist)",
+        "overview": "An autonomous system that identifies, classifies, and neutralizes air threats, built using AI that interprets spoken commands into precise turret actions.",
+        "links": [
+            ["github", "https://github.com/IlyasYao/TIL-AI-2024_freeicemilo"],
+            [
+                "leaderboard",
+                "https://airtable.com/appeN9J5OcPmfLzgf/shraBC7z4ZCYss9LD/tbljMdswAqrIQi9w8"
+            ]
+        ],
+        "img_src": "/projects/hackathon/FreeIceMilo.jpg",
+        "tech": {
+            "tech_type": "Technology Stack",
+            "tech_items": [
+                "GCP",
+                "Vertex AI Workbench",
+                "Docker",
+                "HuggingFace",
+                "AI/ML",
+                "(ASR) OpenAI Whisper",
+                "(NLP) BERT",
+                "(VLM) RT-DETR(x)",
+                "(VLM) CLIP(large)",
+                "Python",
+                "RESTful API",
+                "Websocket",
+                "Javascript",
+                "three.js"
+            ]
+        }
+    },
+    {
+        "completion_sequence": 12,
+        "project_type": "hackathon",
+        "title": "TikTok TechJam 2024",
+        "subtitle": "Lockerism (People's Choice Award)",
+        "overview": "An analytics application, powered by Privacy-Enhancing Technologies (PET), Homomorphic Encryption (HE) and blockchain, to bring data privacy and security to users.",
+        "links": [
+            ["devpost", "https://devpost.com/software/lockerism"],
+            ["github", "https://github.com/Terristwj/tiktok_techjam_2024"],
+            ["pitch", "https://www.youtube.com/watch?v=P3b_avifwmQ"]
+        ],
+        "img_src": "/projects/hackathon/Lockerism.jpg",
+        "tech": {
+            "tech_type": "Technology Stack",
+            "tech_items": [
+                "Kaggle",
+                "Python",
+                "numpy",
+                "pandas",
+                "scikit-learn",
+                "Flask",
+                "RESTful API",
+                "TypeScript",
+                "NextJS",
+                "MUI",
+                "MetaMask",
+                "Ethers",
+                "Web3",
+                "ZKsync",
+                "Cybersecurity",
+                "Blockchain",
+                "Machine Learning"
+            ]
+        }
     }
 ]

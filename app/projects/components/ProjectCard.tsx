@@ -2,7 +2,7 @@
 
 import Image from "next/image";
 
-import IProject from "@/app/projects/components/ProjectInterface";
+import IProject, { ITech } from "@/app/projects/components/ProjectInterface";
 import ParallaxText from "@/app/projects/components/ParallaxText";
 
 import FadingText from "@/app/components/Common/FadingText";
@@ -15,11 +15,12 @@ interface ProjectCardProps {
 const baseVelocityOrigin: number = 5;
 
 export default function ProjectCard({ project }: ProjectCardProps) {
-    const { title, subtitle, overview, links, img_src, tech_stack }: IProject =
+    const { title, subtitle, overview, links, img_src, tech }: IProject =
         project;
+    const { tech_type, tech_items }: ITech = tech;
 
     // Speed of parallax effect - based on number of tech stack items
-    const baseVelocity: number = baseVelocityOrigin / tech_stack.length;
+    const baseVelocity: number = baseVelocityOrigin / tech_items.length;
 
     // Main link
     const mainLink: string = links[0][1];
@@ -120,13 +121,13 @@ export default function ProjectCard({ project }: ProjectCardProps) {
                             className="mt-4 font-bold poppins leading-7
                             text-teal-600 dark:text-teal-400"
                         >
-                            Technology Stack
+                            {tech_type}
                         </h3>
                         <ParallaxText baseVelocity={-baseVelocity}>
-                            {tech_stack}
+                            {tech_items}
                         </ParallaxText>
                         <ParallaxText baseVelocity={baseVelocity}>
-                            {tech_stack}
+                            {tech_items}
                         </ParallaxText>
                     </section>
                     {/* Tech Stack - END ========================================= */}
