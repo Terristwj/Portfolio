@@ -8,7 +8,7 @@ import { Analytics } from "@vercel/analytics/react";
 import "@/app/styles/globals.css";
 
 import Navbar from "@/app/components/Navbar/Navbar";
-import Theme from "@/app/components/Wrappers/Theme";
+import Theme from "@/app/components/Wrappersa/Theme";
 
 import MetaDataKeywords from "@/app/MetaDataKeywords";
 

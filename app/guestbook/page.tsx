@@ -3,8 +3,8 @@
 import { useState, useEffect } from "react";
 
 // Wrappers
-import PageAnimate from "@/app/components/Wrappers/PageAnimate";
-import PageDefault from "@/app/components/Wrappers/PageDefault";
+import PageAnimate from "@/app/components/Wrappersa/PageAnimate";
+import PageDefault from "@/app/components/Wrappersa/PageDefault";
 
 // Content
 import Form from "@/app/guestbook/components/Form/Form";
