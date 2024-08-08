@@ -3,8 +3,8 @@
 import { useEffect, useState } from "react";
 import { AnimatePresence, motion } from "framer-motion";
 
-import PageAnimate from "@/app/components/Wrappersa/PageAnimate";
-import PageDefault from "@/app/components/Wrappersa/PageDefault";
+import PageAnimate from "@/app/components/Wrappers/PageAnimate";
+import PageDefault from "@/app/components/Wrappers/PageDefault";
 
 import AnimatedTabs from "@/app/projects/components/AnimatedTabs";
 import ProjectCard from "@/app/projects/components/ProjectCard";

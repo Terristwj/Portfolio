@@ -1,7 +1,7 @@
 "use client";
 
-import PageAnimate from "@/app/components/Wrappersa/PageAnimate";
-import PageDefault from "@/app/components/Wrappersa/PageDefault";
+import PageAnimate from "@/app/components/Wrappers/PageAnimate";
+import PageDefault from "@/app/components/Wrappers/PageDefault";
 
 // Homepage Components
 import Hero from "@/app/components/Homepage/Hero";
