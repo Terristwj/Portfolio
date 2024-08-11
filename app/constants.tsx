@@ -23,13 +23,15 @@ export const TypewriterWords: string[] = [
 ];
 
 // (1.3) Social Media Links
-export interface ISocialMediaLinks {
-    github: string;
-    linkedin: string;
-    mail: string;
+export interface ISocialMediaUrls {
+    githubUrl: string;
+    linkedinUrl: string;
+    mailUrl: string;
+    portfolioUrl: string;
 }
-export const SocialMediaLinks: ISocialMediaLinks = {
-    github: "https://github.com/Terristwj",
-    linkedin: "https://www.linkedin.com/in/terristan/",
-    mail: "mailto:terristanwei@gmail.com",
+export const SocialMediaUrls: ISocialMediaUrls = {
+    githubUrl: "https://github.com/Terristwj",
+    linkedinUrl: "https://www.linkedin.com/in/terristan/",
+    mailUrl: "mailto:terristanwei@gmail.com",
+    portfolioUrl: "https://terris-portfolio.vercel.app/",
 };

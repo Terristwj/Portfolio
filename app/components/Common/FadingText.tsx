@@ -34,7 +34,7 @@ export default function FadingText({
                         ? word + " "
                         : word;
                 return (
-                    <label
+                    <span
                         key={index}
                         className={`${classNames}
                             transition-colors duration-1000 ease-in-out
@@ -42,7 +42,7 @@ export default function FadingText({
                             dark:hover:text-teal-400`}
                     >
                         {finalWord}
-                    </label>
+                    </span>
                 );
             })}
         </>

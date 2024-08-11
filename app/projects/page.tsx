@@ -62,7 +62,7 @@ export default function Projects() {
             <PageDefault title="Projects" bottomGap={true}>
                 {/* Tabs Section - Controls START */}
                 <div
-                    className="flex justify-between noSelect
+                    className="flex justify-between
                         fira-code text-sm font-medium"
                 >
                     {/* (Left-tabs) Project Type START */}
@@ -103,7 +103,7 @@ export default function Projects() {
                             <motion.article
                                 key={index}
                                 animate={{ y: 10 }}
-                                className="border rounded-md noSelect
+                                className="border rounded-md
                                     border-black bg-white
 
                                     dark:border-white dark:bg-black

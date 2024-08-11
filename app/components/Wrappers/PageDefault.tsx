@@ -19,7 +19,7 @@ export default function PageDefault({
         <div
             className={`${
                 (divider && "divide-y divide-gray-700 dark:divide-gray-100") +
-                " mb-5 noSelect"
+                " mb-5 select-none"
             }`}
         >
             <div className={`${(bottomGap && "pb-8") + " pt-5"}`}>

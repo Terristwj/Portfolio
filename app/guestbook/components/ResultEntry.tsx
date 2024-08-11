@@ -90,7 +90,7 @@ export default function ResultEntry({
             onMouseMove={handleMouseMove}
             initial="initial"
             whileHover="whileHover"
-            className="relative noSelect
+            className="relative
                 flex items-center justify-between
                 py-4 md:py-8
                 group transition-all duration-500"
@@ -142,6 +142,8 @@ export default function ResultEntry({
                         tracking-tighter italic krona-one
                         text-neutral-500
                         text-sm sm:text-base md:text-lg
+                        select-text
+
                         group-hover:text-black
                         group-hover:font-bold
                         group-hover:dark:text-white

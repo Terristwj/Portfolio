@@ -59,7 +59,10 @@ export default function ProjectCard({ project }: ProjectCardProps) {
             <div className="p-4 sm:p-6">
                 {/* Title - START ============================================================ */}
                 <h3
-                    className="text-lg font-bold poppins
+                    className="select-text
+                        font-bold poppins
+                        text-lg lg:text-base xl:text-lg
+                        
                         text-teal-600 dark:text-teal-400
                         group-hover:scale-105 
                         group-hover:pl-2 group-hover:sm:pl-1 
@@ -68,9 +71,8 @@ export default function ProjectCard({ project }: ProjectCardProps) {
                     <a
                         href={mainLink}
                         target="_blank"
-                        className="border-2 border-transparent 
-                            hover:border-t-teal-600 hover:border-b-teal-600
-                            dark:hover:border-t-teal-400 dark:hover:border-b-teal-400
+                        className="border-2 border-transparent rounded-md
+                            hover:border-b-teal-600 dark:hover:border-b-teal-400
                             transition-[border] duration-500"
                     >
                         {title}
@@ -80,7 +82,7 @@ export default function ProjectCard({ project }: ProjectCardProps) {
 
                 {/* Subtitle - START ========================================================= */}
                 <h3
-                    className="font-medium
+                    className="font-medium select-text
                         leading-tight tracking-tight
                         text-black dark:text-white
                         group-hover:text-teal-600 dark:group-hover:text-teal-400
@@ -93,8 +95,10 @@ export default function ProjectCard({ project }: ProjectCardProps) {
                 {/* Overview - START ========================================================= */}
                 <p
                     className="mt-2.5 mb-2.5
-                        cursor-default select-text
+                        cursor-default
                         leading-relaxed text-pretty
+
+                        select-text
                         text-sm montserrat
                         text-black dark:text-white
                         transition-colors duration-300"
@@ -118,7 +122,8 @@ export default function ProjectCard({ project }: ProjectCardProps) {
                     {/* Tech Stack - START ======================================= */}
                     <section>
                         <h3
-                            className="mt-4 font-bold poppins leading-7
+                            className="select-text
+                            mt-4 font-bold poppins leading-7
                             text-teal-600 dark:text-teal-400"
                         >
                             {tech_type}
@@ -141,7 +146,7 @@ export default function ProjectCard({ project }: ProjectCardProps) {
                                     <a
                                         href={link[1]}
                                         target="_blank"
-                                        className="capitalize
+                                        className="capitalize select-text
                                             text-teal-600 dark:text-teal-400 font-medium
                                             border-2 border-transparent
                                             hover:border-t-teal-600 dark:hover:border-t-teal-400

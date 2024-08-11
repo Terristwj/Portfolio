@@ -7,7 +7,7 @@ import PageDefault from "@/app/components/Wrappers/PageDefault";
 import Hero from "@/app/components/Homepage/Hero";
 
 // Settings
-import { MyName, TypewriterWords, SocialMediaLinks } from "@/app/constants";
+import { MyName, TypewriterWords, SocialMediaUrls } from "@/app/constants";
 
 export default function About(): JSX.Element {
     return (
@@ -16,7 +16,7 @@ export default function About(): JSX.Element {
                 <Hero
                     myName={MyName}
                     typeWriterWords={TypewriterWords}
-                    socialMediaLinks={SocialMediaLinks}
+                    SocialMediaUrls={SocialMediaUrls}
                 />
             </PageDefault>
         </PageAnimate>

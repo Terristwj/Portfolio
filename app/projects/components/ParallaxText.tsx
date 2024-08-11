@@ -89,20 +89,20 @@ export default function ParallaxText({
                 {/* Repeat 4 times */}
                 {[...Array(4)].map((_: any, i1: number) => (
                     <span key={i1}>
-                        {/* For each item in techStack */}
+                        {/* For each item in tech_items */}
                         {[...children].map((child: string, i2: number) => (
-                            <span
-                                key={i2}
-                                className="hover:font-extrabold
+                            <span key={i2}>
+                                <span
+                                    className="select-all
+                                    hover:font-extrabold
                                     hover:text-teal-600 hover:dark:text-teal-400"
-                            >
-                                {child}
+                                >
+                                    {child}
+                                </span>
                                 {/* Number of white-spaces */}
                                 {[...Array(numSpaces)].map(
                                     (_: any, i3: number) => (
-                                        <span key={i3} className="noSelect">
-                                            &nbsp;
-                                        </span>
+                                        <span key={i3}>&nbsp;</span>
                                     )
                                 )}
                             </span>
