@@ -37,7 +37,6 @@ class MessageActions {
         // Retrieve temporary directory URL
         const directory: string = tmpdir();
         const tempJsonUrl: string = `${directory}/messages.json`;
-        console.log("tempJsonUrl:", tempJsonUrl);
 
         // Save the final JSON URL
         return isProd ? tempJsonUrl : localJsonUrl;
@@ -71,11 +70,6 @@ class MessageActions {
     public getAllMessages(order: "ASC" | "DESC"): Array<IMessage> {
         const data: string = fs.readFileSync(this.finalJsonUrl).toString();
         const dbMessages: Array<IMessage> = JSON.parse(data);
-
-        // Retrieve temporary directory URL
-        const directory: string = tmpdir();
-        const tempJsonUrl: string = `${directory}/messages.json`;
-        console.log("tempJsonUrl 2:", tempJsonUrl);
 
         return this.sortBy(dbMessages, order);
     }
