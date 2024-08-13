@@ -69,6 +69,8 @@ class MessageActions {
         const data: string = fs.readFileSync(this.finalJsonUrl).toString();
         const dbMessages: Array<IMessage> = JSON.parse(data);
 
+        console.log("this.finalJsonUrl", this.finalJsonUrl);
+
         return this.sortBy(dbMessages, order);
     }
 
