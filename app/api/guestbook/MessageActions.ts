@@ -37,6 +37,7 @@ class MessageActions {
         // Retrieve temporary directory URL
         const directory: string = tmpdir();
         const tempJsonUrl: string = `${directory}/messages.json`;
+        console.log("tempJsonUrl:", tempJsonUrl);
 
         // Save the final JSON URL
         return isProd ? tempJsonUrl : localJsonUrl;

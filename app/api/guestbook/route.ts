@@ -13,8 +13,7 @@ import IMessage from "@/app/guestbook/components/MessageInterface";
 // - Get all messages in JSON format.
 export async function GET(): Promise<NextResponse<IMessage[]>> {
     // Retrieve temporary directory URL
-    const directory: string = tmpdir();
-    const tempJsonUrl: string = `${directory}/messages.json`;
+    const tempJsonUrl: string = `tmp/messages.json`;
 
     // Retrieve temporary JSON file data
     let dbMessages: Array<IMessage> = [];
