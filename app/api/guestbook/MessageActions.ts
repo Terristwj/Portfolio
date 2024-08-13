@@ -8,8 +8,13 @@ import fs from "fs";
 import IMessage from "@/app/guestbook/components/MessageInterface";
 import messages from "@/data/guestbook/messages.json";
 
-// Constants
-import isProd from "@/app/api/guestbook/constants";
+// Environment Variables
+// - If is development, use the local JSON file
+//   - Avoid creating temp in local computer
+// - If is production, use the temp JSON file
+//   - Vercel does not support write files
+const IS_PROD: string | undefined = process.env.IS_PROD;
+const isProd: boolean = IS_PROD === "true";
 
 interface IMessageActions {
     getAllMessages(order: "ASC" | "DESC"): Array<IMessage>;
@@ -40,6 +45,22 @@ class MessageActions {
     public constructor() {
         this.key = "id";
         this.finalJsonUrl = this.getFinalJsonUrl();
+
+        // If is production,
+        // - Write the initial messages to the temp JSON file
+        // - By creating a tmp/messages.json file
+        if (isProd) {
+            const initialMessages: Array<IMessage> = messages;
+            fs.writeFile(
+                this.finalJsonUrl,
+                JSON.stringify(initialMessages),
+                function (err: any) {
+                    if (err) {
+                        console.log(err);
+                    }
+                }
+            );
+        }
     }
 
     /**
