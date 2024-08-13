@@ -125,9 +125,9 @@ export default function ResultEntry({
                                     whileHover: { x: 16 },
                                 }}
                                 transition={{ type: "spring" }}
-                                className="inline-block
-                                    hover:text-black hover:dark:text-white
-                                    hover:transition-colors hover:duration-300"
+                                className={`${char !== " " && "inline-block"}
+                                        hover:text-black hover:dark:text-white
+                                        hover:transition-colors hover:duration-300`}
                             >
                                 {char}
                             </motion.span>

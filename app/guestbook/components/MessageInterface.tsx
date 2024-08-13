@@ -1,3 +1,5 @@
+"use client";
+
 export default interface IMessage {
     id: number;
     message: string;

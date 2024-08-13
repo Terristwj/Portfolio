@@ -1,3 +1,5 @@
+"use client";
+
 // Guestbook Constants
 
 // Form Settings

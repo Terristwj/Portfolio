@@ -1,3 +1,5 @@
+"use client";
+
 // Drop-delay settings
 
 export interface ITab {

@@ -23,26 +23,34 @@ interface IMessageActions {
 
 class MessageActions {
     private key: "id";
-    private jsonUrl: string;
-    private tempJsonUrl: string;
+    private finalJsonUrl: string;
+
+    /**
+     * Get final JSON url.
+     * @return {string} Final JSON Url.
+     */
+    private getFinalJsonUrl(): string {
+        // Local JSON file URL
+        const cwd: string = process.cwd();
+        const localJsonUrl: string = `${cwd}/data/guestbook/messages.json`;
+
+        // Create a temporary directory URL
+        const directory: string = tmpdir();
+        const tempJsonUrl: string = `${directory}/messages.json`;
+
+        // Save the final JSON URL
+        return isProd ? tempJsonUrl : localJsonUrl;
+    }
 
     public constructor() {
         this.key = "id";
-
-        // Local JSON file
-        const cwd = process.cwd();
-        this.jsonUrl = `${cwd}/data/guestbook/messages.json`;
-
-        // Create a temporary directory
-        const directory = tmpdir();
-        this.tempJsonUrl = `${directory}/messages.json`;
+        this.finalJsonUrl = this.getFinalJsonUrl();
 
         // If is production, write the initial messages to the temp JSON file
         if (isProd) {
-            // Write the initial messages to the temp JSON file
             const initialMessages: Array<IMessage> = messages;
             fs.writeFile(
-                this.tempJsonUrl,
+                this.finalJsonUrl,
                 JSON.stringify(initialMessages),
                 function (err: any) {
                     if (err) {
@@ -58,12 +66,10 @@ class MessageActions {
      * @return {Array<IMessage>} All messages.
      */
     public getAllMessages(order: "ASC" | "DESC"): Array<IMessage> {
-        const finalJsonUrl: string = isProd ? this.tempJsonUrl : this.jsonUrl;
+        const data: string = fs.readFileSync(this.finalJsonUrl).toString();
+        const dbMessages: Array<IMessage> = JSON.parse(data);
 
-        const data = fs.readFileSync(finalJsonUrl).toString();
-        const messages: Array<IMessage> = JSON.parse(data);
-
-        return this.sortBy(messages, order);
+        return this.sortBy(dbMessages, order);
     }
 
     /**
@@ -89,9 +95,7 @@ class MessageActions {
      * @param {string} username - The username that created.
      */
     public addMessage(message: string, username: string) {
-        const finalJsonUrl: string = isProd ? this.tempJsonUrl : this.jsonUrl;
-
-        const data = fs.readFileSync(finalJsonUrl).toString();
+        const data: string = fs.readFileSync(this.finalJsonUrl).toString();
         let dbMessages: Array<IMessage> = JSON.parse(data);
 
         dbMessages.push({
@@ -102,7 +106,7 @@ class MessageActions {
         });
 
         fs.writeFile(
-            finalJsonUrl,
+            this.finalJsonUrl,
             JSON.stringify(dbMessages),
             function (err: any) {
                 if (err) {

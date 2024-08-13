@@ -1,3 +1,5 @@
+"use client";
+
 export interface ITech {
     tech_type: string | "Technology Stack" | "Technical Skills";
     tech_items: string[];
