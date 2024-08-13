@@ -1,13 +1,20 @@
 "use server";
 
 // File System - Read/Write JSON
-import { fileURLToPath } from "url";
-import { dirname, resolve } from "path";
+import { tmpdir } from "os";
 import fs from "fs";
 
 // My Messages
 import IMessage from "@/app/guestbook/components/MessageInterface";
 import messages from "@/data/guestbook/messages.json";
+
+// Environment Variables
+// - If is development, use the local JSON file
+//   - Avoid creating temp in local computer
+// - If is production, use the temp JSON file
+//   - Vercel does not support write files
+const IS_PROD: string | undefined = process.env.IS_PROD;
+const isProd: boolean = IS_PROD === "true";
 
 interface IMessageActions {
     getAllMessages(order: "ASC" | "DESC"): Array<IMessage>;
@@ -17,11 +24,33 @@ interface IMessageActions {
 class MessageActions {
     private key: "id";
     private jsonUrl: string;
+    private tempJsonUrl: string;
 
     public constructor() {
         this.key = "id";
+
+        // Local JSON file
         const cwd = process.cwd();
         this.jsonUrl = `${cwd}/data/guestbook/messages.json`;
+
+        // Create a temporary directory
+        const directory = tmpdir();
+        this.tempJsonUrl = `${directory}/messages.json`;
+
+        // If is production, write the initial messages to the temp JSON file
+        if (isProd) {
+            // Write the initial messages to the temp JSON file
+            const initialMessages: Array<IMessage> = messages;
+            fs.writeFile(
+                this.tempJsonUrl,
+                JSON.stringify(initialMessages),
+                function (err: any) {
+                    if (err) {
+                        console.log(err);
+                    }
+                }
+            );
+        }
     }
 
     /**
@@ -29,6 +58,11 @@ class MessageActions {
      * @return {Array<IMessage>} All messages.
      */
     public getAllMessages(order: "ASC" | "DESC"): Array<IMessage> {
+        const finalJsonUrl: string = isProd ? this.tempJsonUrl : this.jsonUrl;
+
+        const data = fs.readFileSync(finalJsonUrl).toString();
+        const messages: Array<IMessage> = JSON.parse(data);
+
         return this.sortBy(messages, order);
     }
 
@@ -55,8 +89,9 @@ class MessageActions {
      * @param {string} username - The username that created.
      */
     public addMessage(message: string, username: string) {
-        console.log("Current path:", this.jsonUrl);
-        const data: string = fs.readFileSync(this.jsonUrl).toString();
+        const finalJsonUrl: string = isProd ? this.tempJsonUrl : this.jsonUrl;
+
+        const data = fs.readFileSync(finalJsonUrl).toString();
         let dbMessages: Array<IMessage> = JSON.parse(data);
 
         dbMessages.push({
@@ -67,7 +102,7 @@ class MessageActions {
         });
 
         fs.writeFile(
-            this.jsonUrl,
+            finalJsonUrl,
             JSON.stringify(dbMessages),
             function (err: any) {
                 if (err) {
