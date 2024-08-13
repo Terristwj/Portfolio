@@ -30,11 +30,11 @@ class MessageActions {
      * @return {string} Final JSON Url.
      */
     private getFinalJsonUrl(): string {
-        // Local JSON file URL
+        // Retrieve local JSON file URL
         const cwd: string = process.cwd();
         const localJsonUrl: string = `${cwd}/data/guestbook/messages.json`;
 
-        // Create a temporary directory URL
+        // Retrieve temporary directory URL
         const directory: string = tmpdir();
         const tempJsonUrl: string = `${directory}/messages.json`;
 
@@ -46,7 +46,9 @@ class MessageActions {
         this.key = "id";
         this.finalJsonUrl = this.getFinalJsonUrl();
 
-        // If is production, write the initial messages to the temp JSON file
+        // If is production,
+        // - Write the initial messages to the temp JSON file
+        // - By creating a tmp/messages.json file
         if (isProd) {
             const initialMessages: Array<IMessage> = messages;
             fs.writeFile(
@@ -68,8 +70,6 @@ class MessageActions {
     public getAllMessages(order: "ASC" | "DESC"): Array<IMessage> {
         const data: string = fs.readFileSync(this.finalJsonUrl).toString();
         const dbMessages: Array<IMessage> = JSON.parse(data);
-
-        console.log("this.finalJsonUrl", this.finalJsonUrl);
 
         return this.sortBy(dbMessages, order);
     }
