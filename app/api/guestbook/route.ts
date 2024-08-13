@@ -19,8 +19,11 @@ export async function GET(): Promise<NextResponse<IMessage[]>> {
     // Retrieve temporary JSON file data
     let dbMessages: Array<IMessage> = [];
     try {
+        console.log("tempJsonUrl:", tempJsonUrl);
         const data: string = fs.readFileSync(tempJsonUrl).toString();
+        console.log("data:", data);
         dbMessages = JSON.parse(data);
+        console.log("dbMessages:", dbMessages);
     } catch (error: any) {
         // JSON file does not exist yet
         console.log("Error:", error);
