@@ -32,8 +32,9 @@ export default function Guestbook(): JSX.Element | null {
     }
 
     // Copy to Clipboard
-    function copyToClipboard(data: any): void {
-        navigator.clipboard.writeText(data.target.innerText);
+    function copyToClipboard(e: React.MouseEvent<HTMLInputElement>): void {
+        const HTMLElement: HTMLInputElement = e.target as HTMLInputElement;
+        navigator.clipboard.writeText(HTMLElement.innerText);
     }
 
     return (
