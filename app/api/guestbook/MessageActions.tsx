@@ -1,6 +1,8 @@
 "use server";
 
 // File System - Read/Write JSON
+import { fileURLToPath } from "url";
+import { dirname, resolve } from "path";
 import fs from "fs";
 
 // My Messages
@@ -18,7 +20,8 @@ class MessageActions {
 
     public constructor() {
         this.key = "id";
-        this.jsonUrl = "@/data/guestbook/messages.json";
+        const cwd = process.cwd();
+        this.jsonUrl = `${cwd}/data/guestbook/messages.json`;
     }
 
     /**
@@ -52,7 +55,8 @@ class MessageActions {
      * @param {string} username - The username that created.
      */
     public addMessage(message: string, username: string) {
-        let data: string = fs.readFileSync(this.jsonUrl).toString();
+        console.log("Current path:", this.jsonUrl);
+        const data: string = fs.readFileSync(this.jsonUrl).toString();
         let dbMessages: Array<IMessage> = JSON.parse(data);
 
         dbMessages.push({
