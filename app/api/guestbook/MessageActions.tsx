@@ -18,7 +18,7 @@ class MessageActions {
 
     public constructor() {
         this.key = "id";
-        this.jsonUrl = "data/guestbook/messages.json";
+        this.jsonUrl = "@/data/guestbook/messages.json";
     }
 
     /**
