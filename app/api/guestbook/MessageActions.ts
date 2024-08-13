@@ -72,6 +72,11 @@ class MessageActions {
         const data: string = fs.readFileSync(this.finalJsonUrl).toString();
         const dbMessages: Array<IMessage> = JSON.parse(data);
 
+        // Retrieve temporary directory URL
+        const directory: string = tmpdir();
+        const tempJsonUrl: string = `${directory}/messages.json`;
+        console.log("tempJsonUrl 2:", tempJsonUrl);
+
         return this.sortBy(dbMessages, order);
     }
 
