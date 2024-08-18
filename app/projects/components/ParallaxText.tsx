@@ -53,7 +53,7 @@ export default function ParallaxText({
     );
 
     const directionFactor: MutableRefObject<number> = useRef<number>(1);
-    useAnimationFrame((t: number, delta: number) => {
+    useAnimationFrame((t: number, delta: number): void => {
         let moveBy: number =
             directionFactor.current * baseVelocity * (delta / 1000);
 
@@ -82,33 +82,40 @@ export default function ParallaxText({
     return (
         <div
             className="overflow-hidden tracking-widest m-0 whitespace-nowrap flex flex-nowrap fira-code"
-            onMouseOver={() => (baseVelocity *= hoverSpeedMultiply)}
-            onMouseOut={() => (baseVelocity /= hoverSpeedMultiply)}
+            onMouseOver={(): number => (baseVelocity *= hoverSpeedMultiply)}
+            onMouseOut={(): number => (baseVelocity /= hoverSpeedMultiply)}
         >
             <motion.div className="flex" style={{ x }}>
                 {/* Repeat 4 times */}
-                {[...Array(4)].map((_: any, i1: number) => (
-                    <span key={i1}>
-                        {/* For each item in tech_items */}
-                        {[...children].map((child: string, i2: number) => (
-                            <span key={i2}>
-                                <span
-                                    className="select-all
+                {[...Array(4)].map(
+                    (_: any, i1: number): JSX.Element => (
+                        <span key={i1}>
+                            {/* For each item in tech_items */}
+                            {[...children].map(
+                                (child: string, i2: number): JSX.Element => (
+                                    <span key={i2}>
+                                        <span
+                                            className="select-all
                                     hover:font-extrabold
                                     hover:text-teal-600 hover:dark:text-teal-400"
-                                >
-                                    {child}
-                                </span>
-                                {/* Number of white-spaces */}
-                                {[...Array(numSpaces)].map(
-                                    (_: any, i3: number) => (
-                                        <span key={i3}>&nbsp;</span>
-                                    )
-                                )}
-                            </span>
-                        ))}
-                    </span>
-                ))}
+                                        >
+                                            {child}
+                                        </span>
+                                        {/* Number of white-spaces */}
+                                        {[...Array(numSpaces)].map(
+                                            (
+                                                _: any,
+                                                i3: number
+                                            ): JSX.Element => (
+                                                <span key={i3}>&nbsp;</span>
+                                            )
+                                        )}
+                                    </span>
+                                )
+                            )}
+                        </span>
+                    )
+                )}
             </motion.div>
         </div>
     );

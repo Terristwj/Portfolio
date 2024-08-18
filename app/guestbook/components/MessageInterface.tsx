@@ -5,4 +5,5 @@ export default interface IMessage {
     message: string;
     username: string;
     created_at: string;
+    is_hidden?: boolean;
 }

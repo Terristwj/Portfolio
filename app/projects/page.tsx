@@ -18,14 +18,14 @@ import {
 import IProject from "@/app/projects/components/ProjectInterface";
 
 // Settings
-import { TypeTabs } from "@/app/projects/constants";
-import { OrderbyTabs } from "@/app/projects/constants";
+import { TYPE_TABS } from "@/app/projects/constants";
+import { ORDERBY_TABS } from "@/app/projects/constants";
 
 export default function Projects() {
     // Default: All/Newest
-    let [activeTypeTab, setActiveTypeTab] = useState<string>(TypeTabs[0]);
+    let [activeTypeTab, setActiveTypeTab] = useState<string>(TYPE_TABS[0]);
     let [activeOrderbyTab, setActiveOrderbyTab] = useState<string>(
-        OrderbyTabs[0]
+        ORDERBY_TABS[0]
     );
 
     // Default projects to be displayed
@@ -34,7 +34,7 @@ export default function Projects() {
     );
 
     // UseEffects for tracking tab changes
-    useEffect(() => {
+    useEffect((): void => {
         // Prevents rendering bug for toggle between tabs
         setProjectArray([]);
 
@@ -44,7 +44,7 @@ export default function Projects() {
 
         // Timer between temp and []
         // - Prevents rendering bug for toggle between tabs
-        setTimeout(() => {
+        setTimeout((): void => {
             if (activeTypeTab === "All") setProjectArray(getAllProjects(order));
             else if (activeTypeTab === "Hackathon")
                 setProjectArray(getHackathonProjects(order));
@@ -68,7 +68,7 @@ export default function Projects() {
                     {/* (Left-tabs) Project Type START */}
                     <AnimatedTabs
                         layoutId="projectTypeBubble"
-                        tabs={TypeTabs}
+                        tabs={TYPE_TABS}
                         useStateActiveTab={{
                             cur: activeTypeTab,
                             set: setActiveTypeTab,
@@ -79,7 +79,7 @@ export default function Projects() {
                     {/* (Right-tabs) Project Order START */}
                     <AnimatedTabs
                         layoutId="projectOrderByBubble"
-                        tabs={OrderbyTabs}
+                        tabs={ORDERBY_TABS}
                         useStateActiveTab={{
                             cur: activeOrderbyTab,
                             set: setActiveOrderbyTab,
@@ -99,11 +99,12 @@ export default function Projects() {
                 >
                     <AnimatePresence>
                         {/* Do not use opacity - Mobile has problems */}
-                        {projectArray.map((project, index) => (
-                            <motion.article
-                                key={index}
-                                animate={{ y: 10 }}
-                                className="border rounded-md
+                        {projectArray.map(
+                            (project, index): JSX.Element => (
+                                <motion.article
+                                    key={index}
+                                    animate={{ y: 10 }}
+                                    className="border rounded-md
                                     border-black bg-white
 
                                     dark:border-white dark:bg-black
@@ -114,10 +115,11 @@ export default function Projects() {
                                     
                                     transition-all duration-500
                                     group relative"
-                            >
-                                <ProjectCard project={project} />
-                            </motion.article>
-                        ))}
+                                >
+                                    <ProjectCard project={project} />
+                                </motion.article>
+                            )
+                        )}
                     </AnimatePresence>
                 </div>
                 {/* Projects Display END */}

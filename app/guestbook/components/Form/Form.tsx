@@ -5,17 +5,23 @@ import { useRef, RefObject } from "react";
 import FormContent from "@/app/guestbook/components/Form/FormContent";
 import handleFormData from "@/app/guestbook/components/Form//HandleFormData";
 
-import { ApiDelaySeconds } from "@/app/guestbook/constants";
+import { API_DELAY_SECONDS } from "@/app/guestbook/constants";
 import { wait } from "@/app/utils/utils";
 
 interface FormProps {
-    addMessage: (message: string, username: string) => void;
+    addMessage: (
+        username: string,
+        message: string,
+        createdAt: string
+    ) => Promise<boolean>;
     resetData: () => Promise<void>;
+    isError: boolean;
 }
 
 export default function Form({
     addMessage,
     resetData,
+    isError,
 }: FormProps): JSX.Element {
     // Message input Field
     const formRef: RefObject<HTMLFormElement> = useRef<HTMLFormElement>(null);
@@ -24,8 +30,12 @@ export default function Form({
         // Debugging
         // console.log(formData.get("message"));
 
+        // Request for a name (Optional)
+        const desiredName: string =
+            prompt("Enter a name (Leave blank to randomize)") || "";
+
         // Minimum delay to prevent spam
-        await wait(ApiDelaySeconds);
+        await wait(API_DELAY_SECONDS);
 
         // Update JSON database
         // - Check filters
@@ -33,7 +43,7 @@ export default function Form({
         //   - Server check with openAI API
         // - Backend overwrites JSON
         //   - JSON in frontend folder is modified (In the server)
-        await handleFormData(addMessage, formData);
+        await handleFormData(addMessage, desiredName, formData);
 
         // onSend reset input field
         formRef.current?.reset();
@@ -50,7 +60,7 @@ export default function Form({
             className="relative flex items-center text-sm mb-5"
         >
             {/* Required for useFormStatus() */}
-            <FormContent resetData={resetData} />
+            <FormContent resetData={resetData} isError={isError} />
         </form>
     );
 }

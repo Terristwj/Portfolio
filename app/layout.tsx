@@ -88,7 +88,7 @@ export default function RootLayout({
             <body
                 suppressHydrationWarning={true} // Prevents errors from extensions
                 className={multilineClassNames(
-                    "h-full",
+                    "h-screen",
 
                     // Light Mode
                     // - Text color

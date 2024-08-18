@@ -38,15 +38,6 @@ This portfolio site was created using [Next.js](https://nextjs.org/), and others
         <td>Animations</td>
         <td>Transitions</td>
     </tr>
-    <!-- <tr>
-        <th align="left">
-            <a href="https://planetscale.com/">
-                PlanetScale
-            </a>
-        </th>
-        <td>Prisma</td>
-        <td>Database</td>
-    </tr> -->
     <tr>
         <th align="left">
             <a href="https://vercel.com/">
@@ -56,11 +47,21 @@ This portfolio site was created using [Next.js](https://nextjs.org/), and others
         <td>Cloud Hosting</td>
         <td>Website Provider</td>
     </tr>
+    <tr>
+        <th align="left">
+            <a href="https://github.com/vercel/storage/tree/main/packages/postgres">
+                Vercel Postgres DB
+            </a>
+        </th>
+        <td>Cloud Database</td>
+        <td>Database Provider</td>
+    </tr>
 </table>
 
 ### (Others) Tech Stack Dependencies
 
 <table>
+    <!-- UI Components - Start -->
     <tr>
         <th colspan="3" align="left">UI Components</th>
     </tr>
@@ -73,6 +74,8 @@ This portfolio site was created using [Next.js](https://nextjs.org/), and others
         <td>UI Library</td>
         <td>Transitions</td>
     </tr>
+    <!-- UI Components - END -->
+    <!-- Framer Motion - Start -->
     <tr>
         <th colspan="3" align="left">Framer Motion</th>
     </tr>
@@ -85,6 +88,8 @@ This portfolio site was created using [Next.js](https://nextjs.org/), and others
         <td>Framer Motion</td>
         <td>Utility</td>
     </tr>
+    <!-- Framer Motion - END -->
+    <!-- Icons - Start -->
     <tr>
         <th colspan="3" align="left">Icons</th>
     </tr>
@@ -106,6 +111,8 @@ This portfolio site was created using [Next.js](https://nextjs.org/), and others
         <td>React Icons</td>
         <td>Social Media Icons</td>
     </tr>
+    <!-- Icons - END -->
+    <!-- Fonts - Start -->
     <tr>
         <th colspan="3" align="left">Fonts</th>
     </tr>
@@ -127,6 +134,8 @@ This portfolio site was created using [Next.js](https://nextjs.org/), and others
         <td>Typewriter Effect</td>
         <td></td>
     </tr>
+    <!-- Fonts - END -->
+    <!-- Guestbook - Start -->
     <tr>
         <th colspan="3" align="left">Guestbook Page</th>
     </tr>
@@ -166,15 +175,6 @@ This portfolio site was created using [Next.js](https://nextjs.org/), and others
         <td>Random Number</td>
         <td>Min/Max Integer/Float</td>
     </tr>
-    <!-- <tr>
-        <th align="left">
-            <a href="https://unsplash.com/developers">
-                Unsplash
-            </a>
-        </th>
-        <td>Random Images</td>
-        <td></td>
-    </tr> -->
     <tr>
         <th align="left">
             <a href="https://picsum.photos/">
@@ -184,37 +184,87 @@ This portfolio site was created using [Next.js](https://nextjs.org/), and others
         <td>Random Images</td>
         <td>URL API</td>
     </tr>
+    <tr>
+        <th align="left">
+            <a href="https://www.npmjs.com/package/axios">
+                Axios
+            </a>
+        </th>
+        <td>API Connector</td>
+        <td>API Handler</td>
+    </tr>
+    <!-- Guestbook - END -->
+    <!-- Vercel - Start -->
+    <tr>
+        <th colspan="3" align="left">Vercel Dependencies</th>
+    </tr>
+    <tr>
+        <th align="left">
+            <a href="https://vercel.com/docs/analytics">
+                Vercel Web Analytics
+            </a>
+        </th>
+        <td>Web Analytics</td>
+        <td>Visitors Count</td>
+    </tr>
+    <tr>
+        <th align="left">
+            <a href="https://vercel.com/docs/speed-insights">
+                Vercel Speed Insights
+            </a>
+        </th>
+        <td>Web Performance</td>
+        <td>Countries Performance</td>
+    </tr>
+    <tr>
+        <th align="left">
+            <a href="https://vercel.com/docs/storage/vercel-postgres">
+                Vercel Postgres Database
+            </a>
+        </th>
+        <td>Postgres Database</td>
+        <td>Cloud Database</td>
+    </tr>
+    <!-- Vercel - END -->
 </table>
 
-### Project's PlanetScale Documentation (DEPRECIATED)
+### Project's Vercel Postgres DB Documentation
 
 In this project,
 
-1. Add `DATABASE_URL` into `.env` to connect to PlanetScale.
+1. Ensure a Vercel Postgres Database (V-PG-DB) is created
 
-2. Create and modify `prisma/schema.prisma` for database changes.
+2. Add every `POSTGRES_<item>` into `.env` to connect to V-PG-DB
 
-3. Using CLI, push any database changes `npx prisma db push`. Refer to [Prisma best practice with NextJS](https://www.prisma.io/docs/orm/more/help-and-troubleshooting/help-articles/nextjs-prisma-client-dev-practices) for more infomation.
-
-4. In PlanetScale, use the console commands to debug:
-    - `SELECT * FROM Guestbook;`
-    - `SELECT * FROM Guestbook ORDER BY created_at DESC;`
-    - `DELETE FROM Guestbook;`
+3. In Vercel UI Dashboard, use the console commands to debug:
+    - `SELECT * FROM messages;`
+    - `SELECT * FROM messages ORDER BY created_at DESC;`
+    - `DELETE FROM messages;`
     - Example
-        - `SELECT * FROM Guestbook WHERE username = "Bossy Gnat" and (message !="fishy\\" and message != "omg" and message !="<h1>hey</h1>" and message !="<br/>");`
-
-### Vercel & PlanetScale Documentation (DEPRECIATED)
-
-[Deploying Vercel project with PlanetScale](https://pris.ly/d/vercel-build)
-
--   In `package.json` -> `scripts` add `"postinstall": "prisma generate"`
+        - `SELECT * FROM messages WHERE username = "Bossy Gnat" and (message !="fishy\\" and message != "omg" and message !="<h1>hey</h1>" and message !="<br/>");`
+4. In the backend, follow the documentation to use @vercel/postgres
+    - https://github.com/vercel/storage/tree/main/packages/postgres#readme
 
 ### Vercel Add-ons Documentation
 
 -   [Speed Insights](https://vercel.com/docs/speed-insights)
     -   `npm i @vercel/speed-insights`
 -   [Web Analytics](https://vercel.com/docs/analytics)
-    -   `@vercel/analytics`
+    -   `npm i @vercel/analytics`
+-   [Postgres Database](https://vercel.com/docs/storage/vercel-postgres)
+    -   `npm i @vercel/postgres`
+
+### OpenAI API Documentation
+
+In this project,
+
+1. Ensure a OpenAI API account is created and configured
+
+2. Add your `OPENAI_APIKEY` into `.env`
+
+3. In the backend, follow the documentation to use OpenAI API
+
+    - https://platform.openai.com/docs/api-reference/introduction
 
 ### References
 

@@ -18,10 +18,10 @@ import ThemeButton from "@/app/components/Navbar/ThemeButton";
 // Drop-delay settings
 import {
     ITab,
-    tabs,
-    desktopThemeBtnDelay,
-    hamburgerDelay,
-    mobileThemeBtnDelay,
+    TABS,
+    DESKTOP_THEME_BTN_DELAY,
+    HAMBURGER_DELAY,
+    MOBILE_THEME_BTN_DELAY,
 } from "@/app/components/Navbar/constants";
 
 export default function Navbar(): JSX.Element {
@@ -67,7 +67,7 @@ export default function Navbar(): JSX.Element {
 
                             {/* Navbar-Desktop-Links - START =================================================== */}
                             <div className="hidden sm:ml-6 sm:flex sm:space-x-8 sm:items-center">
-                                {tabs.map(
+                                {TABS.map(
                                     (tab: ITab): JSX.Element => (
                                         <NavLinkDesktop
                                             key={tab.to}
@@ -78,7 +78,7 @@ export default function Navbar(): JSX.Element {
                                         />
                                     )
                                 )}
-                                <ThemeButton delay={desktopThemeBtnDelay} />
+                                <ThemeButton delay={DESKTOP_THEME_BTN_DELAY} />
                             </div>
                             {/* Navbar-Desktop-Links - END ===================================================== */}
                         </div>
@@ -87,7 +87,7 @@ export default function Navbar(): JSX.Element {
                         {/* Navbar-Mobile - START ====================================================================== */}
                         <div className="-mr-2 flex items-center sm:hidden">
                             {/* Navbar-Mobile-Hamburger - START ================================================ */}
-                            <DropTransition delay={hamburgerDelay}>
+                            <DropTransition delay={HAMBURGER_DELAY}>
                                 <Disclosure.Button
                                     className="inline-flex items-center justify-center p-2 rounded-md
                                         text-gray-600 dark:text-gray-400
@@ -110,7 +110,7 @@ export default function Navbar(): JSX.Element {
                                     &nbsp;&nbsp;
                                 </span>
                             </>
-                            <ThemeButton delay={mobileThemeBtnDelay} />
+                            <ThemeButton delay={MOBILE_THEME_BTN_DELAY} />
                         </div>
                         {/* Navbar-Mobile - END ======================================================================== */}
                     </div>
@@ -137,7 +137,7 @@ export default function Navbar(): JSX.Element {
                                     duration: 0.5,
                                 }}
                             >
-                                {tabs.map(
+                                {TABS.map(
                                     (tab: ITab): JSX.Element => (
                                         <NavLinkMobile
                                             key={tab.to}

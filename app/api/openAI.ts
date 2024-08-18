@@ -24,6 +24,7 @@ interface ISystem {
 const model: string = "gpt-4o-mini";
 
 // Content configuration
+// - Profanity and negativity check
 let content: string = "You are a profanity checker and negativity checker.";
 content +=
     "If any sentence contain profanity or inappropriateness, return 'true'.";
@@ -38,6 +39,15 @@ content +=
     "If any sentence contain religious slender like 'jesus' or 'muslim', return 'true'.";
 content += "If not 'true', return 'false'";
 
+// - Admin and staff check
+content += "You are also an Admin and staff checker.";
+content +=
+    "If any sentence suggest that an admin is saying something, return 'true'.";
+content += "If any sentence is impersonating as an admin, return 'true'.";
+content +=
+    "If any sentence suggest a staff is saying something, return 'true'.";
+content += "If any sentence is impersonating as a staff, return 'true'.";
+
 // System configuration
 const system: ISystem = {
     role: "system",
@@ -49,27 +59,35 @@ const system: ISystem = {
 export async function isProfaneAI(prompt: string): Promise<boolean> {
     "use server";
 
-    const completion = await openAI.chat.completions.create({
+    const completion: any = await openAI.chat.completions.create({
         model,
         messages: [system, { role: "user", content: prompt }],
     });
 
-    const response = completion.choices[0].message.content;
+    const response: any = completion.choices[0].message.content;
 
     // Logs / Debugging
-    console.log(`Someone asked: ${prompt}`);
-    console.log(`OpenAI responded is profane: ${response}`);
+    console.log("OpenAI API:");
+    console.log(`\t- Prompt: ${prompt}`);
+    console.log(`\t- OpenAI responded is profane/phishing: ${response}`);
 
     // Return true if:
     //  1) Profane
-    //  2) Inappropriate
-    //  3) Negative
-    //  4) Hate speech
-    //  5) Sarcasm
-    //  6) Age-restricted words
+    //      1) Profanity / Inappropriate
+    //      2) Negative / Hate speech / Sarcasm
+    //      3) Age-restricted words / word-play
+    //      4) Racial slurs
+    //      5) Political slanders
+    //      6) Religious slanders
+    //  2) Phishing
+    //      1) Admin impersonation
+    //      2) Staff impersonation
     // Else return false
     if (response.includes("true")) {
-        console.log("AI detected profanity/negativity in:", prompt);
+        console.log(
+            "\t- AI ERROR: AI detected profanity/negativity in:",
+            prompt
+        );
         return true;
     } else return false;
 }

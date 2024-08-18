@@ -17,7 +17,7 @@ export default function ThemeButton({
     const [mounted, setMounted] = useState<boolean>(false);
 
     // Prevents rendering error logs
-    useEffect(() => {
+    useEffect((): void => {
         setMounted(true);
     }, []);
 
@@ -28,7 +28,7 @@ export default function ThemeButton({
     return (
         <DropTransition delay={delay}>
             <button
-                onClick={() =>
+                onClick={(): void =>
                     setTheme(resolvedTheme === "dark" ? "light" : "dark")
                 }
                 className="p-2 rounded-lg

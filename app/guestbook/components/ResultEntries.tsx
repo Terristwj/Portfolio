@@ -9,16 +9,16 @@ import ResultEntry from "@/app/guestbook/components/ResultEntry";
 // Result-Entries Settings
 import {
     // Refresh messages
-    RevalidateInterval,
+    REVALIDATE_INTERVAL,
 
     // Animation
-    AnimateDuration,
-    StaggerInterval,
+    ANIMATE_DURATION,
+    STAGGER_INTERVAL,
 
     // Random Image Src
-    RandomImageSrc,
+    RANDOM_IMAGE_SRC,
     ImageWidth,
-    ImageHeight,
+    IMAGE_HEIGHT,
 } from "@/app/guestbook/constants";
 
 interface ResultEntriesProps {
@@ -38,18 +38,20 @@ export default function ResultEntries({
         // Only set interval once
         if (!hasInterval) {
             setHasInterval(true);
+            // Initial load
+            resetData();
 
             // Every interval, refresh the data
             setInterval(async (): Promise<void> => {
                 // Avoid using router.reload()
                 // - Reloading the page does not clear cache
                 await resetData();
-            }, RevalidateInterval);
+            }, REVALIDATE_INTERVAL);
         }
     }
 
     function formatImageSrc(width: number, height: number): string {
-        return `${RandomImageSrc}/${width}/${height}`;
+        return `${RANDOM_IMAGE_SRC}/${width}/${height}`;
     }
 
     return (
@@ -58,7 +60,7 @@ export default function ResultEntries({
                 // picsum.photos API for random images
                 const imgSrc: string = formatImageSrc(
                     ImageWidth,
-                    ImageHeight - index
+                    IMAGE_HEIGHT - index
                 );
 
                 return (
@@ -71,8 +73,8 @@ export default function ResultEntries({
                         }}
                         exit={{ y: 50 }}
                         transition={{
-                            duration: AnimateDuration,
-                            delay: StaggerInterval * index,
+                            duration: ANIMATE_DURATION,
+                            delay: STAGGER_INTERVAL * index,
                         }}
                     >
                         {/* Version 1 - Only Text*/}

@@ -10,15 +10,17 @@ import {
 } from "@/app/guestbook/components/Form/ReactIcons";
 import FormButton from "@/app/guestbook/components/Form/FormButton";
 
-import { ApiDelaySeconds } from "@/app/guestbook/constants";
+import { API_DELAY_SECONDS } from "@/app/guestbook/constants";
 import { wait } from "@/app/utils/utils";
 
 interface FormContentProps {
     resetData: () => Promise<void>;
+    isError: boolean;
 }
 
 export default function FormContent({
     resetData,
+    isError,
 }: FormContentProps): JSX.Element {
     // Button loading
     const { pending }: { pending: boolean } = useFormStatus();
@@ -31,7 +33,7 @@ export default function FormContent({
         // Enable spinner
         setRefreshing(true);
         // Minimum delay to prevent spam
-        await wait(ApiDelaySeconds);
+        await wait(API_DELAY_SECONDS);
         // Reset display
         await resetData();
         // Disable spinner
@@ -46,10 +48,10 @@ export default function FormContent({
                 placeholder="Leave a message..."
                 name="message"
                 required
-                disabled={pending}
+                disabled={pending || isError}
                 autoComplete="off"
                 className={
-                    ((pending || refreshing) &&
+                    ((pending || refreshing || isError) &&
                         "opacity-50 cursor-not-allowed select-none") +
                     " pl-4 pr-32 py-2 mt-1 block w-full rounded-sm" +
                     // Placeholder
@@ -66,7 +68,13 @@ export default function FormContent({
             {/* Input message - END ========================================================= */}
 
             {/* Buttons - START ============================================================= */}
-            <div className="absolute right-2 mt-1 h-7 font-medium flex gap-2">
+            <div
+                className={
+                    ((pending || refreshing || isError) &&
+                        "cursor-not-allowed select-none") +
+                    " absolute right-2 mt-1 h-7 font-medium flex gap-2"
+                }
+            >
                 {pending || refreshing ? (
                     <>
                         {/* Loading Button - START ============================ */}
@@ -78,14 +86,18 @@ export default function FormContent({
                 ) : (
                     <>
                         {/* Send Button - START =============================== */}
-                        <FormButton type="submit">
+                        <FormButton type="submit" disabled={isError}>
                             <IconSend />
                         </FormButton>
                         {/* Send Button - END ================================= */}
 
                         {/* Refresh Button - START ============================ */}
-                        <FormButton type="reset">
-                            <IconRefresh onClick={handleReset} />
+                        <FormButton
+                            type="reset"
+                            onClick={handleReset}
+                            disabled={isError}
+                        >
+                            <IconRefresh />
                         </FormButton>
                         {/* Refresh Button - END ============================== */}
                     </>
