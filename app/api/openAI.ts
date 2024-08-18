@@ -47,6 +47,7 @@ content += "If any sentence is impersonating as an admin, return 'true'.";
 content +=
     "If any sentence suggest a staff is saying something, return 'true'.";
 content += "If any sentence is impersonating as a staff, return 'true'.";
+content += "But if it is a compliment to the admin, return 'false'.";
 
 // System configuration
 const system: ISystem = {
@@ -83,6 +84,7 @@ export async function isProfaneAI(prompt: string): Promise<boolean> {
     //      1) Admin impersonation
     //      2) Staff impersonation
     // Else return false
+    //      1) If false, it is a compliment to the admin
     if (response.includes("true")) {
         console.log(
             "\t- AI ERROR: AI detected profanity/negativity in:",
