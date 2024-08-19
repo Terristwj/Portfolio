@@ -89,6 +89,7 @@ export async function isProfaneAI(prompt: string): Promise<boolean> {
     //      2) Staff impersonation
     // Else return false
     //      1) If false, it is a compliment to the admin
+    //      2) If false, it is a compliment like programming/coding god
     if (response.includes("true")) {
         console.log(
             "\t- AI ERROR: AI detected profanity/negativity in:",
