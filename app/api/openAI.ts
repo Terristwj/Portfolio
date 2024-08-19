@@ -47,7 +47,11 @@ content += "If any sentence is impersonating as an admin, return 'true'.";
 content +=
     "If any sentence suggest a staff is saying something, return 'true'.";
 content += "If any sentence is impersonating as a staff, return 'true'.";
+
+// - Exceptions
 content += "But if it is a compliment to the admin, return 'false'.";
+content +=
+    "But if it is about 'programming god' or 'code god' compliments, return 'false'.";
 
 // System configuration
 const system: ISystem = {

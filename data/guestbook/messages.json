@@ -1,16 +1,93 @@
 [
-    {
-        "id": 2,
-        "message": "Be my honorary first record! 🙂",
-        "username": "Still Terris",
-        "created_at": "2024-02-03T08:41:20.769Z",
-        "is_hidden": false
-    },
-    {
-        "id": 1,
-        "message": "Welcome to my Guestbook!",
-        "username": "Terris the Admin",
-        "created_at": "2024-02-03T08:41:20.769Z",
-        "is_hidden": false
-    }
+  {
+    "id": 13,
+    "message": "Coding Legend",
+    "username": "Brendan",
+    "created_at": "2024-08-19T09:14:17.841Z",
+    "is_hidden": false
+  },
+  {
+    "id": 12,
+    "message": "terris oppa",
+    "username": "SW",
+    "created_at": "2024-08-19T07:29:35.839Z",
+    "is_hidden": false
+  },
+  {
+    "id": 11,
+    "message": "Sheeeshhhh",
+    "username": "Henry",
+    "created_at": "2024-08-18T15:48:04.883Z",
+    "is_hidden": false
+  },
+  {
+    "id": 10,
+    "message": "TERRIS YOURE SO COOL",
+    "username": "ritika",
+    "created_at": "2024-08-18T15:26:45.251Z",
+    "is_hidden": false
+  },
+  {
+    "id": 9,
+    "message": "Wow Terris! You're him!",
+    "username": "Darius",
+    "created_at": "2024-08-18T15:25:39.874Z",
+    "is_hidden": false
+  },
+  {
+    "id": 8,
+    "message": "hi shaun :D",
+    "username": "Terris",
+    "created_at": "2024-08-18T15:24:17.012Z",
+    "is_hidden": false
+  },
+  {
+    "id": 7,
+    "message": "Wow, this is amazing! I wish I could do something this beast😳😳😳",
+    "username": "John",
+    "created_at": "2024-08-18T15:23:58.473Z",
+    "is_hidden": false
+  },
+  {
+    "id": 6,
+    "message": "wassup Terris",
+    "username": "Shaun",
+    "created_at": "2024-08-18T15:23:57.350Z",
+    "is_hidden": false
+  },
+  {
+    "id": 5,
+    "message": "Sick! Cant wait for more great things to come!",
+    "username": "Rach",
+    "created_at": "2024-08-18T15:16:59.372Z",
+    "is_hidden": false
+  },
+  {
+    "id": 4,
+    "message": "Great Portfolio!",
+    "username": "Derrick",
+    "created_at": "2024-08-18T15:00:08.026Z",
+    "is_hidden": false
+  },
+  {
+    "id": 3,
+    "message": "/secret",
+    "username": "password",
+    "created_at": "2024-08-18T14:57:03.069Z",
+    "is_hidden": true
+  },
+  {
+    "id": 2,
+    "message": "Be my honorary first record! 🙂",
+    "username": "Still Terris",
+    "created_at": "2024-08-03T16:41:20.769Z",
+    "is_hidden": false
+  },
+  {
+    "id": 1,
+    "message": "Welcome to my Guestbook!",
+    "username": "Terris the Admin",
+    "created_at": "2024-08-03T12:41:20.769Z",
+    "is_hidden": false
+  }
 ]
