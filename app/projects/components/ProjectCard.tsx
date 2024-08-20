@@ -83,6 +83,7 @@ export default function ProjectCard({ project }: ProjectCardProps) {
                 {/* Subtitle - START ========================================================= */}
                 <h3
                     className="font-medium select-text
+
                         leading-tight tracking-tight
                         text-black dark:text-white
                         group-hover:text-teal-600 dark:group-hover:text-teal-400

@@ -28,9 +28,9 @@
     {
         "completion_sequence": 3,
         "project_type": "hackathon",
-        "title": "Synthia",
-        "subtitle": "The Best GenAI Tool",
-        "overview": "Synthia is a web-based AI; A Chatbot, Image generator, Music generator, and Code generator.",
+        "title": "SMU .Hack HEAP 2023",
+        "subtitle": "Synthia (Top 10 Finalist)",
+        "overview": "The Best GenAI Tool. Synthia is a web-based AI; A Chatbot, Image generator, Music generator, and Code generator.",
         "links": [
             ["site", "https://synthia-gen-ai-website.vercel.app/"],
             [
@@ -57,9 +57,9 @@
     {
         "completion_sequence": 4,
         "project_type": "hackathon",
-        "title": "Viiicky (Most Creative Award)",
-        "subtitle": "Your Colourblind Asssistant",
-        "overview": "Aim to help the colourblind. Viiicky enables users to identify colours and rectify colour deficiency.",
+        "title": "SMU Ellipsis Tech Series 2023",
+        "subtitle": "Viiicky (Most Creative Award)",
+        "overview": "Your Colourblind Asssistant. Aimed to help the colourblind, Viiicky enables users to identify colours and rectify colour deficiency.",
         "links": [
             ["site", "https://vicky-nine.vercel.app/"],
             [
@@ -77,9 +77,9 @@
     {
         "completion_sequence": 5,
         "project_type": "hackathon",
-        "title": "EduTrekker",
-        "subtitle": "Self-learning for children",
-        "overview": "An AI driven tutoring app for children. Note-taking, AI-curated flashcards, and an AI teacher named Pam.",
+        "title": "SMU WiT Google Ignite 2023",
+        "subtitle": "EduTrekker",
+        "overview": "Self-learning for children. An AI driven tutoring app for children. Note-taking, AI-curated flashcards, and an AI teacher named Pam.",
         "links": [
             ["site", "https://ignite-matchsticks-pam.web.app/"],
             [
@@ -96,9 +96,9 @@
     {
         "completion_sequence": 6,
         "project_type": "hackathon",
-        "title": "UrbanAIze",
-        "subtitle": "Urban Planning with AI",
-        "overview": "Empowered by various AI models. Generate diverse 3D urban layout plans for better city development.",
+        "title": "NUS-NES CATALYSTxAI 2023",
+        "subtitle": "UrbanAIze",
+        "overview": "Urban Planning with AI. Empowered by various AI models. Generate diverse 3D urban layout plans for better city development.",
         "links": [
             [
                 "figma",
