@@ -139,7 +139,7 @@ export default function ProjectCard({ project }: ProjectCardProps) {
                     {/* Tech Stack - END ========================================= */}
 
                     {/* Visit Items - START ====================================== */}
-                    <div className="flex">
+                    <div className="flex flex-wrap">
                         {links.map((link: string[], _: number): JSX.Element => {
                             return (
                                 <div key={`${title}_${link[0]}`}>
@@ -156,7 +156,6 @@ export default function ProjectCard({ project }: ProjectCardProps) {
                                     >
                                         &rarr; {link[0]}
                                     </a>
-                                    &nbsp; &nbsp;
                                 </div>
                             );
                         })}

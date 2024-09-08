@@ -62,6 +62,7 @@
         "overview": "Your Colourblind Asssistant. Aimed to help the colourblind, Viiicky enables users to identify colours and rectify colour deficiency.",
         "links": [
             ["site", "https://vicky-nine.vercel.app/"],
+            ["github", "https://github.com/Terristwj/Vicky"],
             [
                 "pitch",
                 "https://www.canva.com/design/DAFs2rj4YTM/v7RKuWysnLGd9AvaRnRL0Q/view?utm_content=DAFs2rj4YTM&utm_campaign=designshare&utm_medium=link&utm_source=publishsharelink#1"
@@ -82,6 +83,7 @@
         "overview": "Self-learning for children. An AI driven tutoring app for children. Note-taking, AI-curated flashcards, and an AI teacher named Pam.",
         "links": [
             ["site", "https://ignite-matchsticks-pam.web.app/"],
+            ["github", "https://github.com/Terristwj/Matchsticks"],
             [
                 "pitch",
                 "https://docs.google.com/presentation/d/1VlYox3sGu5h6qYRd2Zpp7SPYK6eq2_sB96zVZQfbb_U/edit?usp=sharing"
@@ -142,6 +144,7 @@
         "overview": "An eCommerce platform for fashionistas to buy and sell pre-loved fashion items. Gamification and AI empowered.",
         "links": [
             ["site", "https://smu-wad2.web.app/about"],
+            ["github", "https://github.com/Terristwj/Revente"],
             [
                 "pitch",
                 "https://www.canva.com/design/DAFy0X2wNfg/t5iFIhIUxyxV-uX_voKW5A/view"
