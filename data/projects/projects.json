@@ -311,5 +311,133 @@
                 "Machine Learning"
             ]
         }
+    },
+    {
+        "completion_sequence": 13,
+        "project_type": "academic",
+        "title": "CityJS Singapore 2024",
+        "subtitle": "JavaScript Conference",
+        "overview": "During the events, meet and hear from the most audacious and provocative speakers in the JavaScript conferences. Developer, Architect, CTO, this is the best time to get ideas and learn what is new and upcoming in the JavaScript & Frontend world.",
+        "links": [["official website", "https://singapore.cityjsconf.org/"]],
+        "img_src": "/projects/academic/CityJS.jpg",
+        "tech": {
+            "tech_type": "Conference Topics",
+            "tech_items": [
+                "Frontend",
+                "Vue",
+                "React",
+                "Angular",
+                "Vite",
+                "Reactive & Functional Program",
+                "Transition APIs",
+                "Payment APIs",
+                "Web Accessibility",
+                "2FA & Multi-FA",
+                "Machine Learning",
+                "AI Empowered",
+                "Copilot",
+                "Unit Test"
+            ]
+        }
+    },
+    {
+        "completion_sequence": 14,
+        "project_type": "hackathon",
+        "title": "HacX! 2024",
+        "subtitle": "Team FreeIceKopi (Top 20 Semi-finalist)",
+        "overview": "Organized by HTX and Microsoft, Hack for Public Safety! A project about detecting unusual objects through the analysis of video footage captured by officers' body-worn cameras and notify the officers where required.",
+        "links": [
+            ["official", "https://hacx.sg/"],
+            ["challenges", "https://hacx.sg/challenge/"],
+            [
+                "pitch",
+                "https://docs.google.com/presentation/d/1M4l9aJVn98CHgpd3bkB60j2Es-npxY_VBv-mVZSg2EE/edit?usp=sharing"
+            ]
+        ],
+        "img_src": "/projects/hackathon/FreeIceKopi.jpg",
+        "tech": {
+            "tech_type": "Technology Stack",
+            "tech_items": [
+                "Machine Learning",
+                "Object Detection",
+                "Object Classification",
+                "Python",
+                "RESTful API",
+                "TypeScript",
+                "React Native",
+                "Mobile Dev",
+                "Raspberry Pi",
+                "Bluetooth",
+                "IoT"
+            ]
+        }
+    },
+    {
+        "completion_sequence": 15,
+        "project_type": "academic",
+        "title": "Grandis",
+        "subtitle": "WFH Management System",
+        "overview": "A WFH management application that facilitates managing staff WFH schedules, tracking approvals, and application status. This project aims to practice SCRUM methodology.",
+        "links": [["Site", "https://spm-one-in-all-wfh.vercel.app/"]],
+        "img_src": "/projects/academic/Grandis.jpg",
+        "tech": {
+            "tech_type": "Technology Stack",
+            "tech_items": [
+                "Scrum",
+                "NextJs",
+                "TypeScript",
+                "Supabase",
+                "Jest",
+                "SonarQube",
+                "Vercel"
+            ]
+        }
+    },
+    {
+        "completion_sequence": 16,
+        "project_type": "academic",
+        "title": "UrbanEdge",
+        "subtitle": "The Shift to the Cloud",
+        "overview": "A project simulating a failing on-premise data center and the migration to the cloud. The project demonstrates using AWS with AWS Well-Architected Design to propose a migration plan to shift to AWS Cloud.",
+        "links": [["No Links", ""]],
+        "img_src": "/projects/academic/UrbanEdge.jpg",
+        "tech": {
+            "tech_type": "Technology Stack",
+            "tech_items": [
+                "AWS Cloud",
+                "Migration Strategy",
+                "Risk Management",
+                "Monitoring, Alerts & Logging",
+                "Scalability & Availability",
+                "Management & Governance",
+                "Cost Analysis"
+            ]
+        }
+    },
+    {
+        "completion_sequence": 17,
+        "project_type": "academic",
+        "title": "GDG DevFest 2024",
+        "subtitle": "Google Developer Group - SG",
+        "overview": "Facilitator at GDG SG 2024, an annual conference for developers, designers, and technology enthusiasts. The event is organized by Google Developer Group Singapore and is part of the Google Developer Groups DevFest series.",
+        "links": [
+            [
+                "Official",
+                "https://sites.google.com/view/devfest-singapore-2024/"
+            ]
+        ],
+        "img_src": "/projects/academic/DevFest2024.jpg",
+        "tech": {
+            "tech_type": "Conference Topics",
+            "tech_items": [
+                "Google Cloud",
+                "LLMs",
+                "Agentic AI",
+                "Vertex AI",
+                "CrewAI",
+                "Machine Learning",
+                "AI Ethics"
+            ]
+        }
     }
 ]
