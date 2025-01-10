@@ -319,7 +319,7 @@
         "subtitle": "JavaScript Conference",
         "overview": "During the events, meet and hear from the most audacious and provocative speakers in the JavaScript conferences. Developer, Architect, CTO, this is the best time to get ideas and learn what is new and upcoming in the JavaScript & Frontend world.",
         "links": [["official website", "https://singapore.cityjsconf.org/"]],
-        "img_src": "/projects/academic/CityJS.jpg",
+        "img_src": "/projects/academic/CityJs.jpg",
         "tech": {
             "tech_type": "Conference Topics",
             "tech_items": [
@@ -399,7 +399,7 @@
         "title": "UrbanEdge",
         "subtitle": "The Shift to the Cloud",
         "overview": "A project simulating a failing on-premise data center and the migration to the cloud. The project demonstrates using AWS with AWS Well-Architected Design to propose a migration plan to shift to AWS Cloud.",
-        "links": [["No Links", ""]],
+        "links": [],
         "img_src": "/projects/academic/UrbanEdge.jpg",
         "tech": {
             "tech_type": "Technology Stack",
@@ -422,7 +422,7 @@
         "overview": "Facilitator at GDG SG 2024, an annual conference for developers, designers, and technology enthusiasts. The event is organized by Google Developer Group Singapore and is part of the Google Developer Groups DevFest series.",
         "links": [
             [
-                "Official",
+                "Official Website",
                 "https://sites.google.com/view/devfest-singapore-2024/"
             ]
         ],

@@ -23,7 +23,8 @@ export default function ProjectCard({ project }: ProjectCardProps) {
     const baseVelocity: number = baseVelocityOrigin / tech_items.length;
 
     // Main link
-    const mainLink: string = links[0][1];
+    // - If empty, no hyperlink
+    const mainLink: string = links.length != 0 ? links[0][1] : "#";
 
     return (
         <>
@@ -37,8 +38,10 @@ export default function ProjectCard({ project }: ProjectCardProps) {
             >
                 <a
                     href={mainLink}
-                    target="_blank"
-                    className="absolute w-full h-full"
+                    target={mainLink === "#" ? "" : "_blank"}
+                    className={`absolute w-full h-full ${
+                        mainLink === "#" ? "cursor-default" : "cursor-pointer"
+                    }`}
                 >
                     <Image
                         fill
@@ -140,25 +143,43 @@ export default function ProjectCard({ project }: ProjectCardProps) {
 
                     {/* Visit Items - START ====================================== */}
                     <div className="flex flex-wrap">
-                        {links.map((link: string[], _: number): JSX.Element => {
-                            return (
-                                <div key={`${title}_${link[0]}`}>
-                                    {/* hover:border-b-teal-600 dark:hover:border-b-teal-400 */}
-                                    <a
-                                        href={link[1]}
-                                        target="_blank"
-                                        className="capitalize select-text
-                                            text-teal-600 dark:text-teal-400 font-medium
-                                            border-2 border-transparent
-                                            hover:border-t-teal-600 dark:hover:border-t-teal-400
-                                            group-hover:ms-1
-                                            transition-all duration-500"
-                                    >
-                                        &rarr; {link[0]}
-                                    </a>
-                                </div>
-                            );
-                        })}
+                        {links.length == 0 ? (
+                            // No Link
+                            <div>
+                                <span
+                                    className="capitalize select-text
+                                        text-teal-600 dark:text-teal-400 font-medium
+                                        border-2 border-transparent
+                                        hover:border-t-teal-600 dark:hover:border-t-teal-400
+                                        group-hover:ms-1
+                                        transition-all duration-500"
+                                >
+                                    No links available
+                                </span>
+                            </div>
+                        ) : (
+                            // Have links
+                            links.map(
+                                (link: string[], _: number): JSX.Element => {
+                                    return (
+                                        <div key={`${title}_${link[0]}`}>
+                                            <a
+                                                href={link[1]}
+                                                target="_blank"
+                                                className="capitalize select-text
+                                                    text-teal-600 dark:text-teal-400 font-medium
+                                                    border-2 border-transparent
+                                                    hover:border-t-teal-600 dark:hover:border-t-teal-400
+                                                    group-hover:ms-1
+                                                    transition-all duration-500"
+                                            >
+                                                &rarr; {link[0]}
+                                            </a>
+                                        </div>
+                                    );
+                                }
+                            )
+                        )}
                     </div>
                     {/* Visit Items - END ======================================== */}
                 </div>
