@@ -399,7 +399,7 @@
         "title": "UrbanEdge",
         "subtitle": "The Shift to the Cloud",
         "overview": "A project simulating a failing on-premise data center and the migration to the cloud. The project demonstrates using AWS with AWS Well-Architected Design to propose a migration plan to shift to AWS Cloud.",
-        "links": [],
+        "links": [["GitHub", "https://github.com/Terristwj/IS458-UrbanEdge"]],
         "img_src": "/projects/academic/UrbanEdge.jpg",
         "tech": {
             "tech_type": "Technology Stack",
