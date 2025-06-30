@@ -2,6 +2,10 @@
 @tailwind components;
 @tailwind utilities;
 
+html {
+    scroll-behavior: smooth;
+}
+
 * {
     transition: background-color 0.5s linear;
 }
@@ -9,7 +13,7 @@
 /* Scrollbar START */
 /* width */
 ::-webkit-scrollbar {
-    width: 2px;
+    width: 5px;
 }
 
 /* Track */

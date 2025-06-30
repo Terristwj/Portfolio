@@ -60,31 +60,40 @@ export default async function handleFormData(
         (desiredName && desiredName.length > NAME_MAX_LENGTH)
     ) {
         alert("Message is too long!");
-    }
-    // Check for profanity using 'bad-words' package
-    // Check for profanity using openAI
-    else if (
-        // 'bad-words' package
-        myFilter.isProfane(message) ||
-        (desiredName && myFilter.isProfane(desiredName)) ||
-        // OpenAI
-        (USE_OPENAI && (await isProfaneAI(nameAndMessage)))
-    ) {
-        alert("You can't type that!");
-    }
-    // Update database
-    else {
-        // Actions
-        const success = await addMessage(
-            desiredName ? desiredName : checkCookie(),
-            message,
-            new Date().toISOString()
-        );
+    } else {
+        try {
+            // Check for profanity using 'bad-words' package
+            // Check for profanity using openAI
+            if (
+                // 'bad-words' package
+                myFilter.isProfane(message) ||
+                (desiredName && myFilter.isProfane(desiredName)) ||
+                // OpenAI
+                (USE_OPENAI && (await isProfaneAI(nameAndMessage)))
+            ) {
+                alert("You can't type that!");
+            }
+            // Update database
+            else {
+                // Actions
+                const success = await addMessage(
+                    desiredName ? desiredName : checkCookie(),
+                    message,
+                    new Date().toISOString()
+                );
 
-        if (!success) {
+                if (!success) {
+                    alert(
+                        "There was a database connection problem." +
+                            "\nPlease contact me to fix it!"
+                    );
+                }
+            }
+        } catch (error: any) {
+            console.log(error.message);
             alert(
-                "There was a database connection problem." +
-                    "\nPlease contact me to fix it!"
+                "There seems to be an error with the AI service." +
+                    "\nPlease try again later or contact me to fix it!"
             );
         }
     }

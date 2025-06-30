@@ -7,17 +7,13 @@ import PageDefault from "@/app/components/Wrappers/PageDefault";
 import Hero from "@/app/components/Homepage/Hero";
 
 // Settings
-import { MyName, TypewriterWords, SocialMediaUrls } from "@/app/constants";
+import { ProfileProps } from "@/app/constants";
 
 export default function About(): JSX.Element {
     return (
         <PageAnimate>
             <PageDefault title="About Me" divider={true} bottomGap={true}>
-                <Hero
-                    myName={MyName}
-                    typeWriterWords={TypewriterWords}
-                    SocialMediaUrls={SocialMediaUrls}
-                />
+                <Hero ProfileProps={ProfileProps} />
             </PageDefault>
         </PageAnimate>
     );

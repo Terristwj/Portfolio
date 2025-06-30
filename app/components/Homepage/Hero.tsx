@@ -1,184 +1,286 @@
 "use client";
 
-import Image from "next/image";
-import { Typewriter } from "react-simple-typewriter";
-
 import Me from "public/me.png";
-import { IMyName, ISocialMediaUrls } from "@/app/constants";
+import { ProfilePropsType } from "@/app/constants";
 import { multilineClassNames } from "@/app/utils/utils";
 
 import { K } from "@/app/components/Common/KeywordText";
 
 // Homepage Components
-import ReactIcon from "@/app/components/Homepage/ReactIcon";
+import Profile from "@/app/components/Homepage/Profile";
+import Introduction from "@/app/components/Homepage/Sections/Introduction";
+import Hackathon from "@/app/components/Homepage/Sections/Hackathon";
+
+import NackToTopIcon from "@/app/components/Homepage/BackToTopIcon";
 
 interface HeroProps {
-    myName: IMyName;
-    typeWriterWords: string[];
-    SocialMediaUrls: ISocialMediaUrls;
+    ProfileProps: ProfilePropsType;
 }
 
-export default function Hero({
-    myName,
-    typeWriterWords,
-    SocialMediaUrls,
-}: HeroProps): JSX.Element {
-    const { fname, lname }: IMyName = myName;
-    const { githubUrl, linkedinUrl, mailUrl }: ISocialMediaUrls =
-        SocialMediaUrls;
-
+export default function Hero({ ProfileProps }: HeroProps): JSX.Element {
     const sentenceHoverCSS: string =
         "transition-colors duration-700 ease-in-out hover:text-teal-600 dark:hover:text-teal-400";
 
     return (
         <>
             <div
-                className="items-center space-y-2
+                className="items-center space-y-4
                     lg:grid lg:grid-cols-3
-                    lg:gap-x-8 lg:space-y-0"
+                    lg:gap-x-12 lg:space-y-0"
             >
                 {/* Profile - START =================================================================== */}
-                <div
-                    className={multilineClassNames(
-                        // Default
-                        "flex pt-8 gap-x-8",
-                        "flex-row justify-center items-center",
-                        // Medium
-                        "md:gap-x-16",
-                        // Large
-                        "lg:flex-col"
-                    )}
-                >
-                    {/* Image - START ========================================= */}
-                    <Image
-                        alt="My Picture"
-                        src={Me}
-                        draggable={false}
-                        priority
-                        className="h-48 w-48
-                        rounded-full object-cover object-top"
-                    />
-                    {/* Image - END =========================================== */}
-
-                    {/* Info - START ========================================== */}
-                    <div
-                        className="w-64
-                            flex flex-col 
-                            lg:items-center"
-                    >
-                        <h3
-                            className={multilineClassNames(
-                                // Default
-                                "pt-4 pb-2 font-bold",
-                                "text-teal-600 dark:text-teal-400",
-                                "tracking-tight",
-                                "text-4xl",
-                                // Large
-                                "lg:text-2xl lg:leading-8"
-                            )}
-                        >
-                            {`${fname} ${lname}`}
-                        </h3>
-                        <p
-                            className={multilineClassNames(
-                                // Default
-                                "text-black dark:text-white",
-                                " font-semibold fira-code",
-                                // Small
-                                "text-lg",
-                                // Large
-                                "lg:text-base"
-                            )}
-                        >
-                            <Typewriter
-                                words={[...typeWriterWords]}
-                                loop={0}
-                                cursor
-                                cursorStyle="|"
-                                typeSpeed={100}
-                                deleteSpeed={50}
-                                delaySpeed={1000}
-                            />
-                        </p>
-
-                        <div
-                            className="pt-4
-                                flex space-x-5"
-                        >
-                            {/* Github */}
-                            <ReactIcon
-                                to={githubUrl}
-                                d="M511.6 76.3C264.3 76.2 64 276.4 64 523.5 64 718.9 189.3 885 363.8 946c23.5 5.9 19.9-10.8 19.9-22.2v-77.5c-135.7 15.9-141.2-73.9-150.3-88.9C215 726 171.5 718 184.5 703c30.9-15.9 62.4 4 98.9 57.9 26.4 39.1 77.9 32.5 104 26 5.7-23.5 17.9-44.5 34.7-60.8-140.6-25.2-199.2-111-199.2-213 0-49.5 16.3-95 48.3-131.7-20.4-60.5 1.9-112.3 4.9-120 58.1-5.2 118.5 41.6 123.2 45.3 33-8.9 70.7-13.6 112.9-13.6 42.4 0 80.2 4.9 113.5 13.9 11.3-8.6 67.3-48.8 121.3-43.9 2.9 7.7 24.7 58.3 5.5 118 32.4 36.8 48.9 82.7 48.9 132.3 0 102.2-59 188.1-200 212.9a127.5 127.5 0 0138.1 91v112.5c.8 9 0 17.9 15 17.9 177.1-59.7 304.6-227 304.6-424.1 0-247.2-200.4-447.3-447.5-447.3z"
-                            />
-                            {/* LinkedIn */}
-                            <ReactIcon
-                                to={linkedinUrl}
-                                d="M880 112H144c-17.7 0-32 14.3-32 32v736c0 17.7 14.3 32 32 32h736c17.7 0 32-14.3 32-32V144c0-17.7-14.3-32-32-32zM349.3 793.7H230.6V411.9h118.7v381.8zm-59.3-434a68.8 68.8 0 1168.8-68.8c-.1 38-30.9 68.8-68.8 68.8zm503.7 434H675.1V608c0-44.3-.8-101.2-61.7-101.2-61.7 0-71.2 48.2-71.2 98v188.9H423.7V411.9h113.8v52.2h1.6c15.8-30 54.5-61.7 112.3-61.7 120.2 0 142.3 79.1 142.3 181.9v209.4z"
-                            />
-                            {/* Mail */}
-                            <ReactIcon
-                                to={mailUrl}
-                                d="M928 160H96c-17.7 0-32 14.3-32 32v640c0 17.7 14.3 32 32 32h832c17.7 0 32-14.3 32-32V192c0-17.7-14.3-32-32-32zm-80.8 108.9L531.7 514.4c-7.8 6.1-18.7 6.1-26.5 0L189.6 268.9A7.2 7.2 0 01194 256h648.8a7.2 7.2 0 014.4 12.9z"
-                            />
-                        </div>
-                    </div>
-                    {/* Info - END ============================================ */}
-                </div>
+                <Profile profileURL={Me} ProfileProps={ProfileProps} />
                 {/* Profile - END ===================================================================== */}
 
                 {/* Description - START =============================================================== */}
                 <div
                     className={multilineClassNames(
                         // Default
-                        "pt-8 pb-7 max-w-none",
-                        "prose-base montserrat",
+                        "py-12 max-w-none montserrat",
                         "dark:prose-invert",
                         "select-text cursor-default",
                         // Medium
-                        "sm:px-12",
+                        "sm:px-8",
                         // Large
-                        "lg:pl-0 lg:col-span-2",
-                        // XLarge
-                        "xl:prose-xl"
+                        "lg:pl-8 lg:col-span-2",
+                        "lg:pr-4"
                     )}
                 >
                     {/* Desc Title - START ================================================== */}
-                    <p className="font-bold leading-9">
-                        {/* Heading */}
-                        <span className={`${sentenceHoverCSS} text-4xl`}>
-                            Hi there! I’m <K>{`${fname}`}</K>.
-                        </span>
+                    <div className="mb-6">
+                        <h2 className="font-bold leading-tight mb-4">
+                            {/* Heading */}
+                            <span
+                                className={`${sentenceHoverCSS} text-4xl block mb-2`}
+                            >
+                                Hi there! I&#39;m{" "}
+                                <K>{`${ProfileProps.MyName.fname}`}</K>.
+                            </span>
 
-                        <br />
-
-                        {/* Subtitle */}
-                        <span className={`${sentenceHoverCSS} text-xl`}>
-                            A <K>Full Stack Developer</K> based in Singapore.
-                        </span>
-                    </p>
+                            {/* Subtitle */}
+                            <span
+                                className={`${sentenceHoverCSS} text-xl text-gray-600 dark:text-gray-400`}
+                            >
+                                A <K>Full Stack Developer</K> based in
+                                Singapore.
+                            </span>
+                        </h2>
+                    </div>
                     {/* Desc Title - END ==================================================== */}
 
-                    {/* Desc Content - START ================================================ */}
-                    <p className={sentenceHoverCSS}>
-                        I’m currently a penultimate student at{" "}
-                        <K>Singapore Management University</K>, pursuing a{" "}
-                        <K>BSc in Information Systems</K>. My passion for
-                        creating Full Stack applications often shines through my
-                        participation in <K>hackathons</K>—where I’ve taken part
-                        in 10 to date. This portfolio{" "}
-                        <K>highlights the skills</K> I’ve developed throughout
-                        my coding journey.
-                    </p>
-                    <p className={sentenceHoverCSS}>
-                        My journey in tech spans beyond{" "}
-                        <K>Full Stack development</K>. I’ve delved into{" "}
-                        <K>AI/ML</K>, <K>backend development</K> (APIs and
-                        algorithms), <K>solution architecture</K>,{" "}
-                        <K>UI/UX design</K>, and <K>cloud computing</K>. With{" "}
-                        <K>three internships under my belt</K>, I continue to
-                        expand my skills and explore new technological
-                        frontiers.
-                    </p>
+                    {/* Desc Content – START ================================================ */}
+
+                    {/* (1) Intro Section */}
+                    <Introduction sentenceHoverCSS={sentenceHoverCSS} K={K} />
+
+                    <br />
+
+                    {/* (2) Hackathon Section */}
+                    <Hackathon sentenceHoverCSS={sentenceHoverCSS} K={K} />
+
+                    {/* (3) Experience Section */}
+                    <section
+                        id="experience"
+                        className={`${sentenceHoverCSS} container mx-auto my-12`}
+                    >
+                        <h2 className="text-2xl font-semibold mb-3">
+                            Experience
+                        </h2>
+                        <div className="space-y-4">
+                            <div>
+                                <h3 className="text-xl font-bold">
+                                    Tax Technology Transformation Intern
+                                </h3>
+                                <p className="text-sm text-gray-600 dark:text-gray-400">
+                                    KPMG Singapore &middot; May 2025 – Present
+                                </p>
+                                {/* <ul className="list-disc ml-5 mt-2 text-gray-800 dark:text-gray-200">
+                                    <li>
+                                        Documented business requirements,
+                                        achieving 95% stakeholder approval
+                                    </li>
+                                    <li>
+                                        Designed end-to-end tests, cutting cycle
+                                        time by 30%
+                                    </li>
+                                    <li>
+                                        Built Generative AI tools, improving
+                                        efficiency by 25%
+                                    </li>
+                                    <li>
+                                        Maintained 99.5% system uptime post
+                                        go-live
+                                    </li>
+                                </ul> */}
+                            </div>
+
+                            <div>
+                                <h3 className="text-xl font-bold">
+                                    Frontend Developer
+                                </h3>
+                                <p className="text-sm text-gray-600 dark:text-gray-400">
+                                    Accenture Southeast Asia &middot; May 2024 –
+                                    Nov 2024
+                                </p>
+                            </div>
+
+                            <div>
+                                <h3 className="text-xl font-bold">
+                                    Solution Engineering Intern
+                                </h3>
+                                <p className="text-sm text-gray-600 dark:text-gray-400">
+                                    Usertip Pte Ltd &middot; May 2023 – Aug 2023
+                                </p>
+                            </div>
+
+                            <div>
+                                <h3 className="text-xl font-bold">
+                                    Junior Software Engineer Intern
+                                </h3>
+                                <p className="text-sm text-gray-600 dark:text-gray-400">
+                                    GT Robot Technology Pte Ltd &middot; Mar
+                                    2019 – Jun 2019
+                                </p>
+                            </div>
+                        </div>
+                    </section>
+
+                    {/* Education Section */}
+                    <section
+                        id="education"
+                        className={`${sentenceHoverCSS} container mx-auto my-12`}
+                    >
+                        <h2 className="text-2xl font-semibold mb-3">
+                            Education
+                        </h2>
+                        <div className="space-y-4">
+                            <div>
+                                <strong>Singapore Management University</strong>
+                                <span className="float-end">
+                                    2022 – Present
+                                </span>
+                                <div className="text-sm text-gray-600 dark:text-gray-400">
+                                    BSc Information Systems (Digital Cloud
+                                    Solutioning &amp; Business Analytics)
+                                    <br />
+                                    (GPA 3.15/4.00)
+                                </div>
+                            </div>
+
+                            <div>
+                                <strong>Nanyang Polytechnic</strong>
+                                <span className="float-end">2017 – 2020</span>
+                                <div className="text-sm text-gray-600 dark:text-gray-400">
+                                    Diploma in Business Informatics
+                                    <br />
+                                    (GPA 3.73/4.00)
+                                </div>
+                            </div>
+                        </div>
+                    </section>
+
+                    {/* Certifications Section */}
+                    <section
+                        id="certifications"
+                        className={`${sentenceHoverCSS} container mx-auto my-12`}
+                    >
+                        <h2 className="text-2xl font-semibold mb-6">
+                            Latest Certifications
+                        </h2>
+
+                        <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+                            <div
+                                className="bg-teal-50 dark:bg-teal-900/20 rounded-lg p-6
+                                    transition-all duration-300 ease-in-out
+                                    hover:bg-teal-100 dark:hover:bg-teal-900/30
+                                    hover:shadow-lg hover:shadow-teal-500/20 dark:hover:shadow-teal-400/20
+                                    hover:scale-105 hover:-translate-y-1
+                                    border border-transparent hover:border-teal-200 dark:hover:border-teal-700
+                                    group"
+                            >
+                                <h3 className="font-bold">
+                                    Google Professional ML Engineer
+                                </h3>
+                            </div>
+
+                            <div
+                                className="bg-teal-50 dark:bg-teal-900/20 rounded-lg p-6
+                                    transition-all duration-300 ease-in-out
+                                    hover:bg-teal-100 dark:hover:bg-teal-900/30
+                                    hover:shadow-lg hover:shadow-teal-500/20 dark:hover:shadow-teal-400/20
+                                    hover:scale-105 hover:-translate-y-1
+                                    border border-transparent hover:border-teal-200 dark:hover:border-teal-700
+                                    group"
+                            >
+                                <h3 className="font-bold">
+                                    Google Cloud Digital Leader
+                                </h3>
+                            </div>
+                        </div>
+                    </section>
+
+                    {/* Activities Section */}
+                    <section
+                        id="activities"
+                        className={`${sentenceHoverCSS} container mx-auto my-12`}
+                    >
+                        <h2 className="text-2xl font-semibold mb-3">
+                            Leadership &amp; Volunteering
+                        </h2>
+                        <div className="space-y-3">
+                            <div>
+                                <strong>
+                                    Volunteer Facilitator – GDG Singapore
+                                </strong>
+
+                                <div className="text-sm text-gray-600 dark:text-gray-400">
+                                    – Google Cloud & I/O Extended Singapore
+                                    2025, DevFest Singapore 2024
+                                    <br />– Fostering collaboration among 4,500+
+                                    GDG Singapore members
+                                </div>
+                            </div>
+                            <div>
+                                <strong>
+                                    Technology & Google Developer Group Director
+                                    – SMU .Hack
+                                </strong>
+                                <div className="text-sm text-gray-600 dark:text-gray-400">
+                                    – Organized and led 11 workshops, fireside
+                                    chats, and hackathons
+                                    <br />– Facilitated technical workshops on
+                                    modern frameworks
+                                    <br />– Collaborated with partners like
+                                    Google, Exabytes, and Cyber Youth Singapore
+                                </div>
+                            </div>
+                            <div>
+                                <strong>
+                                    Workshop Instructor &amp; Mentor – SMU
+                                    Ellipsis
+                                </strong>
+                                <div className="text-sm text-gray-600 dark:text-gray-400">
+                                    – Instructed 3 programming workshops
+                                    <br />– Mentored peer-to-peer learning
+                                    initiatives
+                                    <br />– Guided freshmen students through
+                                    career in software engineering
+                                </div>
+                            </div>
+                        </div>
+                    </section>
+
+                    {/* Back to top */}
+                    <section id="back-to-top" className="text-center my-8">
+                        <a
+                            href="#top"
+                            className={`${sentenceHoverCSS} text-teal-600 dark:text-teal-400 underline`}
+                        >
+                            Back to top
+                            <NackToTopIcon />
+                        </a>
+                    </section>
+
                     {/* Desc Content - END ================================================== */}
                 </div>
                 {/* Description - END ================================================================= */}
