@@ -103,7 +103,7 @@ export default function ProjectCard({ project }: ProjectCardProps) {
                         leading-relaxed text-pretty
 
                         select-text
-                        text-sm montserrat
+                        text-sm montserrat text-justify
                         text-black dark:text-white
                         transition-colors duration-300"
                 >
