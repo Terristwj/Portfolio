@@ -8,6 +8,7 @@ import { multilineClassNames } from "@/app/utils/utils";
 
 import ReactIcon from "@/app/components/Homepage/Profile/ReactIcon";
 import QuickStatsBar from "@/app/components/Homepage/Profile/QuickStatsBar";
+import PDFViewer from "@/app/components/Homepage/Profile/PDFViewer";
 
 type ProfileProps = {
     profileURL: StaticImageData;
@@ -147,6 +148,8 @@ export default function Profile({
                         />
                     ))}
                 </div>
+                {/* (6) Resume Viewer/Download Button */}
+                <PDFViewer />
             </div>
             {/* Info - END ============================================ */}
         </div>
