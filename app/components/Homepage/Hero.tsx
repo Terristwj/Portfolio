@@ -73,8 +73,6 @@ export default function Hero({ ProfileProps }: HeroProps): JSX.Element {
                     {/* (1) Intro Section */}
                     <Introduction sentenceHoverCSS={sentenceHoverCSS} K={K} />
 
-                    <br />
-
                     {/* (2) Hackathon Section */}
                     <Hackathon sentenceHoverCSS={sentenceHoverCSS} K={K} />
 
@@ -88,7 +86,7 @@ export default function Hero({ ProfileProps }: HeroProps): JSX.Element {
                         </h2>
                         <div className="space-y-4">
                             <div>
-                                <h3 className="text-xl font-bold">
+                                <h3 className="font-bold">
                                     Tax Technology Transformation Intern
                                 </h3>
                                 <p className="text-sm text-gray-600 dark:text-gray-400">
@@ -115,7 +113,7 @@ export default function Hero({ ProfileProps }: HeroProps): JSX.Element {
                             </div>
 
                             <div>
-                                <h3 className="text-xl font-bold">
+                                <h3 className="font-bold">
                                     Frontend Developer
                                 </h3>
                                 <p className="text-sm text-gray-600 dark:text-gray-400">
@@ -125,7 +123,7 @@ export default function Hero({ ProfileProps }: HeroProps): JSX.Element {
                             </div>
 
                             <div>
-                                <h3 className="text-xl font-bold">
+                                <h3 className="font-bold">
                                     Solution Engineering Intern
                                 </h3>
                                 <p className="text-sm text-gray-600 dark:text-gray-400">
@@ -134,7 +132,7 @@ export default function Hero({ ProfileProps }: HeroProps): JSX.Element {
                             </div>
 
                             <div>
-                                <h3 className="text-xl font-bold">
+                                <h3 className="font-bold">
                                     Junior Software Engineer Intern
                                 </h3>
                                 <p className="text-sm text-gray-600 dark:text-gray-400">
