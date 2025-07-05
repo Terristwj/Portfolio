@@ -9,7 +9,7 @@
         "img_src": "/projects/academic/HealthierMcDonalds.jpg",
         "tech": {
             "tech_type": "Technology Stack",
-            "tech_items": ["HTML/CSS", "Vanilla-JavaScript"]
+            "tech_items": ["HTML/CSS/Javascript"]
         }
     },
     {
@@ -226,7 +226,7 @@
             "tech_items": [
                 "TypeScript",
                 "Next.JS",
-                "RESTFul APIs",
+                "RESTful API",
                 "Python",
                 "Flask",
                 "Javascript",
@@ -419,14 +419,14 @@
         "project_type": "academic",
         "title": "GDG DevFest 2024",
         "subtitle": "Google Developer Group - SG",
-        "overview": "Facilitator at GDG SG 2024, an annual conference for developers, designers, and technology enthusiasts. The event is organized by Google Developer Group Singapore and is part of the Google Developer Groups DevFest series.",
+        "overview": "Facilitator at the annual conference for developers, designers, and technology enthusiasts. The event is organized by Google Developer Group Singapore and is part of the Google Developer Groups DevFest series.",
         "links": [
             [
                 "Official Website",
                 "https://sites.google.com/view/devfest-singapore-2024/"
             ]
         ],
-        "img_src": "/projects/academic/DevFest2024.jpg",
+        "img_src": "/projects/academic/GDG_DevFest2024.jpg",
         "tech": {
             "tech_type": "Conference Topics",
             "tech_items": [
@@ -437,6 +437,184 @@
                 "CrewAI",
                 "Machine Learning",
                 "AI Ethics"
+            ]
+        }
+    },
+    {
+        "completion_sequence": 18,
+        "project_type": "academic",
+        "title": "React Workshop Instructor",
+        "subtitle": ".Hack - MESS 2025 Workshop",
+        "overview": "Organizer and instructor for a React workshop at .Hack - MESS 2025. The workshop covers the fundamentals of React, including components, state management, and hooks. Taught be recreating an engaging PalWorld website.",
+        "links": [
+            [
+                "Website",
+                "https://terristwj.github.io/DotHack-MESS-Workshop-2025/"
+            ],
+            [
+                "GitHub",
+                "https://github.com/Terristwj/DotHack-MESS-Workshop-2025"
+            ]
+        ],
+        "img_src": "/projects/academic/dotHack_MESS2025.jpg",
+        "tech": {
+            "tech_type": "Technology Stack",
+            "tech_items": [
+                "React",
+                "NodeJS",
+                "Responsive Web Design",
+                "Web Application Development"
+            ]
+        }
+    },
+    {
+        "completion_sequence": 19,
+        "project_type": "academic",
+        "title": "Game Development Workshop Organizer",
+        "subtitle": ".Hack - GameDev Workshop 2025",
+        "overview": "Organizer and teaching assistant for .Hack - Game Development Workshop. Taught by guest invite, Rayner Tan. The workshop covers game loops, input & movement, and collisions & physics",
+        "links": [
+            [
+                "Workshop",
+                "https://second-shade-3ce.notion.site/Game-Development-Workshop-1167dad8cdb5806db7ddc215323d1a89"
+            ]
+        ],
+        "img_src": "/projects/academic/dotHack_GameDev2025.jpg",
+        "tech": {
+            "tech_type": "Technology Stack",
+            "tech_items": ["C", "RayLib", "Game Development"]
+        }
+    },
+    {
+        "completion_sequence": 20,
+        "project_type": "academic",
+        "title": "Web Development Workshop Series 2025",
+        "subtitle": ".Hack X CYC X Exabytes",
+        "overview": "Director of the 8-week-long workshop series. Targeted at young youths, our structured curriculum guides students through the essential concepts and practical skills needed to create engaging websites.",
+        "links": [["Workshop Series", "https://smuhackxcyc.notion.site/"]],
+        "img_src": "/projects/academic/dotHack_CYC_Exabytes_Series2025.jpg",
+        "tech": {
+            "tech_type": "Technology Stack",
+            "tech_items": [
+                "HTML/CSS/Javascript",
+                "Responsive Web Design",
+                "Web Application Development",
+                "RESTful API",
+                "NodeJS",
+                "ExpreeJS",
+                "Supabase",
+                "Git",
+                "Cloud deployment",
+                "Cloud computing"
+            ]
+        }
+    },
+    {
+        "completion_sequence": 21,
+        "project_type": "academic",
+        "title": ".Hack CMS",
+        "subtitle": "Google Suites Clone",
+        "overview": "Developed as part of the Full Stack Development module at Singapore Management University, dotHack CMS is a custom content management system designed for the SMU dotHack club. To replace Google Drive.",
+        "links": [["GitHub", "https://smudothack.surge.sh/"]],
+        "img_src": "/projects/academic/dotHackCMS.jpg",
+        "tech": {
+            "tech_type": "Technology Stack",
+            "tech_items": [
+                "NextJs",
+                "TypeScript",
+                "MUI Components",
+                "TailwindCSS",
+                "Go",
+                "RESTful API",
+                "gRPC",
+                "Swagger",
+                "JWT",
+                "CockroachDB",
+                "AWS",
+                "CloudFlare"
+            ]
+        }
+    },
+    {
+        "completion_sequence": 22,
+        "project_type": "academic",
+        "title": "London Smart Meters",
+        "subtitle": "Big Data ETL Analytics",
+        "overview": "Developed for Big Data Architecture module, this project utilizes AWS services to create an end-to-end ETL pipeline for analyzing London Smart Meters data for energy consumption patterns.",
+        "links": [
+            [
+                "Finale Deck",
+                "https://www.canva.com/design/DAGjdmp8s5M/t_ZHSEMAlAy75oino3Pnnw/view?utm_content=DAGjdmp8s5M"
+            ],
+            [
+                "Pitch Deck",
+                "https://www.canva.com/design/DAGgllzAxXw/_Kb4X_MnrbLFrdB452Zv9Q/view?utm_content=DAGgllzAxXw"
+            ]
+        ],
+        "img_src": "/projects/academic/LondonSmartMeters.jpg",
+        "tech": {
+            "tech_type": "Technology Stack",
+            "tech_items": [
+                "Big Data Analytics",
+                "Python",
+                "PySpark",
+                "Terraform",
+                "Boto3",
+                "AWS Glue",
+                "AWS Athena",
+                "AWS Quicksight",
+                "AWS SageMaker"
+            ]
+        }
+    },
+    {
+        "completion_sequence": 23,
+        "project_type": "academic",
+        "title": "Backend Workshop Instructor",
+        "subtitle": ".Hack - HEAP 2025",
+        "overview": "HEAP is an annual hackathon organized by SMU dotHack. Instructor for the Backend Workshop, we taught participants how to create their own backend servers with APIs, databases and authentication/authorization.",
+        "links": [],
+        "img_src": "/projects/academic/dotHack_HEAPBackend.jpg",
+        "tech": {
+            "tech_type": "Technology Stack",
+            "tech_items": [
+                "NodeJS",
+                "ExpreeJS",
+                "RESTful API",
+                "Supabase",
+                "Clerk",
+                "Auth",
+                "JWT"
+            ]
+        }
+    },
+    {
+        "completion_sequence": 24,
+        "project_type": "academic",
+        "title": "GDG Cloud & I/O Extended 2025",
+        "subtitle": "Google Developer Group - SG",
+        "overview": "Volunteer at an annual meetup for developers, designers, and technology enthusiasts. The event is organized by Google Developer Group Singapore to share about Google's latest happenings in AI/ML and Cloud.",
+        "links": [
+            [
+                "Post",
+                "https://www.linkedin.com/posts/terristan_googlecloudnext-googleio-googlefordevelopers-activity-7340318896756805656-GOiE"
+            ],
+            [
+                "Official Website",
+                "https://gdg.community.dev/events/details/google-gdg-singapore-presents-google-io-extended-singapore-2025/"
+            ]
+        ],
+        "img_src": "/projects/academic/GDG_CloudIO2025.jpg",
+        "tech": {
+            "tech_type": "Conference Topics",
+            "tech_items": [
+                "Google Cloud",
+                "LLMs",
+                "Agentic AI",
+                "Vertex AI",
+                "Gemini",
+                "Veo",
+                "Firebase Studio"
             ]
         }
     }
