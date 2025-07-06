@@ -5,7 +5,7 @@
         "title": "A Healthier McDonalds",
         "subtitle": "Guide to a Healthier McDonalds",
         "overview": "My first website in 2017. Aimed to help motivate and spread awareness of being healthy. Especially in McDonalds.",
-        "links": [["site", "https://mymcsample.web.app/MainWebPage.html"]],
+        "links": [["Website", "https://mymcsample.web.app/MainWebPage.html"]],
         "img_src": "/projects/academic/HealthierMcDonalds.jpg",
         "tech": {
             "tech_type": "Technology Stack",
@@ -18,7 +18,7 @@
         "title": "StaffCorps",
         "subtitle": "All-in-one Business Solution Tool",
         "overview": "A Singapore-based app to boost productivity; OCR, News, real-time weather, and real-time traffic video.",
-        "links": [["site", "https://staffcorps-ff2bb.web.app/home"]],
+        "links": [["Website", "https://staffcorps-ff2bb.web.app/home"]],
         "img_src": "/projects/academic/StaffCorps.jpg",
         "tech": {
             "tech_type": "Technology Stack",
@@ -32,13 +32,13 @@
         "subtitle": "Synthia (Top 10 Finalist)",
         "overview": "The Best GenAI Tool. Synthia is a web-based AI; A Chatbot, Image generator, Music generator, and Code generator.",
         "links": [
-            ["site", "https://synthia-gen-ai-website.vercel.app/"],
+            ["Website", "https://synthia-gen-ai-website.vercel.app/"],
             [
-                "pitch",
+                "Pitch",
                 "https://docs.google.com/presentation/d/1UDDu-MYY3yNmJo_f99f1KUEKXrBLoSQGgOr9SSt4VMM/edit?usp=sharing"
             ],
             [
-                "appendix",
+                "Appendix",
                 "https://docs.google.com/presentation/d/1IjmlcROHSKsYXwYLqjMmZtMbGlyViA5SvSudedWdeRA/edit?usp=sharing"
             ]
         ],
@@ -61,13 +61,13 @@
         "subtitle": "Viiicky (Most Creative Award)",
         "overview": "Your Colourblind Asssistant. Aimed to help the colourblind, Viiicky enables users to identify colours and rectify colour deficiency.",
         "links": [
-            ["site", "https://vicky-nine.vercel.app/"],
-            ["github", "https://github.com/Terristwj/Vicky"],
+            ["Website", "https://vicky-nine.vercel.app/"],
+            ["GitHub", "https://github.com/Terristwj/Vicky"],
             [
-                "pitch",
+                "Pitch",
                 "https://www.canva.com/design/DAFs2rj4YTM/v7RKuWysnLGd9AvaRnRL0Q/view?utm_content=DAFs2rj4YTM&utm_campaign=designshare&utm_medium=link&utm_source=publishsharelink#1"
             ],
-            ["video", "https://www.youtube.com/watch?v=gTMW-ZFXwGg"]
+            ["Video", "https://www.youtube.com/watch?v=gTMW-ZFXwGg"]
         ],
         "img_src": "/projects/hackathon/Viiicky.jpg",
         "tech": {
@@ -82,10 +82,10 @@
         "subtitle": "EduTrekker",
         "overview": "Self-learning for children. An AI driven tutoring app for children. Note-taking, AI-curated flashcards, and an AI teacher named Pam.",
         "links": [
-            ["site", "https://ignite-matchsticks-pam.web.app/"],
-            ["github", "https://github.com/Terristwj/Matchsticks"],
+            ["Website", "https://ignite-matchsticks-pam.web.app/"],
+            ["GitHub", "https://github.com/Terristwj/Matchsticks"],
             [
-                "pitch",
+                "Pitch",
                 "https://docs.google.com/presentation/d/1VlYox3sGu5h6qYRd2Zpp7SPYK6eq2_sB96zVZQfbb_U/edit?usp=sharing"
             ]
         ],
@@ -103,11 +103,11 @@
         "overview": "Urban Planning with AI. Empowered by various AI models. Generate diverse 3D urban layout plans for better city development.",
         "links": [
             [
-                "figma",
+                "Figma",
                 "https://www.figma.com/proto/TB0akMAxSXhEtRkl2nNy7k/We-prototype-here?type=design&node-id=162-4917&t=HC5zF66k2mWhaOUn-1&scaling=scale-down-width&page-id=13%3A9787&starting-point-node-id=162%3A4917"
             ],
             [
-                "pitch",
+                "Pitch",
                 "https://www.canva.com/design/DAFxLGwcxSI/jluNy81THJi1PQyGFnFIFA/view"
             ]
         ],
@@ -125,10 +125,10 @@
         "overview": "The WeSports App facilitate seamless booking of badminton courts - Connecting Youths through Sports.",
         "links": [
             [
-                "figma",
+                "Figma",
                 "https://www.figma.com/proto/vhDiwasq01SLSg4xZxwdRK/Our-Design-goes-here?type=design&node-id=27-1014&t=zqHd0DKhfO4COVeX-0&scaling=scale-down&page-id=27%3A1014&starting-point-node-id=333%3A16744"
             ],
-            ["video", "https://www.youtube.com/watch?v=C-EaYvbNT_A"]
+            ["Video", "https://www.youtube.com/watch?v=C-EaYvbNT_A"]
         ],
         "img_src": "/projects/academic/WeSports.jpg",
         "tech": {
@@ -143,8 +143,8 @@
         "subtitle": "Sustainable Fashion Marketplace",
         "overview": "An eCommerce platform for fashionistas to buy and sell pre-loved fashion items. Gamification and AI empowered.",
         "links": [
-            ["site", "https://smu-wad2.web.app/about"],
-            ["github", "https://github.com/Terristwj/Revente"],
+            ["Website", "https://smu-wad2.web.app/about"],
+            ["GitHub", "https://github.com/Terristwj/Revente"],
             [
                 "pitch",
                 "https://www.canva.com/design/DAFy0X2wNfg/t5iFIhIUxyxV-uX_voKW5A/view"
@@ -183,11 +183,11 @@
         "overview": "An MVP to enhance efficiency and drive new business models for growth. Utilizing AI, cloud, analytics, mobile, social media, and IoT.",
         "links": [
             [
-                "figma",
+                "Figma",
                 "https://www.figma.com/proto/B3tWisk8APZ092OFs9GCHh/DBTT---Sheng-Siong?node-id=34-1477&scaling=min-zoom&content-scaling=fixed&page-id=0%3A1&starting-point-node-id=34%3A1477"
             ],
             [
-                "pitch",
+                "Pitch",
                 "https://www.canva.com/design/DAF_SDr_UkI/6xZoIp6uo4Ay3KZ92LK_qA/view"
             ]
         ],
@@ -211,12 +211,12 @@
         "overview": "An enterprise solution built using Service-Oriented Architecture (SOA) and scalable microservices - Empowering Healthcare in Singapore.",
         "links": [
             [
-                "pitch",
+                "Pitch",
                 "https://www.canva.com/design/DAGAkk7bgUY/WfDpD9C12thxVQY5h292kg/view"
             ],
-            ["github", "https://github.com/0gw0/Healthcare-API"],
+            ["GitHub", "https://github.com/0gw0/Healthcare-API"],
             [
-                "design",
+                "Design",
                 "https://www.canva.com/design/DAF_uRnk1AY/Zr3uAlGTDztbG1TbFcVXQg/view"
             ]
         ],
@@ -250,9 +250,9 @@
         "subtitle": "Team FreeIceMilo (Rank 5 - Finalist)",
         "overview": "An autonomous system that identifies, classifies, and neutralizes air threats, built using AI that interprets spoken commands into precise turret actions.",
         "links": [
-            ["github", "https://github.com/IlyasYao/TIL-AI-2024_freeicemilo"],
+            ["Github", "https://github.com/IlyasYao/TIL-AI-2024_freeicemilo"],
             [
-                "leaderboard",
+                "Leaderboard",
                 "https://airtable.com/appeN9J5OcPmfLzgf/shraBC7z4ZCYss9LD/tbljMdswAqrIQi9w8"
             ]
         ],
@@ -284,9 +284,9 @@
         "subtitle": "Lockerism (People's Choice Award)",
         "overview": "An analytics application, powered by Privacy-Enhancing Technologies (PET), Homomorphic Encryption (HE) and blockchain, to bring data privacy and security to users.",
         "links": [
-            ["devpost", "https://devpost.com/software/lockerism"],
-            ["github", "https://github.com/Terristwj/tiktok_techjam_2024"],
-            ["pitch", "https://www.youtube.com/watch?v=P3b_avifwmQ"]
+            ["Devpost", "https://devpost.com/software/lockerism"],
+            ["GitHub", "https://github.com/Terristwj/tiktok_techjam_2024"],
+            ["Pitch", "https://www.youtube.com/watch?v=P3b_avifwmQ"]
         ],
         "img_src": "/projects/hackathon/Lockerism.jpg",
         "tech": {
@@ -318,7 +318,7 @@
         "title": "CityJS Singapore 2024",
         "subtitle": "JavaScript Conference",
         "overview": "During the events, meet and hear from the most audacious and provocative speakers in the JavaScript conferences. Developer, Architect, CTO, this is the best time to get ideas and learn what is new and upcoming in the JavaScript & Frontend world.",
-        "links": [["official website", "https://singapore.cityjsconf.org/"]],
+        "links": [["Official Website", "https://singapore.cityjsconf.org/"]],
         "img_src": "/projects/academic/CityJs.jpg",
         "tech": {
             "tech_type": "Conference Topics",
@@ -347,10 +347,10 @@
         "subtitle": "Team FreeIceKopi (Top 20 Semi-finalist)",
         "overview": "Organized by HTX and Microsoft, Hack for Public Safety! A project about detecting unusual objects through the analysis of video footage captured by officers' body-worn cameras and notify the officers where required.",
         "links": [
-            ["official", "https://hacx.sg/"],
-            ["challenges", "https://hacx.sg/challenge/"],
+            ["Official", "https://hacx.sg/"],
+            ["Challenges", "https://hacx.sg/challenge/"],
             [
-                "pitch",
+                "Pitch",
                 "https://docs.google.com/presentation/d/1M4l9aJVn98CHgpd3bkB60j2Es-npxY_VBv-mVZSg2EE/edit?usp=sharing"
             ]
         ],
@@ -378,7 +378,7 @@
         "title": "Grandis",
         "subtitle": "WFH Management System",
         "overview": "A WFH management application that facilitates managing staff WFH schedules, tracking approvals, and application status. This project aims to practice SCRUM methodology.",
-        "links": [["Site", "https://spm-one-in-all-wfh.vercel.app/"]],
+        "links": [["Website", "https://spm-one-in-all-wfh.vercel.app/"]],
         "img_src": "/projects/academic/Grandis.jpg",
         "tech": {
             "tech_type": "Technology Stack",
@@ -515,7 +515,7 @@
         "title": ".Hack CMS",
         "subtitle": "Google Suites Clone",
         "overview": "Developed as part of the Full Stack Development module at Singapore Management University, dotHack CMS is a custom content management system designed for the SMU dotHack club. To replace Google Drive.",
-        "links": [["GitHub", "https://smudothack.surge.sh/"]],
+        "links": [["Website", "https://smudothack.surge.sh/"]],
         "img_src": "/projects/academic/dotHackCMS.jpg",
         "tech": {
             "tech_type": "Technology Stack",
@@ -549,7 +549,8 @@
             [
                 "Pitch Deck",
                 "https://www.canva.com/design/DAGgllzAxXw/_Kb4X_MnrbLFrdB452Zv9Q/view?utm_content=DAGgllzAxXw"
-            ]
+            ],
+            ["ETL Demo", "https://www.youtube.com/watch?v=qyXWQ5VINv4"]
         ],
         "img_src": "/projects/academic/LondonSmartMeters.jpg",
         "tech": {
