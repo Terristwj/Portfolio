@@ -10,6 +10,10 @@ import { K } from "@/app/components/Common/KeywordText";
 import Profile from "@/app/components/Homepage/Profile";
 import Introduction from "@/app/components/Homepage/Sections/Introduction";
 import Hackathon from "@/app/components/Homepage/Sections/Hackathon";
+import Experience from "@/app/components/Homepage/Sections/Experience";
+import Education from "@/app/components/Homepage/Sections/Education";
+import Certifications from "@/app/components/Homepage/Sections/Certifications";
+import Activities from "@/app/components/Homepage/Sections/Activities";
 
 import NackToTopIcon from "@/app/components/Homepage/BackToTopIcon";
 
@@ -77,196 +81,16 @@ export default function Hero({ ProfileProps }: HeroProps): JSX.Element {
                     <Hackathon sentenceHoverCSS={sentenceHoverCSS} K={K} />
 
                     {/* (3) Experience Section */}
-                    <section
-                        id="experience"
-                        className={`${sentenceHoverCSS} container mx-auto my-12`}
-                    >
-                        <h2 className="text-2xl font-semibold mb-3">
-                            Experience
-                        </h2>
-                        <div className="space-y-4">
-                            <div>
-                                <h3 className="font-bold">
-                                    Tax Technology Transformation Intern
-                                </h3>
-                                <p className="text-sm text-gray-600 dark:text-gray-400">
-                                    KPMG Singapore &middot; May 2025 – Present
-                                </p>
-                                {/* <ul className="list-disc ml-5 mt-2 text-gray-800 dark:text-gray-200">
-                                    <li>
-                                        Documented business requirements,
-                                        achieving 95% stakeholder approval
-                                    </li>
-                                    <li>
-                                        Designed end-to-end tests, cutting cycle
-                                        time by 30%
-                                    </li>
-                                    <li>
-                                        Built Generative AI tools, improving
-                                        efficiency by 25%
-                                    </li>
-                                    <li>
-                                        Maintained 99.5% system uptime post
-                                        go-live
-                                    </li>
-                                </ul> */}
-                            </div>
-
-                            <div>
-                                <h3 className="font-bold">
-                                    Frontend Developer
-                                </h3>
-                                <p className="text-sm text-gray-600 dark:text-gray-400">
-                                    Accenture Southeast Asia &middot; May 2024 –
-                                    Nov 2024
-                                </p>
-                            </div>
-
-                            <div>
-                                <h3 className="font-bold">
-                                    Solution Engineering Intern
-                                </h3>
-                                <p className="text-sm text-gray-600 dark:text-gray-400">
-                                    Usertip Pte Ltd &middot; May 2023 – Aug 2023
-                                </p>
-                            </div>
-
-                            <div>
-                                <h3 className="font-bold">
-                                    Junior Software Engineer Intern
-                                </h3>
-                                <p className="text-sm text-gray-600 dark:text-gray-400">
-                                    GT Robot Technology Pte Ltd &middot; Mar
-                                    2019 – Jun 2019
-                                </p>
-                            </div>
-                        </div>
-                    </section>
+                    <Experience sentenceHoverCSS={sentenceHoverCSS} />
 
                     {/* Education Section */}
-                    <section
-                        id="education"
-                        className={`${sentenceHoverCSS} container mx-auto my-12`}
-                    >
-                        <h2 className="text-2xl font-semibold mb-3">
-                            Education
-                        </h2>
-                        <div className="space-y-4">
-                            <div>
-                                <strong>Singapore Management University</strong>
-                                <span className="float-end">
-                                    2022 – Present
-                                </span>
-                                <div className="text-sm text-gray-600 dark:text-gray-400">
-                                    BSc Information Systems (Digital Cloud
-                                    Solutioning &amp; Business Analytics)
-                                    <br />
-                                    (GPA 3.15/4.00)
-                                </div>
-                            </div>
-
-                            <div>
-                                <strong>Nanyang Polytechnic</strong>
-                                <span className="float-end">2017 – 2020</span>
-                                <div className="text-sm text-gray-600 dark:text-gray-400">
-                                    Diploma in Business Informatics
-                                    <br />
-                                    (GPA 3.73/4.00)
-                                </div>
-                            </div>
-                        </div>
-                    </section>
+                    <Education sentenceHoverCSS={sentenceHoverCSS} />
 
                     {/* Certifications Section */}
-                    <section
-                        id="certifications"
-                        className={`${sentenceHoverCSS} container mx-auto my-12`}
-                    >
-                        <h2 className="text-2xl font-semibold mb-6">
-                            Latest Certifications
-                        </h2>
-
-                        <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-                            <div
-                                className="bg-teal-50 dark:bg-teal-900/20 rounded-lg p-6
-                                    transition-all duration-300 ease-in-out
-                                    hover:bg-teal-100 dark:hover:bg-teal-900/30
-                                    hover:shadow-lg hover:shadow-teal-500/20 dark:hover:shadow-teal-400/20
-                                    hover:scale-105 hover:-translate-y-1
-                                    border border-transparent hover:border-teal-200 dark:hover:border-teal-700
-                                    group"
-                            >
-                                <h3 className="font-bold">
-                                    Google Professional ML Engineer
-                                </h3>
-                            </div>
-
-                            <div
-                                className="bg-teal-50 dark:bg-teal-900/20 rounded-lg p-6
-                                    transition-all duration-300 ease-in-out
-                                    hover:bg-teal-100 dark:hover:bg-teal-900/30
-                                    hover:shadow-lg hover:shadow-teal-500/20 dark:hover:shadow-teal-400/20
-                                    hover:scale-105 hover:-translate-y-1
-                                    border border-transparent hover:border-teal-200 dark:hover:border-teal-700
-                                    group"
-                            >
-                                <h3 className="font-bold">
-                                    Google Cloud Digital Leader
-                                </h3>
-                            </div>
-                        </div>
-                    </section>
+                    <Certifications sentenceHoverCSS={sentenceHoverCSS} />
 
                     {/* Activities Section */}
-                    <section
-                        id="activities"
-                        className={`${sentenceHoverCSS} container mx-auto my-12`}
-                    >
-                        <h2 className="text-2xl font-semibold mb-3">
-                            Leadership &amp; Volunteering
-                        </h2>
-                        <div className="space-y-3">
-                            <div>
-                                <strong>
-                                    Volunteer Facilitator – GDG Singapore
-                                </strong>
-
-                                <div className="text-sm text-gray-600 dark:text-gray-400">
-                                    – Google Cloud & I/O Extended Singapore
-                                    2025, DevFest Singapore 2024
-                                    <br />– Fostering collaboration among 4,500+
-                                    GDG Singapore members
-                                </div>
-                            </div>
-                            <div>
-                                <strong>
-                                    Technology & Google Developer Group Director
-                                    – SMU .Hack
-                                </strong>
-                                <div className="text-sm text-gray-600 dark:text-gray-400">
-                                    – Organized and led 11 workshops, fireside
-                                    chats, and hackathons
-                                    <br />– Facilitated technical workshops on
-                                    modern frameworks
-                                    <br />– Collaborated with partners like
-                                    Google, Exabytes, and Cyber Youth Singapore
-                                </div>
-                            </div>
-                            <div>
-                                <strong>
-                                    Workshop Instructor &amp; Mentor – SMU
-                                    Ellipsis
-                                </strong>
-                                <div className="text-sm text-gray-600 dark:text-gray-400">
-                                    – Instructed 3 programming workshops
-                                    <br />– Mentored peer-to-peer learning
-                                    initiatives
-                                    <br />– Guided freshmen students through
-                                    career in software engineering
-                                </div>
-                            </div>
-                        </div>
-                    </section>
+                    <Activities sentenceHoverCSS={sentenceHoverCSS} />
 
                     {/* Back to top */}
                     <section id="back-to-top" className="text-center my-8">
